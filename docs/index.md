@@ -1,0 +1,22 @@
+# Thalian Documentation
+
+Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence platform that surfaces insights across your identity providers, endpoint managers, security tools, and SaaS applications.
+
+## Guides
+
+- **[Getting Started](getting-started.md)** — Create your workspace and connect your first integration
+- **[Integrations](integrations-guide.md)** — 24 supported platforms, connection flows, sync, and alerts
+- **[Findings & Remediation](findings-and-remediation.md)** — Understanding findings, remediation actions, and the approval workflow
+- **[Reports & Audit](reports-and-audit.md)** — Posture tracking, MTTR, drift snapshots, and the immutable audit log
+- **[Settings & Admin](settings-and-admin.md)** — Team management, RBAC roles, security settings, billing
+- **[Policies & Planning](policies-and-planning.md)** — Auto-generated policies, scenario builder, and security goals
+
+## Security & Compliance
+
+- **[Information Security Policy](information-security-policy.md)** — How Thalian protects your data
+- **[Incident Response Plan](incident-response-plan.md)** — How we handle security incidents
+- **[Change Management Policy](change-management-policy.md)** — How changes are reviewed, tested, and deployed
+
+---
+
+Need help? Contact [support@thalian.ai](mailto:support@thalian.ai)

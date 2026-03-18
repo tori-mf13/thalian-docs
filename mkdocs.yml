@@ -1,0 +1,35 @@
+site_name: Thalian Docs
+site_url: https://docs.thalian.ai
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: deep purple
+    accent: teal
+  font:
+    text: DM Sans
+    code: DM Mono
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Integrations: integrations-guide.md
+  - Findings & Remediation: findings-and-remediation.md
+  - Reports & Audit: reports-and-audit.md
+  - Settings & Admin: settings-and-admin.md
+  - Policies & Planning: policies-and-planning.md
+  - Information Security Policy: information-security-policy.md
+  - Incident Response Plan: incident-response-plan.md
+  - Change Management Policy: change-management-policy.md
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+
+copyright: "&copy; 2026 Thalian, Inc."
