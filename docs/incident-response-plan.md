@@ -141,4 +141,4 @@ This plan will be tested annually through:
 
 ---
 
-*This document is maintained in the Thalian source repository and deployed to docs.thalian.ai.*
+*For the full security controls and data handling practices, see [Information Security Policy](./information-security-policy.md).*

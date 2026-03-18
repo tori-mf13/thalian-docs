@@ -26,9 +26,13 @@ nav:
   - Information Security Policy: information-security-policy.md
   - Incident Response Plan: incident-response-plan.md
   - Change Management Policy: change-management-policy.md
+  - Brand Guidelines: brand-guidelines.md
+  - Development Guidelines: development-guidelines.md
 
 markdown_extensions:
   - tables
+  - admonition
+  - pymdownx.details
   - toc:
       permalink: true
 

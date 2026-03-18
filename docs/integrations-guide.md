@@ -129,4 +129,4 @@ When you exceed the free plan's integration limit, the oldest integrations are a
 
 ---
 
-*For platform-specific setup instructions, see the help links on each integration's connect modal.*
+*For information on what Thalian does with your synced data, see [Findings & Remediation](./findings-and-remediation.md).*

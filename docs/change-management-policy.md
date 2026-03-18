@@ -128,4 +128,4 @@ This policy is reviewed quarterly or when significant changes are made to the de
 
 ---
 
-*This document is maintained in the Thalian source repository and deployed to docs.thalian.ai.*
+*For emergency response procedures referenced in this policy, see [Incident Response Plan](./incident-response-plan.md).*

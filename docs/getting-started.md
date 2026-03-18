@@ -96,4 +96,4 @@ An AI-generated summary of your workspace's security posture and notable changes
 
 ---
 
-*Need help? Contact support@thalian.ai*
+*For information on connecting additional platforms, see [Integrations Guide](./integrations-guide.md).*

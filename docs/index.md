@@ -2,6 +2,8 @@
 
 Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence platform that surfaces insights across your identity providers, endpoint managers, security tools, and SaaS applications.
 
+---
+
 ## Guides
 
 - **[Getting Started](getting-started.md)** — Create your workspace and connect your first integration
@@ -16,6 +18,11 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 - **[Information Security Policy](information-security-policy.md)** — How Thalian protects your data
 - **[Incident Response Plan](incident-response-plan.md)** — How we handle security incidents
 - **[Change Management Policy](change-management-policy.md)** — How changes are reviewed, tested, and deployed
+
+## Reference
+
+- **[Brand Guidelines](brand-guidelines.md)** — Typography, color system, logo usage, and mark geometry
+- **[Development Guidelines](development-guidelines.md)** — Core rules, security checklists, and architecture decisions
 
 ---
 

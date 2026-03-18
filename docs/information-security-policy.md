@@ -179,4 +179,4 @@ This policy is reviewed quarterly or upon any significant change to infrastructu
 
 ---
 
-*This document is maintained in the Thalian source repository and deployed to docs.thalian.ai.*
+*For incident handling procedures, see [Incident Response Plan](./incident-response-plan.md). For deployment and change procedures, see [Change Management Policy](./change-management-policy.md).*
