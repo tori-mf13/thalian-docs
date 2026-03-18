@@ -1,6 +1,6 @@
 # Change Management Policy
 
-**Thalian, Inc.**
+**Thalian, LLC**
 **Effective Date:** March 2026
 **Last Reviewed:** March 18, 2026
 **Owner:** Engineering Team

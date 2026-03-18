@@ -19,6 +19,13 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 - **[Incident Response Plan](incident-response-plan.md)** — How we handle security incidents
 - **[Change Management Policy](change-management-policy.md)** — How changes are reviewed, tested, and deployed
 
+## Legal
+
+- **[Terms of Service](terms-of-service.md)** — Agreement governing use of the Thalian platform
+- **[Privacy Policy](privacy-policy.md)** — How we collect, use, and protect your data
+- **[Acceptable Use Policy](acceptable-use-policy.md)** — Permitted and prohibited uses of the Service
+- **[Data Processing Agreement](data-processing-agreement.md)** — GDPR-compliant data processing terms
+
 ## Reference
 
 - **[Brand Guidelines](brand-guidelines.md)** — Typography, color system, logo usage, and mark geometry
