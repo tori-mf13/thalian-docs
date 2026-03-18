@@ -1,0 +1,352 @@
+/* ==============================================
+   Thalian Docs — Custom Theme
+   Matches app.thalian.ai and thalian.ai branding
+   ============================================== */
+
+/* -- Google Fonts -- */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+/* -- Root color tokens (from thalian.ai) -- */
+:root {
+  --t-void: #06020f;
+  --t-deep: #0e0520;
+  --t-surface: #150a2e;
+  --t-surface-raised: #1c1038;
+  --t-border: rgba(124, 58, 237, 0.15);
+  --t-border-bright: rgba(124, 58, 237, 0.35);
+  --t-violet: #7c3aed;
+  --t-violet-bright: #a78bfa;
+  --t-violet-glow: rgba(124, 58, 237, 0.4);
+  --t-teal: #14b8a6;
+  --t-teal-bright: #2dd4bf;
+  --t-teal-dim: rgba(20, 184, 166, 0.15);
+  --t-text: #e8e2f4;
+  --t-text-dim: #9b8ec2;
+  --t-text-muted: #6b5e8a;
+}
+
+/* -- MkDocs Material overrides -- */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--t-void);
+  --md-default-fg-color: var(--t-text);
+  --md-default-fg-color--light: var(--t-text-dim);
+  --md-default-fg-color--lighter: var(--t-text-muted);
+  --md-default-fg-color--lightest: rgba(155, 142, 194, 0.3);
+
+  --md-primary-fg-color: var(--t-deep);
+  --md-primary-bg-color: var(--t-text);
+  --md-primary-fg-color--light: var(--t-surface);
+  --md-primary-fg-color--dark: #030108;
+
+  --md-accent-fg-color: var(--t-teal-bright);
+  --md-accent-fg-color--transparent: var(--t-teal-dim);
+  --md-accent-bg-color: var(--t-teal);
+
+  --md-typeset-color: var(--t-text);
+  --md-typeset-a-color: var(--t-violet-bright);
+
+  --md-code-bg-color: var(--t-surface);
+  --md-code-fg-color: var(--t-text);
+  --md-code-hl-color: var(--t-violet-glow);
+
+  --md-footer-bg-color: var(--t-deep);
+  --md-footer-bg-color--dark: #030108;
+  --md-footer-fg-color: var(--t-text-dim);
+  --md-footer-fg-color--light: var(--t-text-muted);
+  --md-footer-fg-color--lighter: rgba(155, 142, 194, 0.3);
+}
+
+/* -- Header -- */
+.md-header {
+  background-color: rgba(6, 2, 15, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--t-border);
+  box-shadow: none;
+}
+
+.md-header__title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+/* -- Typography -- */
+.md-typeset {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--t-text);
+}
+
+.md-typeset h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  color: var(--t-text);
+  letter-spacing: -0.04em;
+  border-bottom: none;
+}
+
+.md-typeset h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  border-bottom: 1px solid var(--t-border);
+  padding-bottom: 0.4em;
+}
+
+.md-typeset h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* -- Links -- */
+.md-typeset a {
+  color: var(--t-violet-bright);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--t-teal-bright);
+}
+
+/* -- Navigation sidebar -- */
+.md-nav__link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  color: var(--t-text-dim) !important;
+  transition: color 0.15s ease;
+}
+
+.md-nav__link:hover {
+  color: var(--t-violet-bright) !important;
+}
+
+.md-nav__link--active,
+.md-nav__item--active > .md-nav__link {
+  color: var(--t-teal-bright) !important;
+  font-weight: 600;
+}
+
+.md-nav__title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.7rem;
+  color: var(--t-text-muted) !important;
+}
+
+/* -- Table of contents (right sidebar) -- */
+.md-nav--secondary .md-nav__link {
+  font-size: 0.75rem;
+}
+
+.md-nav--secondary .md-nav__link--active {
+  color: var(--t-teal-bright) !important;
+}
+
+/* -- Code blocks -- */
+.md-typeset code,
+.md-typeset kbd {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82em;
+  background-color: var(--t-surface);
+  border: 1px solid var(--t-border);
+  color: var(--t-teal-bright);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+
+.md-typeset pre {
+  border: 1px solid var(--t-border);
+  border-radius: 8px;
+  background-color: var(--t-surface) !important;
+}
+
+.md-typeset pre code {
+  font-family: 'DM Mono', monospace;
+  border: none;
+  background: none;
+  color: var(--t-text);
+  padding: 0;
+}
+
+/* -- Tables -- */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--t-border);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 0.82rem;
+}
+
+.md-typeset table:not([class]) thead {
+  background-color: var(--t-surface);
+}
+
+.md-typeset table:not([class]) th {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  color: var(--t-text);
+  border-bottom: 1px solid var(--t-border-bright);
+  padding: 0.7em 1em;
+}
+
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid var(--t-border);
+  padding: 0.6em 1em;
+  color: var(--t-text-dim);
+}
+
+.md-typeset table:not([class]) tr:last-child td {
+  border-bottom: none;
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: rgba(124, 58, 237, 0.05);
+}
+
+/* -- Horizontal rules -- */
+.md-typeset hr {
+  border-color: var(--t-border);
+}
+
+/* -- Admonitions -- */
+.md-typeset .admonition,
+.md-typeset details {
+  border: 1px solid var(--t-border);
+  border-radius: 8px;
+  background-color: var(--t-surface);
+  box-shadow: none;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  border-bottom: 1px solid var(--t-border);
+}
+
+/* Warning admonition */
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: rgba(234, 179, 8, 0.3);
+}
+
+/* Info admonition */
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+/* -- Search -- */
+.md-search__input {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--t-surface) !important;
+  border: 1px solid var(--t-border);
+  border-radius: 8px;
+}
+
+.md-search__input::placeholder {
+  color: var(--t-text-muted);
+}
+
+/* -- Footer -- */
+.md-footer {
+  border-top: 1px solid var(--t-border);
+}
+
+.md-footer-meta {
+  background-color: var(--t-deep) !important;
+}
+
+/* -- Scrollbar -- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--t-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--t-surface-raised);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--t-violet);
+}
+
+/* -- Selection -- */
+::selection {
+  background-color: var(--t-violet-glow);
+  color: #ffffff;
+}
+
+/* -- Content area background -- */
+.md-main {
+  background-color: var(--t-void);
+}
+
+.md-content {
+  background-color: transparent;
+}
+
+/* -- Tabs (navigation sections) -- */
+.md-tabs {
+  background-color: var(--t-deep) !important;
+  border-bottom: 1px solid var(--t-border);
+}
+
+.md-tabs__link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  color: var(--t-text-dim) !important;
+}
+
+.md-tabs__link--active {
+  color: var(--t-teal-bright) !important;
+}
+
+/* -- Bold text in tables (first column labels) -- */
+.md-typeset table:not([class]) td strong {
+  color: var(--t-text);
+}
+
+/* -- Lists -- */
+.md-typeset ul li,
+.md-typeset ol li {
+  color: var(--t-text);
+}
+
+/* -- Blockquotes -- */
+.md-typeset blockquote {
+  border-left: 3px solid var(--t-violet);
+  background-color: rgba(124, 58, 237, 0.05);
+  color: var(--t-text-dim);
+  border-radius: 0 8px 8px 0;
+  padding: 0.8em 1.2em;
+}
+
+/* -- Checklist items -- */
+.md-typeset .task-list-indicator::before {
+  border-color: var(--t-violet);
+}
+
+.md-typeset [type="checkbox"]:checked + .task-list-indicator::before {
+  background-color: var(--t-teal);
+}
+
+/* -- Copyright -- */
+.md-copyright {
+  color: var(--t-text-muted);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+}
