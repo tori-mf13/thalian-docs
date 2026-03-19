@@ -27,7 +27,7 @@ Select the identity provider your organization uses:
 ### Step 2: Enter Credentials
 
 - **OAuth platforms** (Google Workspace, Entra ID): Click "Connect" to authorize via your provider's consent screen. Thalian requests only read-only scopes needed for user directory, app inventory, and device management
-- **API key platforms** (Okta, JumpCloud, OneLogin): Enter your API credentials. These are encrypted with AES-256-GCM before storage — the plaintext never touches the database
+- **API key platforms** (Okta, JumpCloud, OneLogin): Enter your API credentials. These are encrypted at rest — the plaintext is never stored
 
 ### Step 3: First Sync
 

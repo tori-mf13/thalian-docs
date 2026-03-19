@@ -78,7 +78,7 @@ Thalian supports 24 platforms across 7 categories:
 3. Enter the required credentials (API token, domain, etc.)
 4. Click **Save** — Thalian validates the credentials and connects
 
-**Credentials are encrypted** with AES-256-GCM before storage. The plaintext is never saved to the database.
+**Credentials are encrypted** at rest before storage and are never exposed in plaintext.
 
 ## Syncing Data
 
@@ -88,7 +88,7 @@ Click the **Sync** button on any integration card to trigger an immediate data p
 
 ### Automatic Sync
 
-Thalian runs automated syncs via a Cloudflare Worker cron job. Connected integrations are synced on a regular schedule without any manual intervention.
+Connected integrations are synced automatically on a regular schedule without any manual intervention.
 
 ### What Happens During a Sync
 
