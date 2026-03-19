@@ -22,7 +22,7 @@ Thalian supports 25 platforms across 8 categories:
 |---|---|---|---|
 | **Microsoft Intune** | OAuth or API | Devices, compliance status, configurations | [Connect Intune](./integrations/microsoft-intune.md) |
 | **Jamf Pro** | API credentials | Mac/iOS devices, compliance, configurations | [Connect Jamf Pro](./integrations/jamf-pro.md) |
-| **Kandji** | API token | Apple devices, blueprints, compliance | [Connect Kandji](./integrations/kandji.md) |
+| **Iru (formerly Kandji)** | API token | Apple devices, blueprints, compliance | [Connect Iru](./integrations/kandji.md) |
 | **Hexnode** | API key | Cross-platform devices, policies | [Connect Hexnode](./integrations/hexnode.md) |
 
 ### Security

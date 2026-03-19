@@ -1,17 +1,17 @@
-# Connect Kandji
+# Connect Iru
 
-Step-by-step guide to connecting Kandji to Thalian for Apple device management intelligence.
+Step-by-step guide to connecting Iru to Thalian for Apple device management intelligence.
 
 ---
 
 ## Prerequisites
 
-- **Kandji account** with API access enabled
-- **Kandji admin permissions** to generate API tokens
+- **Iru account** with API access enabled
+- **Iru admin permissions** to generate API tokens
 
-## Create an API Token in Kandji
+## Create an API Token in Iru
 
-1. Sign in to the Kandji web app
+1. Sign in to the Iru web app
 2. Go to **Settings** → **Access** → **API Token**
 3. Click **Add Token**
 4. Give the token a name (e.g., `Thalian Read-Only`)
@@ -31,8 +31,8 @@ No write permissions are needed.
 ## Connect in Thalian
 
 1. Go to **Integrations** → **Browse**
-2. Find **Kandji** and click **Connect**
-3. Enter your **Kandji subdomain** (e.g., `yourcompany.kandji.io`)
+2. Find **Iru** and click **Connect**
+3. Enter your **Iru subdomain** (e.g., `yourcompany.kandji.io`)
 4. Paste your **API token**
 5. Click **Save** — Thalian validates the credentials and begins the first sync
 

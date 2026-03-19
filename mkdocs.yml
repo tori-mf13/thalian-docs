@@ -35,7 +35,7 @@ nav:
     - OneLogin: integrations/onelogin.md
     - Microsoft Intune: integrations/microsoft-intune.md
     - Jamf Pro: integrations/jamf-pro.md
-    - Kandji: integrations/kandji.md
+    - Iru (formerly Kandji): integrations/kandji.md
     - Hexnode: integrations/hexnode.md
     - CrowdStrike: integrations/crowdstrike.md
     - SentinelOne: integrations/sentinelone.md

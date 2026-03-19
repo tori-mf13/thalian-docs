@@ -16,7 +16,7 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 
 - **[Microsoft Intune](microsoft-intune.md)** — OAuth or API setup for devices and compliance
 - **[Jamf Pro](jamf-pro.md)** — API credentials setup for Mac/iOS devices and configurations
-- **[Kandji](kandji.md)** — API token setup for Apple devices and blueprints
+- **[Iru (formerly Kandji)](kandji.md)** — API token setup for Apple devices and blueprints
 - **[Hexnode](hexnode.md)** — API key setup for cross-platform devices and policies
 
 ## Security
