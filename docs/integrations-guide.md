@@ -107,13 +107,9 @@ For communication platforms (Slack, Teams) and ITSM platforms (Jira, ServiceNow,
 
 ## Plan Limits
 
-| Feature | Free | Pro | Enterprise |
-|---|---|---|---|
-| Integrations | 3 | Unlimited | Unlimited |
-| Identities | 25 | 500 | Unlimited |
-| Data retention | 7 days | 90 days | Unlimited |
+The Free plan includes up to 3 integrations and 25 identities. When you exceed the integration limit, the oldest integrations are automatically paused. Upgrade to Pro to reconnect them.
 
-When you exceed the free plan's integration limit, the oldest integrations are automatically paused. Upgrade to Pro to reconnect them.
+For a full plan comparison, see [Settings & Admin](./settings-and-admin.md).
 
 ## Managing Integrations
 

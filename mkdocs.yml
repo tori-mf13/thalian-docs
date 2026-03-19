@@ -29,13 +29,14 @@ nav:
   - Findings & Remediation: findings-and-remediation.md
   - Reports & Audit: reports-and-audit.md
   - Settings & Admin: settings-and-admin.md
-  - Policies & Planning: policies-and-planning.md
+  - Policies & Impact Analysis: policies-and-planning.md
+  - API Reference: api-reference.md
+  - Changelog: changelog.md
   - Information Security Policy: information-security-policy.md
   - Terms of Service: terms-of-service.md
   - Privacy Policy: privacy-policy.md
   - Acceptable Use Policy: acceptable-use-policy.md
   - Data Processing Agreement: data-processing-agreement.md
-  - Development Guidelines: development-guidelines.md
 
 markdown_extensions:
   - tables

@@ -98,4 +98,4 @@ The UI conditionally renders action buttons, settings panels, and management int
 
 ---
 
-*For information on connecting platforms, see [Integrations Guide](./integrations-guide.md).*
+*For information on security policies and impact analysis, see [Policies & Impact Analysis](./policies-and-planning.md).*
