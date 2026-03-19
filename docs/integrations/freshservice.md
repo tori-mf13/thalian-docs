@@ -17,6 +17,15 @@ Step-by-step guide to connecting Freshservice to Thalian for ITSM intelligence a
 4. Your **API key** is displayed on the right side of the page
 5. Copy the API key
 
+## Recommended Permissions
+
+The Freshservice API key inherits the permissions of the account that owns it. Thalian needs:
+
+- **Read access** to tickets, agents, and assets for sync
+- **Write access** to tickets only if alert rules are enabled (to auto-create tickets for findings)
+
+An **Agent** role with access to the relevant service desks is sufficient.
+
 ## Connect in Thalian
 
 1. Go to **Integrations** → **Browse**

@@ -19,6 +19,15 @@ Step-by-step guide to connecting Zendesk to Thalian for ITSM intelligence and al
 6. Copy the token value — it is shown only once
 7. Click **Save**
 
+## Recommended Permissions
+
+The Zendesk API token inherits the permissions of the admin account used to authenticate. Thalian needs:
+
+- **Read access** to tickets, users, and organizations for sync
+- **Write access** to tickets only if alert rules are enabled (to auto-create tickets for findings)
+
+An **Admin** account is recommended to ensure access to all ticket data and the user directory.
+
 ## Connect in Thalian
 
 1. Go to **Integrations** → **Browse**

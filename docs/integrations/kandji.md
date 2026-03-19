@@ -18,6 +18,16 @@ Step-by-step guide to connecting Kandji to Thalian for Apple device management i
 5. Set permissions to read-only access for devices and blueprints
 6. Click **Save** and copy the token value
 
+## Recommended Permissions
+
+When creating the API token, grant read-only access to the following:
+
+- **Device list** — required to sync the full Apple device inventory
+- **Device details** — required to read hardware, OS, and blueprint data
+- **Blueprints** — required to read blueprint assignments and library item status
+
+No write permissions are needed.
+
 ## Connect in Thalian
 
 1. Go to **Integrations** → **Browse**

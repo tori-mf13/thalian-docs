@@ -17,6 +17,15 @@ Step-by-step guide to connecting Hexnode to Thalian for cross-platform device ma
 4. Click **Generate API Key**
 5. Copy the API key value
 
+## Recommended Permissions
+
+The Hexnode API key inherits the permissions of the admin account. Thalian only needs read access to:
+
+- **Devices** — device inventory across all platforms
+- **Policies** — applied policies and compliance state
+
+Use an admin account with read-only access where possible. No write permissions are needed.
+
 ## Connect in Thalian
 
 1. Go to **Integrations** → **Browse**

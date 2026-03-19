@@ -18,6 +18,10 @@ Step-by-step guide to connecting Cisco Meraki to Thalian for network intelligenc
 5. Under **API access**, click **Generate new API key**
 6. Copy the API key — it is shown only once
 
+## Recommended Permissions
+
+The Meraki API key inherits the permissions of the dashboard account. Thalian only needs read access. A **read-only admin** role at the organization level is sufficient and recommended to limit the key's access.
+
 ## Connect in Thalian
 
 1. Go to **Integrations** → **Browse**
