@@ -4,6 +4,18 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
+## v0.9.1 — March 19, 2026
+
+### Added
+
+- **Public status page** — Real-time platform health at [status.thalian.ai](https://status.thalian.ai) with incident history and email subscription for downtime alerts
+
+### Changed
+
+- Status page moved from an in-app route to a standalone Cloudflare Worker, accessible without authentication
+
+---
+
 ## March 2026
 
 ### New Features
