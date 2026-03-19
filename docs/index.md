@@ -8,6 +8,7 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 
 - **[Getting Started](getting-started.md)** — Create your workspace and connect your first integration
 - **[Integrations](integrations-guide.md)** — 24 supported platforms, connection flows, sync, and alerts
+- **[Integration Guides](integrations/index.md)** — Step-by-step setup instructions for each platform
 - **[Findings & Remediation](findings-and-remediation.md)** — Understanding findings, remediation actions, and the approval workflow
 - **[Reports & Audit](reports-and-audit.md)** — Posture tracking, MTTR, drift snapshots, and the immutable audit log
 - **[Settings & Admin](settings-and-admin.md)** — Team management, RBAC roles, security settings, billing
