@@ -64,7 +64,6 @@ Thalian uses the following sub-processors:
 | **Supabase** | Database and authentication | All Customer Data | United States |
 | **Cloudflare** | Application hosting, CDN, Workers | Request routing, static assets | Global (edge) |
 | **Anthropic** | AI analysis (Claude API) | Workspace context in prompts | United States |
-| **OpenAI** | AI analysis (fallback) | Workspace context in prompts | United States |
 | **Stripe** | Payment processing | Billing data | United States |
 | **Sentry** | Error monitoring | Technical error data | United States |
 
@@ -104,7 +103,7 @@ In the event of a personal data breach:
 Where personal data is transferred outside the European Economic Area (EEA):
 
 - Transfers to US-based sub-processors are covered by Standard Contractual Clauses (SCCs) or equivalent safeguards provided by each sub-processor
-- The Controller acknowledges that AI processing (Anthropic, OpenAI) occurs in the United States
+- The Controller acknowledges that AI processing (Anthropic) occurs in the United States
 
 ## 10. Duration and Termination
 

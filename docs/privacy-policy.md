@@ -68,8 +68,7 @@ When you connect third-party platforms, Thalian syncs data including:
 
 ### Third-Party AI Providers
 
-- **Anthropic (Claude):** Primary AI provider for analysis and chat
-- **OpenAI:** Secondary/fallback AI provider
+- **Anthropic (Claude):** AI provider for analysis and chat
 
 ### AI Data Commitments
 
@@ -115,7 +114,7 @@ We do not sell your data. We share data only in these circumstances:
 
 | Recipient | Purpose | Data Shared |
 |---|---|---|
-| **Anthropic / OpenAI** | AI analysis and chat | Workspace context in AI prompts |
+| **Anthropic** | AI analysis and chat | Workspace context in AI prompts |
 | **Stripe** | Payment processing | Billing information |
 | **Sentry** | Error monitoring | Technical error data (no Customer Data) |
 | **Supabase** | Database hosting | All Customer Data (encrypted at rest) |

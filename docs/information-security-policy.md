@@ -122,7 +122,7 @@ The following security headers are applied to all routes via `public/_headers`:
 | `Strict-Transport-Security` | `max-age=31536000; includeSubDomains` | Enforces HTTPS |
 | `Content-Security-Policy` | Scoped to actual dependencies | Prevents XSS and unauthorized script execution |
 
-**CSP details:** `script-src` allows self and jsdelivr CDN only; `connect-src` is scoped to Supabase, Anthropic, OpenAI, and Stripe endpoints; `frame-ancestors: none` prevents embedding.
+**CSP details:** `script-src` allows self and jsdelivr CDN only; `connect-src` is scoped to Supabase, Anthropic, and Stripe endpoints; `frame-ancestors: none` prevents embedding.
 
 ## 8. Database Security
 
@@ -155,7 +155,6 @@ In addition to RLS (defense in depth), every application query is explicitly sco
 | **Supabase** | Database, Auth, Realtime | All workspace data | Covered under Supabase Terms of Service and DPA |
 | **Cloudflare** | CDN, Pages, Workers, R2 | Request routing, static assets, backend execution | Covered under Cloudflare DPA |
 | **Anthropic** | AI analysis (Claude API) | Workspace context sent in AI prompts | Review Anthropic Terms for data processing |
-| **OpenAI** | AI analysis (fallback) | Workspace context sent in AI prompts | Review OpenAI Terms for data processing |
 | **Stripe** | Payment processing | Customer billing data | Covered under Stripe DPA |
 
 ## 11. Vulnerability Management
