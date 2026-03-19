@@ -270,4 +270,4 @@ Run through every item after completing a feature before marking it done:
 
 ---
 
-*For visual design specifications referenced in Rule 8, see [Brand Guidelines](./brand-guidelines.md).*
+*For information on workspace configuration and team management, see [Settings & Admin](./settings-and-admin.md).*

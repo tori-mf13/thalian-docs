@@ -26,7 +26,6 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 
 ## Reference
 
-- **[Brand Guidelines](brand-guidelines.md)** — Typography, color system, logo usage, and mark geometry
 - **[Development Guidelines](development-guidelines.md)** — Core rules, security checklists, and architecture decisions
 
 ---
