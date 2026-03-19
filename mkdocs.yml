@@ -40,6 +40,7 @@ nav:
     - CrowdStrike: integrations/crowdstrike.md
     - SentinelOne: integrations/sentinelone.md
     - Cisco Meraki: integrations/cisco-meraki.md
+    - Auvik: integrations/auvik.md
     - Jira: integrations/jira.md
     - ServiceNow: integrations/servicenow.md
     - Freshservice: integrations/freshservice.md
@@ -49,6 +50,7 @@ nav:
     - Microsoft Outlook: integrations/microsoft-outlook.md
     - SharePoint: integrations/sharepoint.md
     - Confluence: integrations/confluence.md
+    - Webhooks: integrations/webhooks.md
   - Findings & Remediation: findings-and-remediation.md
   - Reports & Audit: reports-and-audit.md
   - Settings & Admin: settings-and-admin.md

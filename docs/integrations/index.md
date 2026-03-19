@@ -27,6 +27,7 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 ## Network
 
 - **[Cisco Meraki](cisco-meraki.md)** — API key setup for network devices, clients, and VPN
+- **[Auvik](auvik.md)** — API key setup for network devices, alerts, and topology
 
 ## ITSM
 
@@ -40,6 +41,10 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 - **[Slack](slack.md)** — OAuth setup for finding alert delivery
 - **[Microsoft Teams](microsoft-teams.md)** — OAuth or webhook setup for finding alert delivery
 - **[Microsoft Outlook](microsoft-outlook.md)** — OAuth setup for mailbox monitoring and forwarding rule detection
+
+## Outbound
+
+- **[Webhooks](webhooks.md)** — Send findings to SIEMs, SOARs, custom dashboards, or any HTTPS endpoint
 
 ## Collaboration
 

@@ -6,7 +6,7 @@ Thalian's intelligence comes from the data it collects across your IT stack. The
 
 ## Supported Platforms
 
-Thalian supports 23 platforms across 7 categories:
+Thalian supports 25 platforms across 8 categories:
 
 ### Identity & Access
 | Platform | Auth Method | What It Syncs | Setup Guide |
@@ -35,6 +35,7 @@ Thalian supports 23 platforms across 7 categories:
 | Platform | Auth Method | What It Syncs | Setup Guide |
 |---|---|---|---|
 | **Cisco Meraki** | API key | Network devices, clients, VPN status | [Connect Cisco Meraki](./integrations/cisco-meraki.md) |
+| **Auvik** | API key | Network devices, networks, clients, alerts | [Connect Auvik](./integrations/auvik.md) |
 
 ### ITSM (IT Service Management)
 | Platform | Auth Method | What It Syncs | Setup Guide |
@@ -43,6 +44,11 @@ Thalian supports 23 platforms across 7 categories:
 | **ServiceNow** | API credentials | Incidents, users, CMDB items | [Connect ServiceNow](./integrations/servicenow.md) |
 | **Freshservice** | API key | Tickets, agents, assets | [Connect Freshservice](./integrations/freshservice.md) |
 | **Zendesk** | API token | Tickets, users, organizations | [Connect Zendesk](./integrations/zendesk.md) |
+
+### Outbound
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Webhook** | HTTPS endpoint | Outbound finding delivery (no read access needed) | [Outbound Webhooks](./integrations/webhooks.md) |
 
 ### Communication
 | Platform | Auth Method | What It Syncs | Setup Guide |
