@@ -344,9 +344,65 @@
   background-color: var(--t-teal);
 }
 
-/* -- Copyright -- */
+/* -- Header nav links (injected via nav-links.js) -- */
+.th-header-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.th-header-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.35em 0.9em;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  color: #ffffff !important;
+  background: var(--t-violet);
+  border: 1px solid var(--t-violet);
+  white-space: nowrap;
+}
+
+.th-header-link:hover {
+  background: var(--t-violet-bright);
+  border-color: var(--t-violet-bright);
+}
+
+.th-header-link--dim {
+  background: transparent;
+  border-color: var(--t-border-bright);
+  color: var(--t-text-dim) !important;
+}
+
+.th-header-link--dim:hover {
+  color: var(--t-text) !important;
+  border-color: var(--t-text-dim);
+  background: transparent;
+}
+
+@media (max-width: 76.1875em) {
+  .th-header-links {
+    display: none;
+  }
+}
+
+/* -- Copyright & footer links -- */
 .md-copyright {
   color: var(--t-text-muted);
   font-family: 'DM Mono', monospace;
   font-size: 0.7rem;
+}
+
+.md-copyright a {
+  color: var(--t-text-dim);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.md-copyright a:hover {
+  color: var(--t-teal-bright);
 }

@@ -19,6 +19,9 @@ theme:
 extra_css:
   - stylesheets/custom.css
 
+extra_javascript:
+  - assets/nav-links.js
+
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
@@ -44,4 +47,4 @@ markdown_extensions:
   - toc:
       permalink: true
 
-copyright: "&copy; 2026 Thalian, LLC"
+copyright: "&copy; 2026 Thalian, LLC &nbsp;·&nbsp; <a href='/terms-of-service/'>Terms</a> &nbsp;·&nbsp; <a href='/privacy-policy/'>Privacy</a> &nbsp;·&nbsp; <a href='/acceptable-use-policy/'>Acceptable Use</a> &nbsp;·&nbsp; <a href='/data-processing-agreement/'>DPA</a>"
