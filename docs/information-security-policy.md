@@ -165,18 +165,10 @@ In addition to RLS (defense in depth), every application query is explicitly sco
 - **Health monitoring:** `/api/health` endpoint checks Supabase connectivity; Sentry captures frontend errors with 10% trace sampling
 - **Error boundaries:** React `Sentry.ErrorBoundary` wraps the entire application to prevent unhandled errors from exposing internal state
 
-## 12. Incident Response
-
-See the separate [Incident Response Plan](./incident-response-plan.md) for detailed procedures.
-
-## 13. Change Management
-
-See the separate [Change Management Policy](./change-management-policy.md) for detailed procedures.
-
-## 14. Policy Review
+## 12. Policy Review
 
 This policy is reviewed quarterly or upon any significant change to infrastructure, data handling practices, or regulatory requirements. All changes are tracked via version control (git).
 
 ---
 
-*For incident handling procedures, see [Incident Response Plan](./incident-response-plan.md). For deployment and change procedures, see [Change Management Policy](./change-management-policy.md).*
+*For information on how we handle your data, see [Privacy Policy](./privacy-policy.md).*

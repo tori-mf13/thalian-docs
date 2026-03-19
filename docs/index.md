@@ -16,8 +16,6 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 ## Security & Compliance
 
 - **[Information Security Policy](information-security-policy.md)** — How Thalian protects your data
-- **[Incident Response Plan](incident-response-plan.md)** — How we handle security incidents
-- **[Change Management Policy](change-management-policy.md)** — How changes are reviewed, tested, and deployed
 
 ## Legal
 
