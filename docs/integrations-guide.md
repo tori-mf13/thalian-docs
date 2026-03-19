@@ -6,57 +6,62 @@ Thalian's intelligence comes from the data it collects across your IT stack. The
 
 ## Supported Platforms
 
-Thalian supports 24 platforms across 7 categories:
+Thalian supports 25 platforms across 8 categories:
 
 ### Identity & Access
-| Platform | Auth Method | What It Syncs |
-|---|---|---|
-| **Okta** | API token | Users, groups, MFA status, apps, system log events |
-| **Microsoft Entra ID** | OAuth or API | Users, groups, sign-in logs, enterprise apps, conditional access |
-| **Google Workspace** | OAuth | Users, groups, OAuth apps, Gmail app discovery, audit events |
-| **JumpCloud** | API key | Users, devices, systems, policies |
-| **OneLogin** | Client credentials | Users, apps, roles |
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Okta** | API token | Users, groups, MFA status, apps, system log events | [Connect Okta](./integrations/okta.md) |
+| **Microsoft Entra ID** | OAuth or API | Users, groups, sign-in logs, enterprise apps, conditional access | [Connect Entra ID](./integrations/microsoft-entra-id.md) |
+| **Google Workspace** | OAuth | Users, groups, OAuth apps, Gmail app discovery, audit events | [Connect Google Workspace](./integrations/google-workspace.md) |
+| **JumpCloud** | API key | Users, devices, systems, policies | [Connect JumpCloud](./integrations/jumpcloud.md) |
+| **OneLogin** | Client credentials | Users, apps, roles | [Connect OneLogin](./integrations/onelogin.md) |
 
 ### Endpoint Management
-| Platform | Auth Method | What It Syncs |
-|---|---|---|
-| **Microsoft Intune** | OAuth or API | Devices, compliance status, configurations |
-| **Jamf Pro** | API credentials | Mac/iOS devices, compliance, configurations |
-| **Kandji** | API token | Apple devices, blueprints, compliance |
-| **Hexnode** | API key | Cross-platform devices, policies |
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Microsoft Intune** | OAuth or API | Devices, compliance status, configurations | [Connect Intune](./integrations/microsoft-intune.md) |
+| **Jamf Pro** | API credentials | Mac/iOS devices, compliance, configurations | [Connect Jamf Pro](./integrations/jamf-pro.md) |
+| **Kandji** | API token | Apple devices, blueprints, compliance | [Connect Kandji](./integrations/kandji.md) |
+| **Hexnode** | API key | Cross-platform devices, policies | [Connect Hexnode](./integrations/hexnode.md) |
 
 ### Security
-| Platform | Auth Method | What It Syncs |
-|---|---|---|
-| **CrowdStrike** | API credentials | Endpoints, detections, containment status |
-| **SentinelOne** | API token | Agents, threats, device health |
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **CrowdStrike** | API credentials | Endpoints, detections, containment status | [Connect CrowdStrike](./integrations/crowdstrike.md) |
+| **SentinelOne** | API token | Agents, threats, device health | [Connect SentinelOne](./integrations/sentinelone.md) |
 
 ### Network
-| Platform | Auth Method | What It Syncs |
-|---|---|---|
-| **Cisco Meraki** | API key | Network devices, clients, VPN status |
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Cisco Meraki** | API key | Network devices, clients, VPN status | [Connect Cisco Meraki](./integrations/cisco-meraki.md) |
+| **Auvik** | API key | Network devices, networks, clients, alerts | [Connect Auvik](./integrations/auvik.md) |
 
 ### ITSM (IT Service Management)
-| Platform | Auth Method | What It Syncs |
-|---|---|---|
-| **Jira** | OAuth or API | Issues, users, service desk tickets |
-| **Jira Service Management** | OAuth or API | Service requests, agents, queues |
-| **ServiceNow** | API credentials | Incidents, users, CMDB items |
-| **Freshservice** | API key | Tickets, agents, assets |
-| **Zendesk** | API token | Tickets, users, organizations |
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Jira** | OAuth or API | Issues, users, service requests, agents | [Connect Jira](./integrations/jira.md) |
+| **ServiceNow** | API credentials | Incidents, users, CMDB items | [Connect ServiceNow](./integrations/servicenow.md) |
+| **Freshservice** | API key | Tickets, agents, assets | [Connect Freshservice](./integrations/freshservice.md) |
+| **Zendesk** | API token | Tickets, users, organizations | [Connect Zendesk](./integrations/zendesk.md) |
+
+### Outbound
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Webhook** | HTTPS endpoint | Outbound finding delivery (no read access needed) | [Outbound Webhooks](./integrations/webhooks.md) |
 
 ### Communication
-| Platform | Auth Method | What It Syncs |
-|---|---|---|
-| **Slack** | OAuth or bot token | Used for alert delivery (finding notifications to channels) |
-| **Microsoft Teams** | OAuth or webhook | Used for alert delivery (adaptive card notifications) |
-| **Microsoft Outlook** | OAuth | Mailbox monitoring, forwarding rule detection |
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Slack** | OAuth or bot token | Used for alert delivery (finding notifications to channels) | [Connect Slack](./integrations/slack.md) |
+| **Microsoft Teams** | OAuth or webhook | Used for alert delivery (adaptive card notifications) | [Connect Teams](./integrations/microsoft-teams.md) |
+| **Microsoft Outlook** | OAuth | Mailbox monitoring, forwarding rule detection | [Connect Outlook](./integrations/microsoft-outlook.md) |
 
 ### Collaboration
-| Platform | Auth Method | What It Syncs |
-|---|---|---|
-| **SharePoint** | OAuth | Sites, external sharing, document permissions |
-| **Confluence** | OAuth or API | Spaces, external sharing, content exposure |
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **SharePoint** | OAuth | Sites, external sharing, document permissions | [Connect SharePoint](./integrations/sharepoint.md) |
+| **Confluence** | OAuth or API | Spaces, external sharing, content exposure | [Connect Confluence](./integrations/confluence.md) |
 
 ## Connecting an Integration
 
