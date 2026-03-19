@@ -1,6 +1,6 @@
 # Connect Jira
 
-Step-by-step guide to connecting Jira to Thalian for issue tracking and alert delivery.
+Step-by-step guide to connecting Jira to Thalian for issue tracking, ITSM intelligence, and alert delivery. A single Jira connection covers both Jira and Jira Service Management.
 
 ---
 
@@ -34,11 +34,12 @@ If your organization restricts OAuth:
 
 - **Issues** — issues across projects with status, assignee, and priority
 - **Users** — Jira user directory for cross-referencing with identity data
-- **Service desk tickets** — if Jira Service Management is part of the same site
+- **Service requests** — Jira Service Management tickets, SLA data, and queues
+- **Agents** — service desk agent directory and assignments
 
 ## Alert Rules
 
-When alert rules are enabled, Thalian can automatically create Jira issues for new findings above your configured severity threshold.
+When alert rules are enabled, Thalian can automatically create Jira issues or service requests for new findings above your configured severity threshold.
 
 ---
 

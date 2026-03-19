@@ -41,7 +41,6 @@ nav:
     - SentinelOne: integrations/sentinelone.md
     - Cisco Meraki: integrations/cisco-meraki.md
     - Jira: integrations/jira.md
-    - Jira Service Management: integrations/jira-service-management.md
     - ServiceNow: integrations/servicenow.md
     - Freshservice: integrations/freshservice.md
     - Zendesk: integrations/zendesk.md

@@ -6,7 +6,7 @@ Thalian's intelligence comes from the data it collects across your IT stack. The
 
 ## Supported Platforms
 
-Thalian supports 24 platforms across 7 categories:
+Thalian supports 23 platforms across 7 categories:
 
 ### Identity & Access
 | Platform | Auth Method | What It Syncs | Setup Guide |
@@ -39,8 +39,7 @@ Thalian supports 24 platforms across 7 categories:
 ### ITSM (IT Service Management)
 | Platform | Auth Method | What It Syncs | Setup Guide |
 |---|---|---|---|
-| **Jira** | OAuth or API | Issues, users, service desk tickets | [Connect Jira](./integrations/jira.md) |
-| **Jira Service Management** | OAuth or API | Service requests, agents, queues | [Connect JSM](./integrations/jira-service-management.md) |
+| **Jira** | OAuth or API | Issues, users, service requests, agents | [Connect Jira](./integrations/jira.md) |
 | **ServiceNow** | API credentials | Incidents, users, CMDB items | [Connect ServiceNow](./integrations/servicenow.md) |
 | **Freshservice** | API key | Tickets, agents, assets | [Connect Freshservice](./integrations/freshservice.md) |
 | **Zendesk** | API token | Tickets, users, organizations | [Connect Zendesk](./integrations/zendesk.md) |

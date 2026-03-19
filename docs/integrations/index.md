@@ -30,8 +30,7 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 
 ## ITSM
 
-- **[Jira](jira.md)** — OAuth or API setup for issues and alert delivery
-- **[Jira Service Management](jira-service-management.md)** — OAuth or API setup for service requests and alert delivery
+- **[Jira](jira.md)** — OAuth or API setup for issues, service requests, and alert delivery
 - **[ServiceNow](servicenow.md)** — API credentials setup for incidents and CMDB
 - **[Freshservice](freshservice.md)** — API key setup for tickets and assets
 - **[Zendesk](zendesk.md)** — API token setup for tickets and organizations
