@@ -1,6 +1,6 @@
 # Connect Slack
 
-Step-by-step guide to connecting Slack to Thalian for finding alert delivery.
+Step-by-step guide to connecting Slack to Thalian for identity sync and finding alert delivery.
 
 ---
 
@@ -20,6 +20,16 @@ Step-by-step guide to connecting Slack to Thalian for finding alert delivery.
 7. Click **Allow**
 8. You'll be redirected back to Thalian — the integration is now connected
 
+## Requested Permissions
+
+| Scope | Justification |
+|---|---|
+| `chat:write` | Delivers security alert and remediation notifications to designated Slack channels |
+| `channels:read` | Lists public channels so admins can pick which channel receives alerts |
+| `users:read` | Fetches workspace member list for identity sync (correlating Slack accounts to other platforms) |
+| `users:read.email` | Reads email addresses from the users list — required to match Slack users to Entra ID / Google identities |
+| `auditlogs:read` | Ingests Enterprise Grid audit logs for suspicious activity detection. Gracefully degrades on non-Enterprise workspaces |
+
 ## Configure Alert Delivery
 
 After connecting Slack:
@@ -33,7 +43,11 @@ Thalian sends formatted Slack messages for each new finding that meets your thre
 
 ## What Thalian Uses Slack For
 
-Slack is used exclusively for **alert delivery**. Thalian does not read or sync messages, files, or user data from Slack. When a new finding is generated that meets your severity threshold, Thalian posts a notification to your configured channel.
+- **Identity sync** — Thalian reads the workspace member list and email addresses to correlate Slack accounts with identities from other platforms
+- **Alert delivery** — when a new finding meets your severity threshold, Thalian posts a notification to your configured channel
+- **Audit logs** — on Enterprise Grid workspaces, Thalian ingests audit logs for suspicious activity detection
+
+Thalian does not read or sync messages, files, or channel history.
 
 ---
 

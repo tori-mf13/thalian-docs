@@ -19,9 +19,16 @@ Step-by-step guide to connecting Microsoft Outlook to Thalian for email security
 6. Click **Accept** to grant consent
 7. You'll be redirected back to Thalian — the integration is now connected
 
-### What Permissions Are Requested
+## Requested Permissions
 
-Thalian requests read-only access to mailbox settings and mail flow rules. It does **not** read email content or attachments.
+Outlook shares the Microsoft OAuth consent with Entra ID. The scopes specific to Outlook are:
+
+| Scope | Justification |
+|---|---|
+| `Mail.Read` | Detects suspicious mailbox forwarding rules (a common exfiltration vector). Does not read email body/content |
+| `MailboxSettings.Read` | Reserved for future mailbox configuration analysis |
+
+For the full list of Microsoft scopes, see [Connect Microsoft Entra ID](./microsoft-entra-id.md).
 
 ## What Thalian Syncs
 

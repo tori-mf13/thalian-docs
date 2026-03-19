@@ -19,6 +19,10 @@ Step-by-step guide to connecting SharePoint to Thalian for collaboration securit
 6. Click **Accept** to grant consent
 7. You'll be redirected back to Thalian — the integration is now connected
 
+## Requested Permissions
+
+SharePoint shares the Microsoft OAuth consent with Entra ID. The scope specific to SharePoint is `Sites.Read.All`, which reads site metadata and external sharing settings to flag overshared or publicly accessible sites. For the full list of Microsoft scopes, see [Connect Microsoft Entra ID](./microsoft-entra-id.md).
+
 ## What Thalian Syncs
 
 - **Sites** — SharePoint site inventory including site type, owner, and storage usage

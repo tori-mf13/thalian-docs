@@ -19,6 +19,17 @@ Step-by-step guide to connecting Microsoft Teams to Thalian for finding alert de
 6. Click **Accept** to grant consent
 7. You'll be redirected back to Thalian — the integration is now connected
 
+## Requested Permissions
+
+Teams shares the Microsoft OAuth consent with Entra ID. The scopes specific to Teams are:
+
+| Scope | Justification |
+|---|---|
+| `ChannelMessage.Send` | Reserved for future Teams alert delivery |
+| `Team.ReadBasic.All` | Reserved for future Teams workspace enumeration |
+
+For the full list of Microsoft scopes, see [Connect Microsoft Entra ID](./microsoft-entra-id.md).
+
 ## Alternative: Webhook
 
 If your organization restricts OAuth for Teams:

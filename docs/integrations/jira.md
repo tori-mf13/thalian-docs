@@ -20,6 +20,19 @@ Step-by-step guide to connecting Jira to Thalian for issue tracking, ITSM intell
 7. Click **Accept** to grant consent
 8. You'll be redirected back to Thalian — the integration is now connected
 
+## Requested Permissions
+
+| Scope | Justification |
+|---|---|
+| `read:jira-work` | Searches open issues to surface existing tickets, avoid duplicates, and report on backlog risk |
+| `write:jira-work` | Creates new Jira issues when security findings require a ticket (auto-remediation) |
+| `read:jira-user` | Fetches all Jira users for identity sync and to populate the assignee field on auto-created tickets |
+| `read:servicedesk-request` | Reads open Service Desk requests to include them in ITSM metrics and risk reporting |
+| `write:servicedesk-request` | Creates Jira Service Management incident requests when `create_as_incident` is enabled |
+| `read:me` | Fetches accessible cloud resources after OAuth to determine the correct cloud ID for API calls |
+| `read:account` | Fetches account-level metadata required by the Atlassian OAuth flow |
+| `offline_access` | Standard OAuth — allows token refresh without re-prompting |
+
 ## Alternative: API Token
 
 If your organization restricts OAuth:

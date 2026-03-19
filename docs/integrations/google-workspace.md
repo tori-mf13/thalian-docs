@@ -19,6 +19,16 @@ Step-by-step guide to connecting Google Workspace to Thalian for identity and ac
 6. Click **Allow** to grant consent
 7. You'll be redirected back to Thalian — the integration is now connected
 
+## Requested Permissions
+
+| Scope | Justification |
+|---|---|
+| `admin.directory.user.readonly` | Fetches all workspace users (name, email, 2SV status, admin role, suspended flag) for identity sync |
+| `admin.directory.group.readonly` | Fetches Google Groups for group-based access analysis and reporting |
+| `admin.directory.orgunit.readonly` | Reads organizational unit structure for policy inheritance analysis |
+| `admin.reports.audit.readonly` | Ingests Drive, Login, and Admin audit activity logs for anomaly detection |
+| `userinfo.email` | Retrieves the connecting admin's email during the OAuth callback to store as the integration owner |
+
 ### Domain-Wide Delegation
 
 Thalian does not require domain-wide delegation. The OAuth consent flow grants the necessary read-only scopes directly.

@@ -19,12 +19,16 @@ Step-by-step guide to connecting Microsoft Intune to Thalian for endpoint manage
 6. Click **Accept** to grant consent
 7. You'll be redirected back to Thalian — the integration is now connected
 
+## Requested Permissions
+
+Intune shares the Microsoft OAuth consent with Entra ID. The scope specific to Intune is `DeviceManagementManagedDevices.Read.All`, which pulls managed device inventory for endpoint posture checks. For the full list of Microsoft scopes, see [Connect Microsoft Entra ID](./microsoft-entra-id.md).
+
 ## Alternative: API Credentials
 
 If your organization restricts OAuth consent flows:
 
 1. Register an application in **Entra ID** → **App registrations**
-2. Grant the application `DeviceManagementManagedDevices.Read.All` and `DeviceManagementConfiguration.Read.All` permissions (application type)
+2. Grant the application `DeviceManagementManagedDevices.Read.All` permissions (application type)
 3. Create a **client secret**
 4. In Thalian, select the **API** connection method
 5. Enter your **Tenant ID**, **Client ID**, and **Client Secret**
