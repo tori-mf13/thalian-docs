@@ -9,7 +9,6 @@ Notable changes, new features, and fixes for the Thalian platform.
 ### Added
 
 - **Public status page** — Real-time platform health at [status.thalian.ai](https://status.thalian.ai) with incident history and email subscription for downtime alerts
-- **Branded billing emails** — Custom Thalian-branded transactional emails for subscription events: welcome/payment confirmation, payment failure alerts, renewal reminders, and cancellation follow-ups (powered by Loops)
 - **Layer 3 behavioral baselines** — Per-entity anomaly detection that builds individual baselines for users, devices, and apps and flags deviations from established patterns
 - **Findings notification filtering** — Alert notifications now fire only on new findings; recurring open findings no longer generate repeat alerts
 
@@ -28,7 +27,6 @@ Notable changes, new features, and fixes for the Thalian platform.
 ### Changed
 
 - Status page moved from an in-app route to a standalone Cloudflare Worker, accessible without authentication
-- Stripe default customer emails replaced with branded templates matching Thalian's design system
 
 ---
 
