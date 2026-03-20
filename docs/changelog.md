@@ -6,6 +6,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## March 20, 2026
 
+### Improvements
+
+- **Email audience sync — all sign-ups now propagate to Loops** — New app sign-ups, landing page mailing list submissions, and status page subscriptions are now automatically synced to the Loops email audience. Each contact is tagged by source (`app-signup`, `landing-waitlist`, `status-subscribe`) and user group for segmentation. Existing contacts were backfilled at launch.
+
 ### New Features
 
 - **Status page issue report notifications** — When a user submits a report via the "Report an Issue" form on the status page, two emails are now triggered: an internal notification to support@thalian.ai with the reporter's email, affected service, and description, and a confirmation email to the reporter acknowledging receipt.
