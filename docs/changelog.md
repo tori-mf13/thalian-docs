@@ -14,7 +14,7 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### Improved
 
-- **Status page** — Incident cards now show affected services chips; uptime bars show status tooltips on hover
+- **Status page** — Per-service 90-day uptime bars now visible under each service row without expanding; incident cards show affected services chips; uptime bar tooltips include status label; social sharing previews (OG/Twitter cards) now supported
 - **Findings page** — Each tab now includes a short descriptor explaining what the tab tracks, reducing onboarding friction
 - **Causality Insights** — Redesigned compact card layout for the insights tab; remediation suggestions are now entity-specific based on the finding subject
 - **Performance** — Initial app bundle reduced by 69%; database queries parallelized for faster page load
