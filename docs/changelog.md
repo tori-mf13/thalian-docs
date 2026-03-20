@@ -8,12 +8,15 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### New Features
 
+- **Status page issue report notifications** — When a user submits a report via the "Report an Issue" form on the status page, two emails are now triggered: an internal notification to support@thalian.ai with the reporter's email, affected service, and description, and a confirmation email to the reporter acknowledging receipt.
+
 - **In-app feedback form** — A "Give feedback" option is now available in the bottom-left user menu. Submit bug reports, feature requests, or general feedback without leaving the app.
 
 ### Improvements
 
 - **AI chat context — remediation history and prior assessments** — The AI assistant now has full visibility into remediation actions taken in the last 30 days, including pending approvals, completed actions, and Claude's prior reasoning from AI-generated assessments. If actions are awaiting approval, the assistant will proactively surface them.
 - **AI chat context — richer entity data** — Findings in the AI prompt are now explicitly linked to the named user or app they affect, rather than relying on IDs. Device detail now includes OS platform and version. Application listings include category. Admin account lines include department where available.
+- **Security Posture score** — The "Risk Score" stat on the dashboard has been replaced with a unified **Security Posture** score (0–100, higher is better). Uses sigmoid normalization so a single critical finding doesn't catastrophically tank the number, and noise (many low findings) doesn't equal a real critical threat. Displayed with a letter grade (A–F) and color-coded green/amber/red. The same formula now drives both the dashboard and the AI assistant — they will always agree on your score.
 - **AI chat context — finding descriptions** — The assistant now receives the full description of each open finding (why the finding exists and what makes it risky), enabling it to explain findings in plain language rather than just naming them.
 - **AI chat context — stale access analysis** — The assistant can now identify entitlements where the app hasn't been used in 90+ days, surfacing which apps have the most stale seats and which users have access they never use.
 - **AI chat — what-if simulation tool** — The assistant can now answer "what would happen if I suspended this user?" or "how many findings would close if I revoked this access?" by running a live simulation against real workspace data before any action is taken.
