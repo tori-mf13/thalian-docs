@@ -8,7 +8,7 @@ Welcome to Thalian — an AI-powered IT intelligence platform that surfaces insi
 
 1. **Sign up** at [app.thalian.ai/signup](https://app.thalian.ai/signup) using your work email or Google account
 2. **Name your workspace** — this is your organization's Thalian environment. All data, integrations, and team members are scoped to this workspace
-3. **Start your free trial** — Pro features are available for 14 days. After that, you can continue on the Free plan or upgrade
+3. **Start your free trial** — Pro features are available for 30 days. After that, you can continue on the Free plan or upgrade
 
 ## Onboarding: Connect Your First Integration
 

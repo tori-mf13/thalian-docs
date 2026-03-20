@@ -38,7 +38,7 @@ Your use of the Service must comply with our [Acceptable Use Policy](./acceptabl
 
 - Up to 500 identities, unlimited integrations, 90-day data retention
 - Billed monthly via Stripe
-- 14-day free trial included for new workspaces
+- 30-day free trial included for new workspaces
 
 ### Enterprise Plan
 

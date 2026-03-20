@@ -27,7 +27,7 @@ The Settings page (`/settings`) is where you manage your workspace, team, securi
 | Auto-remediation | No | Yes | Yes |
 | Causality analysis | No | Yes | Yes |
 
-- **Trial:** New workspaces get 14 days of Pro features. After expiration (+ 7-day grace period), the workspace downgrades to Free and excess integrations are paused
+- **Trial:** New workspaces get 30 days of Pro features. After expiration (+ 7-day grace period), the workspace downgrades to Free and excess integrations are paused
 
 ### Security
 
