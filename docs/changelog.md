@@ -10,6 +10,20 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **Public status page** — Real-time platform health at [status.thalian.ai](https://status.thalian.ai) with incident history and email subscription for downtime alerts
 - **Branded billing emails** — Custom Thalian-branded transactional emails for subscription events: welcome/payment confirmation, payment failure alerts, renewal reminders, and cancellation follow-ups (powered by Loops)
+- **Layer 3 behavioral baselines** — Per-entity anomaly detection that builds individual baselines for users, devices, and apps and flags deviations from established patterns
+- **Findings notification filtering** — Alert notifications now fire only on new findings; recurring open findings no longer generate repeat alerts
+
+### Improved
+
+- **Status page** — Incident cards now show affected services chips; uptime bars show status tooltips on hover
+- **Findings page** — Each tab now includes a short descriptor explaining what the tab tracks, reducing onboarding friction
+- **Causality Insights** — Redesigned compact card layout for the insights tab; remediation suggestions are now entity-specific based on the finding subject
+- **Performance** — Initial app bundle reduced by 69%; database queries parallelized for faster page load
+- **Auto-sync reliability** — Integrations now sync in parallel, preventing worker timeouts on workspaces with many connected platforms
+
+### Security
+
+- Auth guards and workspace scoping added to 7 previously unguarded API endpoints
 
 ### Changed
 
