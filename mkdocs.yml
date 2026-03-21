@@ -54,6 +54,7 @@ nav:
   - Findings & Remediation: findings-and-remediation.md
   - Reports & Audit: reports-and-audit.md
   - Settings & Admin: settings-and-admin.md
+  - SSO Setup Guide: sso-setup.md
   - Policies & Impact Analysis: policies-and-planning.md
   - API Reference: api-reference.md
   - Changelog: changelog.md
