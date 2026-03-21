@@ -14,7 +14,7 @@ Thalian supports SAML 2.0 SSO via Supabase's native SAML implementation. Once co
 - Team members sign in at [app.thalian.ai](https://app.thalian.ai) and click **Sign in with SSO**
 - They enter their work email — Thalian detects the domain and redirects to your IdP
 - After authenticating at your IdP, they land in Thalian automatically
-- New users are provisioned with **Viewer** access and can be promoted by an admin
+- New users are provisioned with **Viewer** access by default — an admin can change their role in **Settings → Team** after their first sign-in
 
 Both **SP-initiated** (user starts at Thalian) and **IdP-initiated** (user clicks Thalian tile in Okta/Azure/etc.) flows are supported.
 
@@ -96,8 +96,10 @@ Thalian will fetch your IdP's metadata, register the SAML provider, and confirm 
 SSO users are provisioned automatically on first sign-in:
 
 - A Thalian account is created for them
-- They are added to your workspace with **Viewer** access
-- An admin or super admin can promote them to a higher role in **Settings** → **Team**
+- They are added to your workspace with **Viewer** access by default
+
+!!! info "Default role: Viewer"
+    Every SSO user starts as a Viewer — they can see dashboards, findings, and asset data, but cannot take actions or manage settings. To give a user more access, go to **Settings → Team**, find their name, and change their role. Available roles are Viewer, Auditor, Agent, Security Analyst, Admin, and Super Admin.
 
 !!! note "Role sync (SCIM)"
     Automatic role sync from your IdP requires SCIM, which is on the roadmap. Today, role assignment is manual after first sign-in.
