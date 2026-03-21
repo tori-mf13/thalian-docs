@@ -6,7 +6,17 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## March 21, 2026
 
+### Improvements
+
+- **Cross-platform identity context in findings** — Findings that affect a user active across multiple identity providers now say so explicitly. For example, "Tori Ferrante is active across Google Workspace and Okta but is logging in from a device not enrolled in your MDM." The finding detail panel also shows teal platform badges on the affected entity chip so the cross-platform scope is immediately visible.
+
+- **One finding per person, not per platform record** — The intelligence engine now understands that the same email address across multiple integrations represents the same human being. Findings like "Active users without managed devices" now generate a single finding per person with full cross-platform context, rather than one finding per integration record. The underlying identity data model now has three distinct tiers: authoritative IDP only (for MFA rules), raw all-platform records (for cross-platform mismatch detection), and a new canonical per-person layer (for per-human findings).
+
 ### Fixes
+
+- **OAuth scope false positives eliminated** — The platform was incorrectly flagging Figma, Slack, and other apps as having email inbox access because the basic OIDC `email` scope (which only provides a user's email address for authentication) was being matched as a substring of "mail." A centralized scope interpretation engine now tests each OAuth scope individually with precise patterns. `email` no longer implies inbox access — only explicit grants like `gmail.readonly` or `https://mail.google.com/` do. This fix applies across findings, AI analysis, briefs, and dossiers.
+
+- **Shadow IT findings no longer duplicated** — Apps flagged as both "Unvetted app with sensitive data access" and "Unvetted OAuth applications detected" were appearing twice in the findings list. Apps already covered by the more specific sensitive-scope finding are now excluded from the general unvetted apps finding.
 
 - **Impact analysis scores now match the Security Posture score** — The "Current" and "After action" scores shown in the "Simulate a fix" panel on finding detail were using an old raw severity-weighted formula. They now use the same sigmoid-normalized 0–100 Security Posture formula as the dashboard, so the numbers are consistent across the product. The panel badge now reads "+X posture pts" / "−X posture pts" to make the direction unambiguous.
 
@@ -21,8 +31,6 @@ Notable changes, new features, and fixes for the Thalian platform.
 ### Improvements
 
 - **Security Posture score history and sparkline** — The Security Posture stat on the dashboard now shows a live sparkline trend line (up to 30 data points) and a delta indicator (e.g., +5 or −3) comparing your current score to the previous analysis run. A point-in-time snapshot is recorded automatically after every analysis. The AI assistant also now has access to the full posture trend history, so it can tell you whether your security posture has been improving or declining over time.
-
-- **Email audience sync — all sign-ups now propagate to Loops** — New app sign-ups, landing page mailing list submissions, and status page subscriptions are now automatically synced to the Loops email audience. Each contact is tagged by source (`app-signup`, `landing-waitlist`, `status-subscribe`) and user group for segmentation. Existing contacts were backfilled at launch.
 
 ### New Features
 
