@@ -6,7 +6,13 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## March 20, 2026
 
+### New Features
+
+- **SAML 2.0 SSO for enterprise workspaces** — Enterprise plan workspaces can now configure SAML 2.0 single sign-on directly from Settings → Security → SSO/SAML. Admins provide their IdP metadata URL and email domain; Thalian registers the SAML connection and displays the ACS URL and Entity ID to share with the IdP administrator. Supports both SP-initiated login (via the "Sign in with SSO" button on the login page) and IdP-initiated login (clicking the Thalian tile in Okta, Azure AD, or any SAML-compatible IdP). SSO users are automatically provisioned into the correct workspace on first sign-in. The SAML ACS endpoint is served from `auth.thalian.ai`.
+
 ### Improvements
+
+- **Security Posture score history and sparkline** — The Security Posture stat on the dashboard now shows a live sparkline trend line (up to 30 data points) and a delta indicator (e.g., +5 or −3) comparing your current score to the previous analysis run. A point-in-time snapshot is recorded automatically after every analysis. The AI assistant also now has access to the full posture trend history, so it can tell you whether your security posture has been improving or declining over time.
 
 - **Email audience sync — all sign-ups now propagate to Loops** — New app sign-ups, landing page mailing list submissions, and status page subscriptions are now automatically synced to the Loops email audience. Each contact is tagged by source (`app-signup`, `landing-waitlist`, `status-subscribe`) and user group for segmentation. Existing contacts were backfilled at launch.
 
