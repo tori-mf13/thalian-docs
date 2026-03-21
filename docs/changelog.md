@@ -4,6 +4,14 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
+## March 21, 2026
+
+### Fixes
+
+- **Impact analysis scores now match the Security Posture score** — The "Current" and "After action" scores shown in the "Simulate a fix" panel on finding detail were using an old raw severity-weighted formula. They now use the same sigmoid-normalized 0–100 Security Posture formula as the dashboard, so the numbers are consistent across the product. The panel badge now reads "+X posture pts" / "−X posture pts" to make the direction unambiguous.
+
+---
+
 ## March 20, 2026
 
 ### New Features
