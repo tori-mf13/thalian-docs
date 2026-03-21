@@ -46,25 +46,18 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
-## v0.9.2 — March 19, 2026
+## March 19, 2026
 
 ### New Features
 
 - **AI-reasoned remediation** — For entities with multiple overlapping findings, ask Claude to analyze all open risks in context and propose a sequenced action plan with reasoning. Available from the Remediation page under "AI Recommendations" and from Identities via a one-click deep-link
 - **AI vs. Auto badge differentiation** — Remediation action log now distinguishes Claude-reasoned plans ("AI" badge, violet) from deterministic rule-based automation ("Auto" badge, teal)
 - **AI reasoning in approval cards** — When reviewing Claude-proposed actions, the approval card now shows Claude's assessment — what the situation is, what risk it poses, and why the recommended actions are the right response
-
----
-
-## v0.9.1 — March 19, 2026
-
-### Added
-
 - **Public status page** — Real-time platform health at [status.thalian.ai](https://status.thalian.ai) with incident history and email subscription for downtime alerts
 - **Layer 3 behavioral baselines** — Per-entity anomaly detection that builds individual baselines for users, devices, and apps and flags deviations from established patterns
 - **Findings notification filtering** — Alert notifications now fire only on new findings; recurring open findings no longer generate repeat alerts
 
-### Improved
+### Improvements
 
 - **Status page** — Per-service 90-day uptime bars now visible under each service row without expanding; incident cards show affected services chips; uptime bar tooltips include status label; social sharing previews (OG/Twitter cards) now supported
 - **Findings page** — Each tab now includes a short descriptor explaining what the tab tracks, reducing onboarding friction
@@ -76,7 +69,7 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - Auth guards and workspace scoping added to 7 previously unguarded API endpoints
 
-### Changed
+### Changes
 
 - Status page moved from an in-app route to a standalone Cloudflare Worker, accessible without authentication
 
