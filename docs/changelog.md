@@ -4,6 +4,26 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
+## March 25, 2026
+
+### New Features
+
+- **Automatic remediation now fires after every sync** — Workspaces with auto-remediation enabled will now have eligible findings automatically actioned immediately after each scheduled sync (every 6 hours and at 8am daily). Safe actions (create ticket, notify user, sanction app) execute automatically; higher-risk actions (suspend user, revoke OAuth token, block app) are queued for admin approval and trigger an email notification. All agentic actions appear in the Remediation page under the "Automatic" filter tab.
+
+- **AI Risk Summary on identity detail** — Opening any identity with open findings now shows a "Risk Summary" block powered by Claude — a concise narrative covering their risk score, MFA status, app access breadth, device compliance, and blast radius. The summary loads in place in the identity detail panel, using the same visual style as the dashboard AI brief.
+
+- **OAuth scope risk labels on unsanctioned apps** — The Applications page Unsanctioned tab now shows inline scope risk chips (e.g. "Writes email", "Reads calendar files") sourced from server-side OAuth scope interpretation. These labels surface the actual permission risk of each unsanctioned OAuth app, not just the finding category.
+
+---
+
+## March 23, 2026
+
+### Improvements
+
+- **In-app support form** — "Contact support" in the user menu now opens a proper support form (category, subject, message) instead of the Plain chat widget. Tickets are submitted directly to the support inbox and include your workspace name and plan for context. You'll receive a confirmation email when your ticket is submitted.
+
+---
+
 ## March 21, 2026
 
 ### Improvements
