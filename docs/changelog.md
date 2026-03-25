@@ -8,6 +8,11 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### New Features
 
+- **Three new cross-platform drift signal rules** — The intelligence engine now detects three additional trend-level findings that require data from multiple platform types simultaneously:
+  - **SSO coverage declining** — Fires when the proportion of apps authenticating via SSO is trending downward over time. Includes a breach date projection and lists the top non-SSO apps. Requires an IDP and app discovery data.
+  - **Termination-to-access-removal lag growing** — Measures the average time between an employee's HR termination date and their IDP account suspension across recent offboardings. Fires when the lag exceeds 2 days across 3+ offboarding events, and flags whether the lag is getting worse over time. Also surfaces any terminated employees who still have an enrolled device. Requires HR (Rippling or BambooHR) and an IDP; MDM data is incorporated when available.
+  - **Ghost identity growth** — Detects users being added to SaaS tools (Slack, GitHub, Jira, etc.) without a corresponding account in any connected IDP. Fires when 3 or more such users appear in the last 60 days, or when the rate is accelerating. Requires an IDP and at least 2 connected SaaS platforms.
+
 - **Automatic remediation now fires after every sync** — Workspaces with auto-remediation enabled will now have eligible findings automatically actioned immediately after each scheduled sync (every 6 hours and at 8am daily). Safe actions (create ticket, notify user, sanction app) execute automatically; higher-risk actions (suspend user, revoke OAuth token, block app) are queued for admin approval and trigger an email notification. All agentic actions appear in the Remediation page under the "Automatic" filter tab.
 
 - **AI Risk Summary on identity detail** — Opening any identity with open findings now shows a "Risk Summary" block powered by Claude — a concise narrative covering their risk score, MFA status, app access breadth, device compliance, and blast radius. The summary loads in place in the identity detail panel, using the same visual style as the dashboard AI brief.
