@@ -4,6 +4,14 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
+## March 26, 2026
+
+### Improvements
+
+- **Teams alerts: "Approve in Thalian" button** — Security finding cards sent to Microsoft Teams now include a green "Approve in Thalian" button for approvable actions (suspend user, revoke access, block app, contain host, etc.). Clicking it opens the Remediation page filtered to that exact finding so you can approve with one click. Non-approvable findings (create ticket, notify user) continue to show only "View in Thalian". Also includes a fix to the "View in Thalian" link — it now correctly deep-links to the specific finding rather than the top of the findings list.
+
+---
+
 ## March 25, 2026
 
 ### New Features
