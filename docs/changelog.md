@@ -6,9 +6,39 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## March 26, 2026
 
+### New Features
+
+- **"Since your last session" AI brief** — The dashboard AI brief now opens with what changed since you last logged in. "Since yesterday, 2 new findings surfaced — the most urgent is..." Makes every login feel personalized instead of seeing the same static posture summary.
+
+- **Cross-platform perspective view on findings** — Expanding a cross-platform finding now shows a side-by-side "What each tool sees" breakdown. Each connected platform's view is shown alongside what Thalian sees by joining them — making it immediately obvious why the finding is invisible in any single tool.
+
+- **Live cost counter on integration discovery** — When connecting a new integration that reveals license waste findings, the discovery stream animates the cost counting up as findings are scored. Turns abstract waste into a visceral dollar amount.
+
+- **Drift velocity projection** — Posture sparklines on the Reports page now show a dashed forward projection computed via linear regression on recent data points. Each metric shows where it's heading (e.g., "→92%") alongside the historical delta, giving early warning before thresholds are breached.
+
+- **AI chat contextual actions** — When the AI mentions a high-severity finding about a specific person or device, it now notes available remediation actions: "You can suspend her in Okta directly from here if needed." The AI only offers when the finding is critical/high, the entity is specific, and the platform supports the action.
+
+- **Behavioral anomaly detection** — New analysis rules detect unusual login patterns, off-hours access spikes, and sudden app access changes by comparing against per-user behavioral baselines. Fires when current behavior exceeds 2× the historical norm.
+
+- **7 new cross-platform compound rules** — New findings that require 3+ connected data sources to detect, including: terminated employee with dual exfiltration paths (Slack + GitHub), admin on compromised device with active EDR threat, dormant account with active OAuth abuse, and coordinated multi-platform admin actions within 30 minutes.
+
 ### Improvements
 
-- **Teams alerts: "Approve in Thalian" button** — Security finding cards sent to Microsoft Teams now include a green "Approve in Thalian" button for approvable actions (suspend user, revoke access, block app, contain host, etc.). Clicking it opens the Remediation page filtered to that exact finding so you can approve with one click. Non-approvable findings (create ticket, notify user) continue to show only "View in Thalian". Also includes a fix to the "View in Thalian" link — it now correctly deep-links to the specific finding rather than the top of the findings list.
+- **Teams alerts: "Approve in Thalian" button** — Security finding cards sent to Microsoft Teams now include a green "Approve in Thalian" button for approvable actions (suspend user, revoke access, block app, contain host, etc.). Clicking it opens the Remediation page filtered to that exact finding so you can approve with one click.
+
+- **Findings page streamlined** — Value badges consolidated: cost estimate ($X/yr) shown when available, risk impact (−N pts) as fallback — never both. Sort buttons merged into single "Sort: value". Type filter removed (rarely used). Net result: cleaner rows, fewer buttons.
+
+- **Entity detail panel tightened** — Data Sources chips hidden when attack chain is visible (redundant). Finding count removed from header meta line (already in section header). AI dossier hidden when attack chain narrative exists (attack chain is more structured).
+
+- **Remediation cards collapsed by default** — Approval cards now show just the action label + approve/deny buttons without expanding. Click to see full plan details. Reduces visual noise when reviewing a queue of pending actions.
+
+- **Hourly auto-sync** — Connected integrations now sync every hour (previously every 6 hours). Findings, drift snapshots, and remediation queues update more frequently.
+
+### Fixes
+
+- **Google OAuth app deduplication** — OAuth apps discovered through Google Workspace sync are now deduplicated by normalized name, preventing duplicate entries for apps with slight naming variations.
+
+- **Scoring consistency** — All scoring imports cleaned up to use a single source of truth. Agentic plan endpoint and cron schedules updated to match.
 
 ---
 
