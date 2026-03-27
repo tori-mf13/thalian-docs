@@ -6,29 +6,50 @@ Step-by-step guide to connecting Okta to Thalian for identity and access intelli
 
 ## Prerequisites
 
-- **Okta admin account** with permissions to create API tokens
+- **Okta admin account** with permission to create applications
 - **Okta domain** — your Okta org URL (e.g., `yourcompany.okta.com`)
 
-## Create an API Token in Okta
+## Create an API Services app in Okta
+
+Thalian connects using Okta's OAuth 2.0 client credentials flow. You'll need to create a service app in Okta that grants read-only API access.
 
 1. Sign in to your Okta admin console
-2. Go to **Security** → **API** → **Tokens**
-3. Click **Create Token**
-4. Give the token a descriptive name (e.g., `Thalian Read-Only`)
-5. Copy the token value — it is only shown once
+2. Go to **Applications** → **Applications**
+3. Click **Create App Integration**
+4. Select **API Services** and click **Next**
+5. Give the app a name (e.g., `Thalian`) and click **Save**
 
-!!! warning "Token permissions"
-    The token inherits the permissions of the admin who creates it. Use a read-only admin account where possible.
+## Grant the required OAuth scopes
+
+After creating the app:
+
+1. Go to the **Okta API Scopes** tab on your new app
+2. Grant the following scopes:
+
+| Scope | Purpose |
+|-------|---------|
+| `okta.users.read` | Sync users, status, and MFA enrollment |
+| `okta.apps.read` | Sync assigned applications |
+| `okta.groups.read` | Sync group memberships |
+| `okta.logs.read` | Read system log events |
+
+3. Click **Grant** for each scope
+
+## Copy your credentials
+
+1. Go to the **General** tab of your app
+2. Copy the **Client ID** from the Client Credentials section
+3. Click **Generate new client secret** and copy the value — it is only shown once
 
 ## Connect in Thalian
 
 1. Go to **Integrations** → **Browse**
 2. Find **Okta** and click **Connect**
 3. Enter your **Okta domain** (e.g., `yourcompany.okta.com`)
-4. Paste your **API token**
-5. Click **Save** — Thalian validates the credentials and begins the first sync
+4. Paste your **Client ID** and **Client Secret**
+5. Click **Connect** — Thalian validates the credentials and begins the first sync
 
-## What Thalian Syncs
+## What Thalian syncs
 
 - **Users** — full directory including status, last login, and profile attributes
 - **Groups** — group memberships and assignments
@@ -38,8 +59,8 @@ Step-by-step guide to connecting Okta to Thalian for identity and access intelli
 
 ## Troubleshooting
 
-- **Invalid token:** Ensure the token was copied correctly and has not been revoked in Okta
-- **Missing data:** The API token must belong to an admin with sufficient read permissions across users, groups, and apps
+- **Invalid credentials:** Ensure the Client ID and Secret were copied correctly and the app has not been deactivated
+- **Missing data:** Confirm all four OAuth scopes have been granted on the app's Okta API Scopes tab
 - **Rate limiting:** Thalian respects Okta's rate limits automatically. If syncs are slow, this may indicate heavy API usage on your Okta org
 
 ---
