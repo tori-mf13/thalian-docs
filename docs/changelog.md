@@ -4,6 +4,16 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
+## March 28, 2026
+
+### New Features
+
+- **Access review campaigns** — IT and security teams can now run structured user access certification campaigns directly in Thalian. Create a campaign, scope it by department or application, and work through a paginated list of entitlements — approving access, revoking it, or granting a time-limited exception. Revoke decisions automatically open an ITSM ticket in Jira, ServiceNow, Freshservice, or Zendesk. Completed campaigns export to CSV as audit evidence for SOC 2 (CC6.3), ISO 27001, and HIPAA reviews. A sidebar badge shows pending items. The AI is aware of campaign status and can answer questions like "how many items are still pending in my Q1 review?"
+
+- **Claude-driven agentic remediation planner** — After every sync, Claude Sonnet now reviews all new findings and decides which ones need action, what action to take, and why. Queued actions in the Remediation page now include a "Claude's reasoning" block explaining the recommendation — e.g., "This account hasn't logged into the IDP in 47 days but retains admin roles in Salesforce and GitHub. Suspending reduces blast radius while the offboarding gap is investigated." The planner sequences actions correctly (root cause first), groups multi-finding actions on the same identity, and skips findings it judges low-priority or already handled.
+
+---
+
 ## March 26, 2026
 
 ### New Features
