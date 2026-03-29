@@ -6,6 +6,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## March 28, 2026
 
+### Integrations
+
+- **GCP IAM** — Connect Google Cloud Platform to detect IAM access gaps between your GCP projects and your corporate identity provider. Thalian maps every human member across all your GCP projects and cross-references against Okta, Entra ID, Google Workspace, JumpCloud, and OneLogin. Fires four new findings: GCP project owner not in IDP (critical), GCP member not in IDP (high), public IAM binding via `allUsers` or `allAuthenticatedUsers` (critical), and stale IAM binding for a suspended or deprovisioned user (high). GCP IAM does not auto-sync with corporate directories — access must be removed from IAM policies separately when employees leave. Thalian now surfaces exactly which accounts are falling through the gap.
+
 ### New Features
 
 - **Access review campaigns** — IT and security teams can now run structured user access certification campaigns directly in Thalian. Create a campaign, scope it by department or application, and work through a paginated list of entitlements — approving access, revoking it, or granting a time-limited exception. Revoke decisions automatically open an ITSM ticket in Jira, ServiceNow, Freshservice, or Zendesk. Completed campaigns export to CSV as audit evidence for SOC 2 (CC6.3), ISO 27001, and HIPAA reviews. A sidebar badge shows pending items. The AI is aware of campaign status and can answer questions like "how many items are still pending in my Q1 review?"
