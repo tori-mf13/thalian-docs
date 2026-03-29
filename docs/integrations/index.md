@@ -42,6 +42,11 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 - **[Microsoft Teams](microsoft-teams.md)** — OAuth or webhook setup for finding alert delivery
 - **[Microsoft Outlook](microsoft-outlook.md)** — OAuth setup for mailbox monitoring and forwarding rule detection
 
+## Cloud Infrastructure
+
+- **[Google Cloud IAM](gcp-iam.md)** — OAuth setup for GCP project members, IDP gap detection, and public binding detection
+- **[AWS IAM](aws-iam.md)** — Access key setup for IAM users, IDP gap detection, and MFA coverage
+
 ## Outbound
 
 - **[Webhooks](webhooks.md)** — Send findings to SIEMs, SOARs, custom dashboards, or any HTTPS endpoint
