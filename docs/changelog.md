@@ -8,6 +8,8 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### Integrations
 
+- **AWS IAM** — Connect AWS Identity and Access Management to detect IAM users that exist outside your corporate IDP lifecycle controls. Thalian syncs all IAM users via `GetAccountAuthorizationDetails`, detects admin-level accounts (AdministratorAccess / PowerUserAccess) with no matching IDP identity, IAM users without MFA enrolled, and stale IAM users whose IDP account has been suspended or deprovisioned. AWS IAM does not auto-sync with Okta, Entra, or any other directory — credentials persist after offboarding until explicitly deleted. Auth uses Access Key ID + Secret Access Key, no OAuth required.
+
 - **GCP IAM** — Connect Google Cloud Platform to detect IAM access gaps between your GCP projects and your corporate identity provider. Thalian maps every human member across all your GCP projects and cross-references against Okta, Entra ID, Google Workspace, JumpCloud, and OneLogin. Fires four new findings: GCP project owner not in IDP (critical), GCP member not in IDP (high), public IAM binding via `allUsers` or `allAuthenticatedUsers` (critical), and stale IAM binding for a suspended or deprovisioned user (high). GCP IAM does not auto-sync with corporate directories — access must be removed from IAM policies separately when employees leave. Thalian now surfaces exactly which accounts are falling through the gap.
 
 ### New Features
