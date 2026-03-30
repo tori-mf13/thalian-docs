@@ -79,7 +79,7 @@ Thalian implements the following technical and organizational measures:
 - **Audit logging:** Immutable, SHA-256 hashed logs of all security-relevant actions
 - **Data isolation:** Workspace-scoped queries at application and database layers prevent cross-tenant access
 - **Credential management:** Secrets stored as environment variables, never in source code
-- **Incident response:** Documented procedures in the [Incident Response Plan](./incident-response-plan.md)
+- **Incident response:** Thalian maintains a documented incident response plan; available to customers upon request under NDA
 
 ## 7. Data Subject Rights
 
@@ -96,7 +96,7 @@ In the event of a personal data breach:
 
 - Thalian will notify the Controller without undue delay, and no later than 72 hours after becoming aware of the breach
 - Notification will include: the nature of the breach, categories of data affected, likely consequences, and measures taken or proposed
-- Full breach response procedures are documented in the [Incident Response Plan](./incident-response-plan.md)
+- Full breach response procedures are maintained internally and available to customers upon request under NDA
 
 ## 9. International Transfers
 
