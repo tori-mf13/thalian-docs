@@ -4,6 +4,20 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
+## March 29, 2026
+
+### Integrations
+
+- **Salesforce** — Connect Salesforce to detect CRM access gaps between your Salesforce org and your corporate identity provider. Thalian syncs all active and inactive Salesforce users and cross-references against Okta, Entra ID, Google Workspace, JumpCloud, and OneLogin. Fires four new findings: Salesforce admin not in IDP (critical), Salesforce user not in IDP (high), stale Salesforce user whose IDP account is suspended or deprovisioned but CRM access remains active (high), and connected app authorized by an unknown user outside the IDP (medium). Salesforce is read-only — Thalian uses the `api refresh_token offline_access id` OAuth scopes to sync users and OAuth grants. Auth uses a Salesforce Connected App with an OAuth flow. No write permissions are requested or required.
+
+### Improvements
+
+- **Slack alerts: Dismiss and Snooze from Slack** — Security alerts sent to Slack now include Dismiss and Snooze 7d buttons directly on every alert card. Clicking Dismiss marks the finding as dismissed; Snooze silences it for 7 days. Both actions update the original Slack message in place with a confirmation line (who took the action, when). All actions are signature-verified and written to the immutable audit log — same security model as the existing Approve Remediation button.
+
+- **Okta: upgraded to OAuth 2.0 client credentials** — Okta sync and all 7 Okta remediation functions now authenticate using OAuth client credentials instead of a static SSWS API token. If you have Okta connected, you'll need to reconnect it with your Okta Client ID and Client Secret. The new flow is more secure, token rotation is handled automatically, and it removes the need to manage long-lived API tokens.
+
+---
+
 ## March 28, 2026
 
 ### Integrations
