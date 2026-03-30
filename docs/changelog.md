@@ -8,11 +8,17 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### New Features
 
+- **SSO coverage per identity** — The Identities page now shows how many of each user's apps are SSO-managed vs direct-auth. Hover over the app count to see the breakdown (e.g., "3 SSO-managed, 2 direct auth"). When an IDP is connected and a user has direct-auth apps, the count highlights in purple to flag the gap.
+- **Login source attribution** — The Last Login column now prefers IDP login data over SaaS timestamps. Hover over any login timestamp to see which platform it came from (e.g., "Last seen in Okta"). If all apps are SSO-covered, the tooltip says so; if some bypass SSO, it tells you how many.
+- **7 new SSO coverage findings** — Five identity-level rules detect SSO gaps: admin with direct-auth apps (critical), executive with direct-auth apps (critical), offboarded user with direct-auth apps that SSO deprovisioning can't reach (critical), majority of apps bypassing SSO (high), and new hire provisioned outside the IDP workflow (medium). Two behavioral anomaly rules detect spikes in direct-auth app grants and off-hours activity on non-SSO apps.
 - **Identity type filtering** — The Identities page now has an All / Users / Service & Shared toggle. Service accounts (shared inboxes, bots, automation accounts) are identified using a 40+ prefix list and separated from human users in the view. The total stat card shows an inline service account count alongside the human identity count.
 - **Sync engine: stale-before-AI** — AI Brief and AI Chat now trigger a background sync for any integration that hasn't synced recently before generating content, ensuring responses reflect current posture. Concurrent requests share the same in-flight sync to avoid redundant API calls.
 
 ### Improvements
 
+- **MFA accuracy** — MFA findings (admin without MFA, MFA coverage gap, executive without MFA) now only fire when an identity provider is connected and the IDP confirms MFA is disabled. Previously, SaaS-only workspaces could see false-positive "No MFA" findings because SaaS platforms don't report MFA status.
+- **MFA column clarity** — When no IDP is connected, the MFA column shows a dash with a hover tooltip explaining that an identity provider is needed to verify MFA status, instead of misleading "No MFA" badges.
+- **AI chat SSO context** — The AI assistant now includes per-admin SSO coverage (e.g., "SSO: 3/5 apps") and a workspace-level SSO coverage stat in its analysis context.
 - **Disconnect cleanup** — Removing an integration now cancels all pending approval actions tied to that integration's entities in a single two-pass cleanup (fetch all entities → find all related pending actions → cancel). Previously, pending actions could linger after disconnection.
 - **Audit timestamp precision** — Remediation actions and settings audit entries now show absolute timestamps (e.g., "Mar 28, 2026, 2:34 PM PST") instead of relative time ("2 days ago"). Improves readability for audit and compliance review.
 - **AI chat deep links** — When AI responses reference a connected integration, they now include direct links to the relevant admin console (Google Workspace Admin, Microsoft Entra ID portal, GitHub org settings, etc.) so you can navigate directly from chat to take action.
