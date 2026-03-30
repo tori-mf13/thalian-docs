@@ -4,6 +4,26 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
+## March 30, 2026
+
+### New Features
+
+- **Identity type filtering** — The Identities page now has an All / Users / Service & Shared toggle. Service accounts (shared inboxes, bots, automation accounts) are identified using a 40+ prefix list and separated from human users in the view. The total stat card shows an inline service account count alongside the human identity count.
+- **Sync engine: stale-before-AI** — AI Brief and AI Chat now trigger a background sync for any integration that hasn't synced recently before generating content, ensuring responses reflect current posture. Concurrent requests share the same in-flight sync to avoid redundant API calls.
+
+### Improvements
+
+- **Disconnect cleanup** — Removing an integration now cancels all pending approval actions tied to that integration's entities in a single two-pass cleanup (fetch all entities → find all related pending actions → cancel). Previously, pending actions could linger after disconnection.
+- **Audit timestamp precision** — Remediation actions and settings audit entries now show absolute timestamps (e.g., "Mar 28, 2026, 2:34 PM PST") instead of relative time ("2 days ago"). Improves readability for audit and compliance review.
+- **AI chat deep links** — When AI responses reference a connected integration, they now include direct links to the relevant admin console (Google Workspace Admin, Microsoft Entra ID portal, GitHub org settings, etc.) so you can navigate directly from chat to take action.
+- **Status page: immediate incident creation** — The status health check now creates an incident on the first degraded check rather than waiting for a recovery cycle. Reduces lag between a real outage and an incident appearing on status.thalian.ai.
+
+### Fixes
+
+- **Signup workspace naming** — Personal email signups (Gmail, Outlook, iCloud, etc.) now get "Personal Workspace" as their workspace name instead of the email domain (e.g., "gmail.com Workspace").
+
+---
+
 ## March 29, 2026
 
 ### Integrations
