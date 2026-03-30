@@ -42,6 +42,19 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 - **[Microsoft Teams](microsoft-teams.md)** — OAuth or webhook setup for finding alert delivery
 - **[Microsoft Outlook](microsoft-outlook.md)** — OAuth setup for mailbox monitoring and forwarding rule detection
 
+## Version Control
+
+- **[GitHub](github.md)** — OAuth setup for org members, outside collaborators, and IDP gap detection
+
+## CRM
+
+- **[Salesforce](salesforce.md)** — OAuth setup for user IDP gap detection and connected app monitoring
+
+## HR
+
+- **[Rippling](rippling.md)** — API key setup for employee lifecycle data and terminated access detection
+- **[BambooHR](bamboohr.md)** — API key setup for employee lifecycle data and terminated access detection
+
 ## Cloud Infrastructure
 
 - **[Google Cloud IAM](gcp-iam.md)** — OAuth setup for GCP project members, IDP gap detection, and public binding detection

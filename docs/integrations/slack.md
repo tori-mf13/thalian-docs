@@ -51,4 +51,25 @@ Thalian does not read or sync messages, files, or channel history.
 
 ---
 
+## Slack Enterprise Grid
+
+If your organization uses **Slack Enterprise Grid**, connect the **Slack Enterprise Grid** integration (listed separately in the Integrations browser) instead of the standard Slack integration.
+
+Enterprise Grid unlocks two capabilities that are not available on standard Slack:
+
+- **Audit log ingestion** — `auditlogs:read` is an Enterprise Grid-only scope. Thalian ingests organization-wide audit events to detect suspicious activity patterns across your entire Slack grid
+- **User deactivation** — Thalian can deactivate Slack users directly via the `admin.users.setInactive` API, which requires the `admin.users:write` scope. Standard Slack has no user deactivation API
+
+### Connect Slack Enterprise Grid
+
+1. Go to **Integrations** → **Browse**
+2. Find **Slack Enterprise Grid** (separate from the standard Slack entry) and click **Connect**
+3. Authorize the connection using an org-level admin account — grid-level permissions are required
+4. Review the requested scopes — these include `auditlogs:read` and `admin.users:write` in addition to the standard Slack scopes
+5. Click **Allow**
+
+If you connect standard Slack first and later upgrade to Enterprise Grid, connect the Slack Enterprise Grid integration separately. Both can coexist — standard Slack for individual workspaces, Enterprise Grid for the org-level audit feed.
+
+---
+
 *For a full list of supported platforms, see [Integrations Guide](../integrations-guide.md).*

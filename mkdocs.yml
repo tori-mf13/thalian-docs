@@ -50,19 +50,28 @@ nav:
     - Microsoft Outlook: integrations/microsoft-outlook.md
     - SharePoint: integrations/sharepoint.md
     - Confluence: integrations/confluence.md
+    - GitHub: integrations/github.md
+    - Salesforce: integrations/salesforce.md
+    - Rippling: integrations/rippling.md
+    - BambooHR: integrations/bamboohr.md
+    - Google Cloud IAM: integrations/gcp-iam.md
+    - AWS IAM: integrations/aws-iam.md
     - Webhooks: integrations/webhooks.md
   - Findings & Remediation: findings-and-remediation.md
   - Reports & Audit: reports-and-audit.md
   - Settings & Admin: settings-and-admin.md
   - SSO Setup Guide: sso-setup.md
+  - Access Reviews: access-reviews.md
+  - Compliance: compliance.md
   - Policies & Impact Analysis: policies-and-planning.md
   - API Reference: api-reference.md
   - Changelog: changelog.md
-  - Information Security Policy: information-security-policy.md
-  - Terms of Service: terms-of-service.md
-  - Privacy Policy: privacy-policy.md
-  - Acceptable Use Policy: acceptable-use-policy.md
-  - Data Processing Agreement: data-processing-agreement.md
+  - Legal & Security:
+    - Information Security Policy: information-security-policy.md
+    - Terms of Service: terms-of-service.md
+    - Privacy Policy: privacy-policy.md
+    - Acceptable Use Policy: acceptable-use-policy.md
+    - Data Processing Agreement: data-processing-agreement.md
 
 markdown_extensions:
   - tables

@@ -21,7 +21,7 @@ Every finding has:
 
 ## Analysis Engine
 
-Thalian runs 79 analysis rules across 7 categories every time data is synced:
+Thalian runs 115+ analysis rules across 7 categories every time data is synced:
 
 | Category | What It Detects |
 |---|---|
@@ -58,7 +58,7 @@ Open → Snoozed (temporary hide, auto-reopens)
 | **Medium** | 2 | Moderate risk worth monitoring and planning for |
 | **Low** | 1 | Minor issue or informational finding |
 
-The **Risk Score** on the dashboard is the weighted sum: Critical×10 + High×5 + Medium×2 + Low×1.
+The **Security Posture score** on the dashboard is the weighted sum: Critical×10 + High×5 + Medium×2 + Low×1, normalized to a 0–100 scale.
 
 ## Browsing Findings
 
@@ -148,9 +148,9 @@ For Pro and Enterprise workspaces, Thalian supports automated remediation with t
 
 | Tier | Behavior | Actions |
 |---|---|---|
-| **auto_execute** | Executes immediately without human review | Enroll device |
-| **auto_queue** | Queued for execution, reviewable before next run | Remove admin, revoke license, remove from group, rotate credentials |
-| **never** | Always requires manual initiation | Offboard user, email vendor |
+| **auto_execute** | Executes immediately without human review | Create ticket, notify user, sync device, sanction app |
+| **auto_queue** | Queued for approval before execution | Suspend user, block app, revoke OAuth token |
+| **never** | Always requires manual initiation | Retire device, deactivate user, remote lock |
 
 Agentic policies are configurable in Settings > General.
 
