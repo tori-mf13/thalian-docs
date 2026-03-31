@@ -6,6 +6,16 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## March 30, 2026
 
+### Fixes
+
+- **Display labels throughout** — Raw internal identifiers (e.g. `notify_user`, `google_workspace`, `non_compliant`, `in_progress`) no longer appear in the UI. Action types, remediation statuses, compliance statuses, and audit event types are now shown as readable labels everywhere — in finding history, the identity timeline, notification badges, the devices table, and the remediation queue.
+- **Audit log retention** — The audit log now correctly shows 90-day history for Pro workspaces (previously displayed "30-day history" due to a hardcoded mismatch).
+- **Pricing constants** — Billing page pricing is now sourced from a single constant, so it stays consistent if pricing changes.
+
+---
+
+
+
 ### New Features
 
 - **SSO coverage per identity** — The Identities page now shows how many of each user's apps are SSO-managed vs direct-auth. Hover over the app count to see the breakdown (e.g., "3 SSO-managed, 2 direct auth"). When an IDP is connected and a user has direct-auth apps, the count highlights in purple to flag the gap.
