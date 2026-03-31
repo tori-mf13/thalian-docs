@@ -4,6 +4,14 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
+## March 31, 2026
+
+### Improvements
+
+- **GCP IAM privilege analysis** — GCP IAM now detects 4 new privilege and configuration risks beyond IDP gap detection: owner role sprawl per project, service accounts with admin-level roles, users with admin access across 3+ projects, and systemic over-provisioning (>50% of users at Editor or higher). These rules fire even when Google Workspace is the IDP — previously, GCP findings only appeared when users existed outside the corporate identity provider.
+
+---
+
 ## March 30, 2026
 
 ### Integrations
