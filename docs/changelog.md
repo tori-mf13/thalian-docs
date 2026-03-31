@@ -6,11 +6,33 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## March 30, 2026
 
+### Integrations
+
+- **Workday HR** — Connect Workday to cross-reference employee lifecycle data against your identity providers and SaaS access. Thalian syncs active and terminated workers from Workday and detects terminated employees who still have active IDP accounts, SaaS entitlements, or managed devices. Joins with Okta, Entra ID, Google Workspace, JumpCloud, OneLogin, Intune, Jamf, and all connected SaaS platforms. Read-only — uses Workday's REST API with basic auth credentials. Adds to the existing HR intelligence layer alongside Rippling and BambooHR.
+
+### New Features
+
+- **Compliance: evidence export (Enterprise)** — The Compliance page now includes PDF and Excel evidence pack export for Enterprise workspaces. Pro users see a locked "Export evidence" button with an upgrade prompt. The export includes control status, mapped rules, open findings, and a timestamp — formatted for handing directly to an auditor.
+
+- **Compliance: audit log tab** — A dedicated Audit Log tab is now available on the Compliance page, showing a filterable, searchable feed of all user and system actions. Pro workspaces see 30-day history with CSV export; Enterprise sees 1-year retention. Free users see the plan gate.
+
+- **Integration library redesign** — The integration browser has a new card layout and filter bar. Cards now show category, connection status, and sync stats. Filter by category (Identity, Device, HR, Cloud, etc.) to find what you need faster.
+
+- **Clickable stat pills on integrations** — Stat pills on connected integration cards (e.g. "42 identities", "7 findings") now navigate directly to the relevant filtered view — Identities, Applications, Devices, or Findings — scoped to that integration.
+
+### Improvements
+
+- **Plan tier copy** — The billing and upgrade pages now accurately reflect what each plan includes. Pro lists SOC 2 & ISO 27001 control mapping, access review campaigns, and executive reports under a Compliance category. Enterprise lists IP allowlisting, MFA enforcement policy, configurable session timeout, and SSO/SAML enforcement under Security & Governance, plus 1-year audit log retention and SIEM export under Compliance & Audit.
+
+- **Compliance tab gating** — All three tabs on the Compliance page (Controls, Access Reviews, Playbooks) now correctly require Pro or Enterprise. Previously, free users could navigate directly to the Access Reviews and Audit Log tabs via URL and bypass the plan gate.
+
 ### Fixes
 
 - **Display labels throughout** — Raw internal identifiers (e.g. `notify_user`, `google_workspace`, `non_compliant`, `in_progress`) no longer appear in the UI. Action types, remediation statuses, compliance statuses, and audit event types are now shown as readable labels everywhere — in finding history, the identity timeline, notification badges, the devices table, and the remediation queue.
 - **Audit log retention** — The audit log now correctly shows 90-day history for Pro workspaces (previously displayed "30-day history" due to a hardcoded mismatch).
 - **Pricing constants** — Billing page pricing is now sourced from a single constant, so it stays consistent if pricing changes.
+- **Compliance deep links** — "View findings →" links inside expanded compliance controls now navigate correctly to the Findings page filtered to that rule.
+- **AI chat MFA/login accuracy** — The AI assistant no longer reports MFA or login status for platforms that don't expose that data (e.g. GitHub, Slack), preventing misleading "no MFA" statements for accounts where MFA is managed by an IDP.
 
 ---
 
