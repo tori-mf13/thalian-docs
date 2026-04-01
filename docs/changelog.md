@@ -4,6 +4,14 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
+## April 2026
+
+### Security
+
+- **npm supply chain hardening** — In response to the March 30 Axios npm supply chain attack (CVE pending, attributed to North Korean threat actor UNC1069), we audited all dependencies and confirmed Thalian is not affected — axios is not in our dependency tree. We've additionally hardened our build pipeline: npm audit now blocks deployments on high-severity findings, postinstall scripts from transitive dependencies are disabled by default, all dependency versions are pinned exactly, and lockfile integrity validation has been added to CI.
+
+---
+
 ## March 31, 2026
 
 ### New Features
