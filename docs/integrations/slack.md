@@ -28,7 +28,9 @@ Step-by-step guide to connecting Slack to Thalian for identity sync and finding 
 | `channels:read` | Lists public channels so admins can pick which channel receives alerts |
 | `users:read` | Fetches workspace member list for identity sync (correlating Slack accounts to other platforms) |
 | `users:read.email` | Reads email addresses from the users list — required to match Slack users to Entra ID / Google identities |
-| `auditlogs:read` | Ingests Enterprise Grid audit logs for suspicious activity detection. Gracefully degrades on non-Enterprise workspaces |
+
+!!! warning "Audit logs require Enterprise Grid"
+    The `auditlogs:read` scope is only available on Slack Enterprise Grid plans. Standard Slack workspaces do not support this scope. See the [Slack Enterprise Grid](#slack-enterprise-grid) section below for details.
 
 ## Configure Alert Delivery
 

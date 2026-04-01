@@ -38,16 +38,9 @@ Thalian cross-references GitHub organization members and outside collaborators a
 | Scope | Justification |
 |---|---|
 | `read:org` | Reads org members, teams, and outside collaborators for identity sync |
-| `read:user` | Reads user profile and email address for IDP matching |
-
-### Enabling remediation actions
-
-By default, Thalian connects with read-only scopes. To enable remediation actions (removing outside collaborators, removing org members), you need to re-authorize with the additional `write:org` scope:
-
-1. Open the GitHub integration card in **Integrations**
-2. Click **Edit credentials** → **Re-authorize**
-3. Review the updated permissions — Thalian will request `write:org` in addition to the read scopes
-4. Click **Authorize**
+| `write:org` | Enables remediation actions — removing outside collaborators or org members. Requested at initial connect but only used when an action is explicitly initiated or approved |
+| `read:user` | Reads user profile data for IDP matching |
+| `user:email` | Reads the authenticated user's email addresses for identity matching |
 
 Thalian will only use write permissions when a remediation action is explicitly initiated or approved by your team.
 

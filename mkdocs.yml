@@ -70,6 +70,8 @@ nav:
       - BambooHR: integrations/bamboohr.md
       - Google Cloud IAM: integrations/gcp-iam.md
       - AWS IAM: integrations/aws-iam.md
+      - Azure IAM: integrations/azure-iam.md
+      - Workday: integrations/workday.md
       - Webhooks: integrations/webhooks.md
   - Findings & Intelligence:
     - Findings & Remediation: findings-and-remediation.md

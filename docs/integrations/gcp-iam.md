@@ -12,6 +12,10 @@ Thalian cross-references every GCP project member against your corporate identit
 - **GCP member not in IDP** — any human member not present in your IDP (high)
 - **Public IAM binding** — `allUsers` or `allAuthenticatedUsers` binding exposing resources to the internet (critical)
 - **Stale IAM binding** — GCP member whose IDP account is suspended or deprovisioned (high)
+- **Owner role sprawl** — a project has more Owner-role members than expected (high)
+- **Service account with admin role** — a service account holds an admin-level IAM role (high)
+- **Cross-project admin** — a user has admin access across 3+ projects (high)
+- **Editor role overuse** — more than 50% of a project's members have Editor or higher (medium)
 
 GCP IAM does not auto-sync with corporate directories. When an employee leaves and their Okta or Entra account is disabled, their GCP project access remains active until explicitly removed.
 
@@ -54,9 +58,11 @@ GCP IAM does not auto-sync with corporate directories. When an employee leaves a
 
 1. Go to **APIs & Services** → **Data Access** (or **OAuth consent screen** → **Scopes**)
 2. Click **Add or remove scopes**
-3. Add the following scope:
+3. Add the following scopes:
    ```
    https://www.googleapis.com/auth/cloud-platform.read-only
+   openid
+   email
    ```
 4. Save
 

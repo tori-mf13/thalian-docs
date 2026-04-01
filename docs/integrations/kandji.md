@@ -32,7 +32,7 @@ No write permissions are needed.
 
 1. Go to **Integrations** → **Browse**
 2. Find **Iru** and click **Connect**
-3. Enter your **Iru subdomain** (e.g., `yourcompany.kandji.io`)
+3. Enter your **Iru subdomain** (e.g., `yourcompany.api.kandji.io`)
 4. Paste your **API token**
 5. Click **Save** — Thalian validates the credentials and begins the first sync
 

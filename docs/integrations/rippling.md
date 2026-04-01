@@ -36,13 +36,29 @@ Rippling gives Thalian authoritative employment data — who is active, who has 
 ## Prerequisites
 
 - **Rippling account** with admin access
-- Permission to create API keys in Rippling
 
 ---
 
-## Create an API key in Rippling
+## Option 1 — Connect via OAuth (recommended)
 
-Thalian connects to Rippling using an API key with read-only access to employee data.
+1. Go to **Integrations** → **Browse**
+2. Find **Rippling** and click **Connect**
+3. Click **Authorize with Rippling** — you'll be redirected to Rippling
+4. Sign in and approve read-only access to employee data
+5. You'll be redirected back to Thalian — the integration is now connected
+
+Thalian requests the following OAuth scopes:
+
+| Scope | Justification |
+|---|---|
+| `employee:read` | Reads employee profiles, employment status, department, manager, and termination dates |
+| `company:read` | Reads company structure for organizational context |
+
+---
+
+## Option 2 — Connect via API key
+
+If your organization restricts OAuth, you can connect using an API key instead.
 
 1. Sign in to your Rippling admin account
 2. Go to **Settings** → **Developer Settings** → **API Keys**
@@ -53,14 +69,13 @@ Thalian connects to Rippling using an API key with read-only access to employee 
    - Employment details (status, department, manager, start/termination dates)
 6. Click **Create** and copy the API key — it is shown only once
 
----
-
-## Connect in Thalian
+### Connect in Thalian
 
 1. Go to **Integrations** → **Browse**
 2. Find **Rippling** and click **Connect**
-3. Paste your **API Key**
-4. Click **Connect** — Thalian validates the credentials and begins the first sync
+3. Select **API Key** as the connection method
+4. Paste your **API Key**
+5. Click **Connect** — Thalian validates the credentials and begins the first sync
 
 ---
 

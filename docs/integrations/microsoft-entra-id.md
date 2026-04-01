@@ -33,6 +33,7 @@ A single Microsoft OAuth consent covers Entra ID and all other Microsoft integra
 | `Directory.Read.All` | Entra ID | Reads directory role assignments to classify admin vs. standard accounts and detect privilege escalation |
 | `AuditLog.Read.All` | Entra ID | Ingests sign-in logs and directory audit events to detect risky sign-ins, impossible travel, MFA bypass, and privilege changes |
 | `Application.Read.All` | Entra ID | Discovers enterprise app registrations and their role assignments to identify overprivileged or risky third-party OAuth apps |
+| `Policy.Read.All` | Entra ID | Reads Conditional Access policies to detect report-only, disabled, or MFA-gap policies. CA rules stay silent until this scope is granted |
 | `DeviceManagementManagedDevices.Read.All` | Intune | Pulls Intune-managed device inventory — OS version, compliance state, encryption status — for endpoint posture checks |
 | `Mail.Read` | Outlook | Detects suspicious mailbox forwarding rules (a common exfiltration vector). Does not read email body/content |
 | `MailboxSettings.Read` | Outlook | Reserved for future mailbox configuration analysis |

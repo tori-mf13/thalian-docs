@@ -20,48 +20,29 @@ Salesforce does not sync automatically with corporate directories. When an emplo
 ## Prerequisites
 
 - **Salesforce org** — Production or Sandbox
-- **Salesforce admin account** with permission to create Connected Apps
+- **Salesforce admin account** to authorize the OAuth connection
 
 ---
 
-## Step 1 — Create a Connected App in Salesforce
-
-Thalian connects using OAuth 2.0. You'll create a Connected App in Salesforce that grants read-only API access.
-
-1. Sign in to your Salesforce org
-2. Go to **Setup** → search for **App Manager** → click **New Connected App**
-3. Fill in the required fields:
-   - **Connected App Name:** `Thalian`
-   - **API Name:** `Thalian` (auto-filled)
-   - **Contact Email:** your admin email
-4. Under **API (Enable OAuth Settings)**:
-   - Check **Enable OAuth Settings**
-   - **Callback URL:** `https://app.thalian.ai/api/salesforce-callback`
-   - **Selected OAuth Scopes** — add the following:
-     - `Access and manage your data (api)`
-     - `Perform requests at any time (refresh_token, offline_access)`
-     - `Access your basic information (id, profile, email, address, phone)`
-5. Click **Save** — Salesforce will take a few minutes to register the app
-
----
-
-## Step 2 — Copy your credentials
-
-1. After saving, click **Manage Consumer Details** (you may need to verify your identity)
-2. Copy the **Consumer Key** (this is your Client ID)
-3. Copy the **Consumer Secret** (this is your Client Secret) — store it securely
-
----
-
-## Step 3 — Connect in Thalian
+## Connect via OAuth
 
 1. Go to **Integrations** → **Browse**
 2. Find **Salesforce** and click **Connect**
-3. Paste your **Consumer Key** and **Consumer Secret**
-4. Select your instance type: **Production** or **Sandbox**
-5. Click **Connect** — you'll be redirected to Salesforce to authorize the connection
-6. Click **Allow** on the Salesforce OAuth consent screen
-7. You'll be redirected back to Thalian — the integration is now connected
+3. Click **Authorize with Salesforce** — you'll be redirected to the Salesforce login page
+4. Sign in with your Salesforce admin account
+5. Review the requested permissions and click **Allow**
+6. You'll be redirected back to Thalian — the integration is now connected and the first sync begins
+
+Thalian uses a pre-configured Salesforce Connected App with the following read-only OAuth scopes:
+
+| Scope | Justification |
+|---|---|
+| `api` | Access the Salesforce REST API to read user profiles, roles, and OAuth token grants |
+| `refresh_token` | Allows Thalian to maintain the connection without re-prompting for authorization |
+| `offline_access` | Standard scope that allows background sync when you're not actively logged in |
+| `id` | Reads the connecting user's basic identity (name, email) during the OAuth callback |
+
+No write permissions are requested. Thalian does not modify Salesforce data.
 
 ---
 
@@ -87,10 +68,10 @@ Salesforce is a **read-only integration**. Thalian surfaces findings but does no
 
 ## Troubleshooting
 
-- **OAuth error during connect:** Ensure the Callback URL in your Connected App exactly matches `https://app.thalian.ai/api/salesforce-callback`
-- **No users found:** Confirm the `api` scope is included in your Connected App's OAuth scopes
-- **Sandbox vs. Production mismatch:** If you connected a Sandbox, ensure you selected "Sandbox" in the Thalian connection form — the OAuth endpoints differ
-- **Connected App not immediately available:** Salesforce takes up to 10 minutes to activate a newly created Connected App
+- **OAuth error during connect:** Ensure pop-ups are not blocked and try again. If the error persists, contact support.
+- **No users found:** The authorizing account needs sufficient permissions to read user data via the Salesforce API
+- **Sandbox vs. Production:** If you need to connect a Sandbox org, select "Sandbox" in the Thalian connection form — the OAuth endpoints differ
+- **IDP gaps not detected:** Ensure at least one IDP (Okta, Entra ID, Google Workspace, JumpCloud, or OneLogin) is connected and synced
 
 ---
 
