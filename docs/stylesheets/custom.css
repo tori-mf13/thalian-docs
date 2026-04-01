@@ -406,3 +406,101 @@
 .md-copyright a:hover {
   color: var(--t-teal-bright);
 }
+
+/* ==============================================
+   Releases / Blog — Fleet-style cards
+   ============================================== */
+
+/* Blog post list — card style */
+.md-post {
+  background: var(--t-surface);
+  border: 1px solid var(--t-border);
+  border-radius: 10px;
+  padding: 1.5rem 1.75rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.md-post:hover {
+  border-color: var(--t-border-bright);
+  background: var(--t-surface-raised);
+}
+
+/* Post title in list */
+.md-post .md-post__header h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--t-text);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.md-post .md-post__header h2 a {
+  color: var(--t-text) !important;
+  text-decoration: none;
+}
+
+.md-post .md-post__header h2 a:hover {
+  color: var(--t-violet-bright) !important;
+}
+
+/* Post date */
+.md-post .md-post__meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--t-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* Post excerpt */
+.md-post .md-post__content p {
+  color: var(--t-text-dim);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0.5rem 0 0;
+}
+
+/* "Continue reading" link */
+.md-post .md-post__content a[href] {
+  color: var(--t-violet-bright);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.md-post .md-post__content a[href]:hover {
+  color: var(--t-teal-bright);
+}
+
+/* Blog pagination */
+.md-post-pagination {
+  margin-top: 2rem;
+}
+
+.md-post-pagination a {
+  color: var(--t-violet-bright) !important;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+
+/* GitHub link in individual posts */
+.md-typeset a[href*="github.com/tori-mf13/thalian-beta/releases/tag"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  color: var(--t-text-muted);
+  border: 1px solid var(--t-border);
+  border-radius: 6px;
+  padding: 0.3em 0.7em;
+  margin-top: 1.5rem;
+  transition: all 0.15s ease;
+}
+
+.md-typeset a[href*="github.com/tori-mf13/thalian-beta/releases/tag"]:hover {
+  color: var(--t-text);
+  border-color: var(--t-border-bright);
+  background: var(--t-surface);
+}

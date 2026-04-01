@@ -4,24 +4,36 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 
 ---
 
-## Guides
+## Getting Started
 
-- **[Getting Started](getting-started.md)** — Create your workspace and connect your first integration
-- **[Integrations](integrations-guide.md)** — 25 supported platforms, connection flows, sync, and alerts
+- **[Quick Start](getting-started.md)** — Create your workspace and connect your first integration
+- **[Integrations Overview](integrations-guide.md)** — Supported platforms, connection flows, sync mechanics, and alerts
 - **[Integration Guides](integrations/index.md)** — Step-by-step setup instructions for each platform
+
+## Findings & Intelligence
+
 - **[Findings & Remediation](findings-and-remediation.md)** — Understanding findings, remediation actions, and the approval workflow
+- **[Access Reviews](access-reviews.md)** — Run structured user access certification campaigns
+
+## Compliance & Reporting
+
+- **[Compliance](compliance.md)** — SOC 2 and ISO 27001 control mapping on your findings
 - **[Reports & Audit](reports-and-audit.md)** — Posture tracking, MTTR, drift snapshots, and the immutable audit log
-- **[Settings & Admin](settings-and-admin.md)** — Team management, RBAC roles, security settings, billing
 - **[Policies & Impact Analysis](policies-and-planning.md)** — Auto-generated policies, scenario builder, and security goals
+
+## Administration
+
+- **[Settings & Admin](settings-and-admin.md)** — Team management, RBAC roles, security settings, billing
+- **[SSO Setup Guide](sso-setup.md)** — SAML 2.0 single sign-on configuration (Enterprise)
 - **[API Reference](api-reference.md)** — Authentication, endpoints, request format, and error handling
+
+## Releases
+
 - **[Changelog](changelog.md)** — New features, integrations, and improvements by release
 
-## Security & Compliance
+## Security & Legal
 
 - **[Information Security Policy](information-security-policy.md)** — How Thalian protects your data
-
-## Legal
-
 - **[Terms of Service](terms-of-service.md)** — Agreement governing use of the Thalian platform
 - **[Privacy Policy](privacy-policy.md)** — How we collect, use, and protect your data
 - **[Acceptable Use Policy](acceptable-use-policy.md)** — Permitted and prohibited uses of the Service
