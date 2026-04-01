@@ -26,6 +26,8 @@ The Settings page (`/settings`) is where you manage your workspace, team, securi
 | AI queries/day | 25 | 100 | Unlimited |
 | Auto-remediation | No | Yes | Yes |
 | Causality analysis | No | Yes | Yes |
+| Access reviews | No | Yes | Yes |
+| SSO/SAML | No | No | Yes |
 
 - **Trial:** New workspaces get 30 days of Pro features. After expiration (+ 7-day grace period), the workspace downgrades to Free and excess integrations are paused
 
@@ -82,6 +84,14 @@ Configure how and when you receive notifications:
 - **Data retention:** View your plan's retention period. Data older than the retention window is automatically cleaned up (except audit logs, which are kept indefinitely)
 - **Workspace export:** Download a JSON blob of all workspace data (identities, applications, devices, findings, audit log)
 - **Delete workspace:** Permanently delete the workspace and all associated data. For safety, this directs you to contact support@thalian.ai
+
+### Platform
+
+Advanced platform configuration for workspace-level settings:
+
+- **Access:** IP allowlisting and API access controls
+- **Automation:** Webhook forwarding and automated workflow configuration
+- **Compliance:** Compliance framework preferences and evidence export settings
 
 ## Role-Based Access Summary
 

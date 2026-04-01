@@ -21,17 +21,21 @@ Every finding has:
 
 ## Analysis Engine
 
-Thalian runs 115+ analysis rules across 7 categories every time data is synced:
+Thalian runs 295+ analysis rules across 11 categories every time data is synced:
 
 | Category | What It Detects |
 |---|---|
-| **Identity Security** | MFA gaps, stale accounts, dormant admins, privilege anomalies, suspended users with active entitlements |
-| **Shadow IT** | Unvetted applications discovered via OAuth grants, email analysis, or cross-platform observation |
-| **Compound Risk** | Risks that span multiple platforms — e.g., admin on an unmanaged device, dormant user with active cloud access |
-| **Device Posture** | Non-compliant devices, missing encryption, stale MDM check-ins, end-of-life operating systems |
-| **License Waste** | Assigned licenses with no recent usage, duplicate subscriptions across platforms |
+| **Identity Security** | MFA gaps, stale accounts, dormant admins, privilege anomalies, suspended users with active entitlements, platform-specific identity risks (Okta, Entra ID, Salesforce, etc.) |
+| **Access Hygiene** | Over-provisioned access, unused entitlements, role mismatches between platforms, offboarding gaps, cloud IAM IDP gaps |
+| **Shadow IT** | Unvetted applications discovered via OAuth grants, email analysis, or cross-platform observation, AI tool data access detection |
+| **Device Posture** | Non-compliant devices, missing encryption, stale MDM check-ins, end-of-life operating systems, EDR coverage gaps |
+| **License Waste** | Assigned licenses with no recent usage, duplicate subscriptions across platforms, cost-per-active-user analysis |
+| **Compound Risk** | Risks that span multiple platforms — e.g., admin on an unmanaged device, terminated user with dual exfiltration vectors |
 | **Drift Signal** | Changes in security posture over time — MFA coverage dropping, shadow IT count rising, compliance degrading |
-| **Access Hygiene** | Over-provisioned access, unused entitlements, role mismatches between platforms |
+| **Behavioral Anomaly** | Unusual login patterns, off-hours activity spikes, failed authentication bursts, sudden app access changes vs per-user baselines |
+| **Access Risk** | Cloud IAM privilege analysis — GCP owner sprawl, AWS root account usage, Azure service principal risks |
+| **Configuration** | Platform configuration issues — security defaults disabled, weak password policies, permissive session settings |
+| **Finding Correlation** | Automatically correlated findings that share the same affected entity across platforms |
 
 The cross-platform join is the key differentiator. Thalian correlates data across disconnected systems to surface insights that no single tool can produce — for example, an identity that's been deactivated in Okta but still has active entitlements in Google Workspace.
 
@@ -58,7 +62,7 @@ Open → Snoozed (temporary hide, auto-reopens)
 | **Medium** | 2 | Moderate risk worth monitoring and planning for |
 | **Low** | 1 | Minor issue or informational finding |
 
-The **Security Posture score** on the dashboard is the weighted sum: Critical×10 + High×5 + Medium×2 + Low×1, normalized to a 0–100 scale.
+The **Security Posture score** on the dashboard uses a sigmoid normalization of the weighted sum. The raw score (Critical×10 + High×5 + Medium×2 + Low×1) is passed through the formula `90 × (1 − e^(−raw/25))`, capped at 100. This means a handful of critical findings produces a meaningful score increase, but the curve flattens as findings accumulate — preventing a single bad week from pegging the score at 100.
 
 ## Browsing Findings
 
@@ -67,7 +71,7 @@ The Findings page (`/findings`) provides a filterable, searchable list of all fi
 ### Filters
 - **Status tab:** Open, Resolved, Dismissed
 - **Severity:** Critical, High, Medium, Low
-- **Category:** Identity Security, Shadow IT, Compound Risk, Device Posture, License Waste, Drift Signal, Access Hygiene
+- **Category:** Identity Security, Access Hygiene, Shadow IT, Device Posture, License Waste, Compound Risk, Drift Signal, Behavioral Anomaly, Access Risk, Configuration
 - **Entity type:** Identity, Application, Device, Signal
 - **Platform:** Filter by source platform
 - **Search:** Free-text search across finding titles and affected entities
@@ -88,7 +92,7 @@ Click any finding to expand its detail panel, which shows:
 
 ### Available Actions
 
-Thalian supports 25 remediation action types:
+Thalian supports 40+ remediation action templates across several categories:
 
 **Identity actions:**
 | Action | Description |
@@ -97,6 +101,7 @@ Thalian supports 25 remediation action types:
 | Unsuspend user | Restore account access |
 | Force password change | Require new password on next login |
 | Force MFA enrollment | Require MFA setup on next login |
+| Enable MFA (org-wide) | Enforce MFA across the organization |
 | Revoke OAuth token | Invalidate a specific OAuth grant |
 | Revoke all tokens | Invalidate all active tokens |
 | Revoke sessions | End all active sessions |
@@ -106,6 +111,8 @@ Thalian supports 25 remediation action types:
 | Revoke license | Reclaim license assignment |
 | Remove from group | Remove user from a specific group |
 | Rotate credentials | Force credential rotation |
+| Deprovision user | Remove user from platform entirely |
+| Reconcile identities | Align identity records across platforms |
 
 **Application actions:**
 | Action | Description |
@@ -114,6 +121,9 @@ Thalian supports 25 remediation action types:
 | Block app | Block application access |
 | Flag as unauthorized | Mark as shadow IT |
 | Revoke shadow IT | Remove OAuth grants for shadow apps |
+| Review app adoption | Investigate low-usage applications |
+| Consolidate apps | Merge duplicate functional applications |
+| Flag for renewal | Mark application contract for renewal review |
 
 **Device actions:**
 | Action | Description |
@@ -124,6 +134,17 @@ Thalian supports 25 remediation action types:
 | Enroll device | Send MDM enrollment invite |
 | Contain host | Isolate from network (CrowdStrike/SentinelOne) |
 | Lift containment | Remove network isolation |
+
+**Investigation & review actions:**
+| Action | Description |
+|---|---|
+| Review SSO coverage | Investigate direct-auth apps bypassing SSO |
+| Investigate behavioral anomaly | Review unusual access patterns |
+| Investigate risky sign-in | Review flagged authentication events |
+| Investigate departing user | Review access for departing employees |
+| Investigate external sharing | Review external sharing activity |
+| Review access | General access review for over-provisioned users |
+| Revoke collaboration access | Remove external sharing or collaboration privileges |
 
 **Other:**
 | Action | Description |

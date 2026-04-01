@@ -67,13 +67,12 @@ Complete, immutable record of all actions taken in your workspace:
 
 ## Risk Score Calculation
 
-The risk score displayed on the dashboard and tracked in posture reports is calculated as:
+The risk score displayed on the dashboard and tracked in posture reports is calculated in two steps:
 
-```
-Risk Score = (Critical findings × 10) + (High × 5) + (Medium × 2) + (Low × 1)
-```
+1. **Raw score:** `(Critical findings × 10) + (High × 5) + (Medium × 2) + (Low × 1)`
+2. **Normalized score:** `90 × (1 − e^(−raw / 25))`, capped at 100
 
-Only **open** findings (status: `open` or `in_progress`) are counted. Resolved and dismissed findings do not contribute to the score.
+The sigmoid normalization means a handful of critical findings produces a meaningful score increase, but the curve flattens as findings accumulate — preventing a single bad week from pegging the score at 100. Only **open** findings (status: `open` or `in_progress`) are counted. Resolved and dismissed findings do not contribute to the score.
 
 ## Drift Snapshots
 

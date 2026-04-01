@@ -33,46 +33,70 @@ Thalian maps its findings across the five Trust Services Criteria:
 
 | Control | What Thalian monitors |
 |---|---|
-| CC6.1 | MFA enforcement across all connected IDPs and SaaS apps |
-| CC6.2 | User provisioning and deprovisioning via IDP sync |
-| CC6.3 | Role-based access and privilege minimization findings |
-| CC6.6 | External user access — outside collaborators, guest accounts, shadow IT |
-| CC6.7 | Terminated user access detection across all connected platforms |
+| CC6.1 — Logical and Physical Access Controls | MFA enforcement across all connected IDPs and SaaS apps |
+| CC6.2 — Credential Issuance | User provisioning, admin elevation, service account and shared account detection |
+| CC6.3 — Authorization-Based Access | Role-based access, OAuth scope management, privilege drift across platforms |
+| CC6.5 — Access Restrictions | Stale accounts, dormant admins, ghost entitlements, departed user access |
+| CC6.6 — Threats and Vulnerabilities | Endpoint protection, EDR coverage, infected devices, OS currency, admin devices without management |
+| CC6.7 — Access Removal Upon Termination | Terminated user access detection across all connected platforms |
+| CC6.8 — Access Review | Periodic access review coverage — stale admins, unused entitlements, dormant OAuth apps, license clawback |
 
 ### CC7 — System Operations
 
 | Control | What Thalian monitors |
 |---|---|
-| CC7.1 | Device compliance and endpoint health across MDM platforms |
-| CC7.2 | Behavioral anomaly detection and unusual access pattern alerts |
-| CC7.3 | Security incident detection via cross-platform correlation |
+| CC7.2 — Anomaly Monitoring | Behavioral anomaly detection, unusual login patterns, off-hours activity, mailbox forwarding rules |
+| CC7.3 — Anomaly Evaluation | Drift signal analysis — MFA coverage decline, admin sprawl expansion, compliance degradation |
 
 ### CC8 — Change Management
 
 | Control | What Thalian monitors |
 |---|---|
-| CC8.1 | Admin role changes and privilege drift across platforms |
+| CC8.1 — Change Management | Integration sync health, audit trail with SHA-256 tamper detection |
 
-### CC9 — Risk Mitigation
+### CC9 — Risk Management
 
 | Control | What Thalian monitors |
 |---|---|
-| CC9.2 | Vendor and third-party access via OAuth grants and connected app monitoring |
+| CC9.1 — Risk Mitigation | Cross-platform risk correlation, shadow IT detection, privilege accumulation, departing user data access |
 
 ---
 
 ## ISO 27001 coverage
 
-Thalian maps findings to Annex A controls across access management, asset management, and operations security:
+Thalian maps findings to 12 Annex A controls across organizational, people, physical, and technological domains:
+
+### Organizational Controls
 
 | Annex A Control | What Thalian monitors |
 |---|---|
-| A.5.15 — Access control | IDP-to-SaaS entitlement coverage and gaps |
-| A.5.16 — Identity management | Identity lifecycle — provisioning, deprovisioning, MFA status |
-| A.5.17 — Authentication | MFA coverage, password policy violations, stale credentials |
-| A.5.18 — Access rights | Privilege minimization, admin sprawl, dormant access |
-| A.5.19 — Information security in supplier relationships | Third-party OAuth grants, shadow IT, connected app permissions |
-| A.8.8 — Management of technical vulnerabilities | Endpoint compliance, OS version currency, EDR coverage |
+| A.5.9 — Inventory of Information and Other Associated Assets | Shadow IT discovery, unvetted applications, unmanaged devices, EDR coverage gaps |
+| A.5.15 — Access Control | IDP-to-SaaS entitlement coverage and gaps, MFA enforcement, SSO bypass detection |
+| A.5.18 — Access Rights | Privilege minimization, admin sprawl, privilege accumulation, ghost entitlements, cross-platform privilege drift |
+| A.5.23 — Information Security for Use of Cloud Services | OAuth scope management, scope creep detection, dormant OAuth apps, excessive app grants |
+
+### People Controls
+
+| Annex A Control | What Thalian monitors |
+|---|---|
+| A.6.1 — Screening | Users not found in identity provider, service account human pattern detection, shared account detection |
+| A.6.5 — Responsibilities After Termination | Offboarding gaps, departed user entitlements, cross-platform terminated user access |
+
+### Physical Controls
+
+| Annex A Control | What Thalian monitors |
+|---|---|
+| A.7.9 — Security of Assets Off-Premises | Unmanaged devices, unencrypted endpoints, end-of-life OS versions, stale MDM check-ins |
+
+### Technological Controls
+
+| Annex A Control | What Thalian monitors |
+|---|---|
+| A.8.1 — User Endpoint Devices | Admin devices without compliance, EDR coverage, infected devices, CrowdStrike/SentinelOne sensor health |
+| A.8.2 — Privileged Access Rights | Admin MFA enforcement, stale admins, admin excessive OAuth, admin elevation bursts |
+| A.8.5 — Secure Authentication | MFA coverage gaps, department-level MFA gaps, MFA regression, MFA coverage decline trends |
+| A.8.15 — Logging | Integration sync health, audit trail with SHA-256 tamper detection |
+| A.8.16 — Monitoring Activities | Behavioral anomaly detection — login frequency, location diversity, off-hours activity, failed authentication, mailbox forwarding rules |
 
 ---
 
@@ -81,7 +105,7 @@ Thalian maps findings to Annex A controls across access management, asset manage
 The Compliance page is designed to be used alongside your access reviews and audit preparation:
 
 - **Before an audit:** run the Compliance page to identify controls that have open findings — these are the areas an auditor is most likely to probe
-- **During an access review:** link your Access Review campaign decisions as evidence against CC6.7 (terminated user access) and A.5.18 (access rights)
+- **During an access review:** link your Access Review campaign decisions as evidence against CC6.7 (terminated user access), CC6.8 (access review), and A.5.18 (access rights)
 - **For a penetration test prep:** use the At Risk controls to prioritize remediation before external testing begins
 
 ---

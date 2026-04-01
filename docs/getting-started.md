@@ -63,7 +63,7 @@ Five summary metrics updated after each analysis:
 | **Identities** | Total unique identities across all connected platforms |
 | **Shadow IT** | Number of unvetted/unsanctioned applications detected |
 | **Stale Accounts** | Users who haven't logged into any connected platform in 30+ days |
-| **Risk Score** | Weighted composite: Critical×10 + High×5 + Medium×2 + Low×1 |
+| **Risk Score** | Normalized composite score (0–100) based on severity-weighted findings. Uses a sigmoid curve so early findings have outsized impact and the score flattens as findings accumulate |
 
 Each card shows a trend arrow comparing to the previous analysis run.
 

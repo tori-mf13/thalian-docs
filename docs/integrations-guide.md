@@ -6,13 +6,13 @@ Thalian's intelligence comes from the data it collects across your IT stack. The
 
 ## Supported Platforms
 
-Thalian supports 25 platforms across 8 categories:
+Thalian supports 31+ platforms across 11 categories:
 
 ### Identity & Access
 | Platform | Auth Method | What It Syncs | Setup Guide |
 |---|---|---|---|
 | **Okta** | API token | Users, groups, MFA status, apps, system log events | [Connect Okta](./integrations/okta.md) |
-| **Microsoft Entra ID** | OAuth or API | Users, groups, sign-in logs, enterprise apps, conditional access | [Connect Entra ID](./integrations/microsoft-entra-id.md) |
+| **Microsoft Entra ID** | OAuth or API | Users, groups, sign-in logs, enterprise apps, conditional access policies | [Connect Entra ID](./integrations/microsoft-entra-id.md) |
 | **Google Workspace** | OAuth | Users, groups, OAuth apps, Gmail app discovery, audit events | [Connect Google Workspace](./integrations/google-workspace.md) |
 | **JumpCloud** | API key | Users, devices, systems, policies | [Connect JumpCloud](./integrations/jumpcloud.md) |
 | **OneLogin** | Client credentials | Users, apps, roles | [Connect OneLogin](./integrations/onelogin.md) |
@@ -45,16 +45,12 @@ Thalian supports 25 platforms across 8 categories:
 | **Freshservice** | API key | Tickets, agents, assets | [Connect Freshservice](./integrations/freshservice.md) |
 | **Zendesk** | API token | Tickets, users, organizations | [Connect Zendesk](./integrations/zendesk.md) |
 
-### Outbound
-| Platform | Auth Method | What It Syncs | Setup Guide |
-|---|---|---|---|
-| **Webhook** | HTTPS endpoint | Outbound finding delivery (no read access needed) | [Outbound Webhooks](./integrations/webhooks.md) |
-
 ### Communication
 | Platform | Auth Method | What It Syncs | Setup Guide |
 |---|---|---|---|
-| **Slack** | OAuth or bot token | Used for alert delivery (finding notifications to channels) | [Connect Slack](./integrations/slack.md) |
-| **Microsoft Teams** | OAuth or webhook | Used for alert delivery (adaptive card notifications) | [Connect Teams](./integrations/microsoft-teams.md) |
+| **Slack** | OAuth | Users, guest accounts, alert delivery (finding notifications to channels) | [Connect Slack](./integrations/slack.md) |
+| **Slack Enterprise Grid** | OAuth | Enterprise audit logs, cross-workspace user management | [Connect Slack](./integrations/slack.md) |
+| **Microsoft Teams** | OAuth or webhook | Audit events, alert delivery (adaptive card notifications) | [Connect Teams](./integrations/microsoft-teams.md) |
 | **Microsoft Outlook** | OAuth | Mailbox monitoring, forwarding rule detection | [Connect Outlook](./integrations/microsoft-outlook.md) |
 
 ### Collaboration
@@ -62,6 +58,35 @@ Thalian supports 25 platforms across 8 categories:
 |---|---|---|---|
 | **SharePoint** | OAuth | Sites, external sharing, document permissions | [Connect SharePoint](./integrations/sharepoint.md) |
 | **Confluence** | OAuth or API | Spaces, external sharing, content exposure | [Connect Confluence](./integrations/confluence.md) |
+
+### Developer Tools
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **GitHub** | OAuth | Org members, outside collaborators, repositories, IDP gap detection | [Connect GitHub](./integrations/github.md) |
+
+### HR & People
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Rippling** | API key | Employee lifecycle data, departments, managers, terminated access detection | [Connect Rippling](./integrations/rippling.md) |
+| **BambooHR** | API key | Employee lifecycle data, departments, managers, terminated access detection | [Connect BambooHR](./integrations/bamboohr.md) |
+| **Workday** | API credentials | Employee lifecycle data, departments, managers, terminated access detection | [Connect Workday](./integrations/workday.md) |
+
+### CRM
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Salesforce** | OAuth | Users, connected apps, OAuth tokens, IDP gap detection | [Connect Salesforce](./integrations/salesforce.md) |
+
+### Cloud Infrastructure
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Google Cloud IAM** | OAuth | GCP project members, IAM bindings, IDP gap detection | [Connect GCP IAM](./integrations/gcp-iam.md) |
+| **AWS IAM** | Access key | IAM users, access keys, MFA status, IDP gap detection | [Connect AWS IAM](./integrations/aws-iam.md) |
+| **Azure IAM** | OAuth | Role assignments, service principals, IDP gap detection | [Connect Azure IAM](./integrations/azure-iam.md) |
+
+### Outbound
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Webhook** | HTTPS endpoint | Outbound finding delivery (no read access needed) | [Outbound Webhooks](./integrations/webhooks.md) |
 
 ## Connecting an Integration
 

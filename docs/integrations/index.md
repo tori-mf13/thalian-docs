@@ -38,8 +38,9 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 
 ## Communication
 
-- **[Slack](slack.md)** — OAuth setup for finding alert delivery
-- **[Microsoft Teams](microsoft-teams.md)** — OAuth or webhook setup for finding alert delivery
+- **[Slack](slack.md)** — OAuth setup for users, guest accounts, and finding alert delivery
+- **[Slack Enterprise Grid](slack.md)** — OAuth setup for enterprise audit logs and cross-workspace user management
+- **[Microsoft Teams](microsoft-teams.md)** — OAuth or webhook setup for audit events and finding alert delivery
 - **[Microsoft Outlook](microsoft-outlook.md)** — OAuth setup for mailbox monitoring and forwarding rule detection
 
 ## Version Control
@@ -50,15 +51,17 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 
 - **[Salesforce](salesforce.md)** — OAuth setup for user IDP gap detection and connected app monitoring
 
-## HR
+## HR & People
 
 - **[Rippling](rippling.md)** — API key setup for employee lifecycle data and terminated access detection
 - **[BambooHR](bamboohr.md)** — API key setup for employee lifecycle data and terminated access detection
+- **[Workday](workday.md)** — API credentials setup for employee lifecycle data and terminated access detection
 
 ## Cloud Infrastructure
 
 - **[Google Cloud IAM](gcp-iam.md)** — OAuth setup for GCP project members, IDP gap detection, and public binding detection
 - **[AWS IAM](aws-iam.md)** — Access key setup for IAM users, IDP gap detection, and MFA coverage
+- **[Azure IAM](azure-iam.md)** — OAuth setup for role assignments, service principals, and IDP gap detection
 
 ## Outbound
 
