@@ -6,6 +6,50 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## April 2026
 
+### Integrations
+
+- **Zoom** — Connect your Zoom organization to detect users and admins not in your corporate IDP, SSO enforcement gaps, offboarded employees with active Zoom accounts, and stale unused seats. Read-only OAuth integration with `user:read:admin` and `account:read:admin` scopes. Syncs users, roles, and account security settings. 5 detection rules.
+
+- **Box** — Connect Box to detect IDP gaps, offboarded employees retaining file access, and external sharing activity. OAuth integration with admin-level scopes. Syncs enterprise users and admin event logs (external sharing events). Cross-references with IDP data to surface departed employees who still have access to corporate files. 4 detection rules.
+
+### New Features
+
+- **316 detection rules** — The analysis engine now runs 316 rules (up from 173 in mid-March), covering identity security, access hygiene, device posture, behavioral anomalies, shadow IT, license waste, compound cross-platform risks, and drift signals. Every rule fires with real data from existing API integrations.
+
+- **Cross-platform compound rules** — 14 new rules that require data from 3+ connected platforms to fire. These are findings that no single tool can surface: terminated employee with active device not wiped (HR + IDP + MDM), EDR threat on a cloud admin's device (EDR + MDM + Cloud IAM), admin in IDP + cloud + CRM simultaneously (IDP + Cloud + Salesforce), and more.
+
+- **AWS IAM deep analysis** — AWS sync now pulls the IAM Credential Report (access key rotation, usage, multi-key detection), root account MFA status via GetAccountSummary, root account activity via CloudTrail LookupEvents, and IAM role trust policy analysis (detects wildcard trust and cross-account principals). 11 AWS rules total.
+
+- **GCP service account key monitoring** — GCP sync now fetches user-managed key metadata for each service account, enabling detection of keys not rotated in 90+ days and service accounts not using Workload Identity Federation.
+
+- **Salesforce session and export detection** — Salesforce sync now checks admin profile permissions (ModifyAllData, ViewAllData), session IP restriction configuration, and SetupAuditTrail for bulk data export events. Enables 9 Salesforce rules total.
+
+- **Entra ID Identity Protection and PIM** — Entra sync now fetches risky users from Identity Protection, PIM permanent role assignments, admin authentication methods (weak MFA detection), and guest invitation policies. All 6 Microsoft Phase 2 rules fire with existing scopes. No reconnection required for customers who already granted the scopes.
+
+- **Okta security configuration analysis** — Okta sync fetches ThreatInsight status, MFA enrollment policies, password policies, API token hygiene, session settings, and network zones. 14 Okta-specific config rules plus AI context.
+
+- **AI context for all platform metadata** — The AI assistant now surfaces AWS access key stats, IAM role trust policy data, GCP SA key status, Salesforce profile permissions and export activity, Okta security config, Entra credential expiry and legacy auth count, GitHub deploy keys and branch protection, Zoom SSO enforcement, and Box external sharing events.
+
+- **Platform category registry** — New integrations are now classified via a single `PLATFORM_CATEGORY` map in the rule engine. Adding a new IDP, HR, MDM, or EDR platform is a one-line change that automatically propagates to all 300+ rules. No more maintaining 130+ duplicate platform lists across individual rules.
+
+### Improvements
+
+- **Remediation action buttons** — Finding detail panels now show actionable buttons (suspend, revoke, create ticket, etc.) across all finding types. Previously, some finding types only showed a text recommendation with no buttons. Safe actions auto-execute; risky actions queue for approval.
+
+- **Application sanctions** — The Applications page now has sanction, block, and revert buttons directly on application rows for faster policy enforcement.
+
+- **Finding deduplication** — Findings that have been actioned (dismissed, snoozed, resolved) are no longer re-created on the next analysis run. Previously, dismissing a finding and re-running analysis would surface it again.
+
+- **AI remediation prompt tuning** — The AI remediation planner now generates more direct, actionable plans and filters out service account targets that can't be meaningfully remediated.
+
+### Fixes
+
+- **Findings suppression** — Actioned and dismissed findings are now properly excluded from re-creation during analysis, preventing duplicate findings after remediation.
+- **Remediation denied actions** — Actions that were denied by an approver no longer resurface in the remediation queue.
+- **Reports sparklines** — Posture trend sparklines are now correctly constrained and show accurate drift projections.
+- **Integration removal cleanup** — Removing an integration now properly anonymizes associated findings (PII redacted) while preserving them for audit trail.
+- **Light mode readability** — Teal text elements are now darker for better readability on white backgrounds.
+
 ### Security
 
 - **npm supply chain hardening** — In response to the March 30 Axios npm supply chain attack (CVE pending, attributed to North Korean threat actor UNC1069), we audited all dependencies and confirmed Thalian is not affected — axios is not in our dependency tree. We've additionally hardened our build pipeline: npm audit now blocks deployments on high-severity findings, postinstall scripts from transitive dependencies are disabled by default, all dependency versions are pinned exactly, and lockfile integrity validation has been added to CI.
