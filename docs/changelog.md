@@ -42,6 +42,14 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **AI remediation prompt tuning** — The AI remediation planner now generates more direct, actionable plans and filters out service account targets that can't be meaningfully remediated.
 
+- **GCP IAM role names in findings** — GCP IAM findings now display specific role names (Owner, Editor, Viewer) instead of generic "IAM access" descriptions.
+
+- **Analysis cooldown reduced** — Analysis cooldown reduced from 5 minutes to 1 minute for faster iteration.
+
+- **Sidebar findings count** — Sidebar findings badge now updates immediately after running analysis without requiring a page refresh.
+
+- **Analysis error reporting** — Finding insert errors are now reported to Sentry and the audit log for better observability.
+
 ### Fixes
 
 - **Findings suppression** — Actioned and dismissed findings are now properly excluded from re-creation during analysis, preventing duplicate findings after remediation.
@@ -49,6 +57,15 @@ Notable changes, new features, and fixes for the Thalian platform.
 - **Reports sparklines** — Posture trend sparklines are now correctly constrained and show accurate drift projections.
 - **Integration removal cleanup** — Removing an integration now properly anonymizes associated findings (PII redacted) while preserving them for audit trail.
 - **Light mode readability** — Teal text elements are now darker for better readability on white backgrounds.
+- **Integration removal** — Fixed integration removal failing with an internal error.
+- **GCP IAM project discovery** — Fixed GCP IAM sync not discovering projects by adding v1 API fallback for environments without org-level permissions.
+- **GCP IAM identity sync** — Fixed GCP IAM identities not syncing due to database constraint violation on service account identity type.
+- **Finding batch insert** — Fixed analysis silently dropping findings when duplicate finding_keys existed in a batch. One bad row no longer kills the entire batch.
+- **Native client false positives** — Fixed native client apps (iOS Mail, Android) being incorrectly flagged as shadow IT OAuth risks.
+- **Ghost identities** — Fixed ghost "[removed]" identities appearing on the Identities page after integration removal.
+- **Compound finding links** — Fixed "Related findings" links pointing to stale IDs on compound findings.
+- **Orphaned entities** — Fixed orphaned entities persisting after integration removal by changing FK constraints to CASCADE.
+- **GCP IAM remediation buttons** — Fixed remediation buttons showing app-centric actions instead of identity actions on GCP IAM findings.
 
 ### Security
 
