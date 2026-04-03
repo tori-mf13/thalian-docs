@@ -14,6 +14,8 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### New Features
 
+- **Cross-platform brute-force detection** — New `brute_force_login_detected` rule detects credential stuffing attacks by correlating failed login events across platforms. Fires when 3+ distinct IPs attempt 10+ failed logins against the same account on an identity provider. Escalates to a cross-platform finding when the same email also shows 5+ failures on SaaS apps (Salesforce, Box, Zoom, Slack) — a coordinated attack that no single tool can see. Failed login sync added to Salesforce (LoginHistory API), Box (FAILED_LOGIN admin events), and Zoom (sign-in activity reports).
+
 - **316 detection rules** — The analysis engine now runs 316 rules (up from 173 in mid-March), covering identity security, access hygiene, device posture, behavioral anomalies, shadow IT, license waste, compound cross-platform risks, and drift signals. Every rule fires with real data from existing API integrations.
 
 - **Cross-platform compound rules** — 14 new rules that require data from 3+ connected platforms to fire. These are findings that no single tool can surface: terminated employee with active device not wiped (HR + IDP + MDM), EDR threat on a cloud admin's device (EDR + MDM + Cloud IAM), admin in IDP + cloud + CRM simultaneously (IDP + Cloud + Salesforce), and more.
