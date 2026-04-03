@@ -50,6 +50,16 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **Analysis error reporting** — Finding insert errors are now reported to Sentry and the audit log for better observability.
 
+- **Landing page overhaul** — Added Open Graph image for social sharing, "See Live Demo" CTA in hero and navigation, rendered FAQ section, pricing visibility, mobile navigation fix (primary CTA now visible at all breakpoints), and Docs link in top nav.
+
+- **Demo experience** — New guided 5-step walkthrough for first-time demo visitors, persistent demo banner with conversion CTA, and streamlined login (email/password only, request access form for new visitors).
+
+- **Signup hardening** — Company name is now required on the signup form. Personal email domains (Gmail, Yahoo, etc.) are blocked — work email required.
+
+- **SSO error messaging** — SSO login errors now include admin self-service guidance with a link to Settings when no SSO is configured for the domain.
+
+- **Iru naming** — Kandji references across the app and docs updated to "Iru (formerly Kandji)" for consistency with the platform rebrand.
+
 ### Fixes
 
 - **Findings suppression** — Actioned and dismissed findings are now properly excluded from re-creation during analysis, preventing duplicate findings after remediation.
