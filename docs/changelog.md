@@ -62,6 +62,12 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **Iru naming** — Kandji references across the app and docs updated to "Iru (formerly Kandji)" for consistency with the platform rebrand.
 
+- **MDM AI context** — The AI assistant now understands device management data from all 9 MDM platforms (Intune, Jamf, Kandji, Hexnode, Mosyle, Fleet, SimpleMDM, Workspace ONE, Scalefusion). Ask about device compliance, encryption status, stale check-ins, or problem devices and get platform-aware answers.
+
+- **Paused integration coverage** — Paused integrations now count toward coverage gap calculations on the dashboard. Previously, pausing an integration would trigger a "missing coverage" alert even though the integration was still protecting that domain.
+
+- **11 CI drift checks** — Automated checks now verify that platform registries, permission maps, severity scores, analysis rule categories, and compliance framework mappings stay in sync between frontend and backend. Any drift is caught before merge.
+
 ### Fixes
 
 - **Findings suppression** — Actioned and dismissed findings are now properly excluded from re-creation during analysis, preventing duplicate findings after remediation.
@@ -77,6 +83,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 - **Ghost identities** — Fixed ghost "[removed]" identities appearing on the Identities page after integration removal.
 - **Compound finding links** — Fixed "Related findings" links pointing to stale IDs on compound findings.
 - **Orphaned entities** — Fixed orphaned entities persisting after integration removal by changing FK constraints to CASCADE.
+- **Stale entity analysis** — Fixed entities from disconnected or paused integrations loading into analysis and generating stale findings. Entity data now scoped to connected integrations only.
+- **Device enrollment remediation** — Fixed "Send enrollment invite" button failing silently due to a naming mismatch between analysis rules and the remediation executor.
+- **Finding categories** — Fixed findings with `access_risk` and `configuration` categories rendering without category labels or icons.
+- **Platform action buttons** — Fixed action buttons appearing on platforms that don't support them (read-only platforms like Outlook, SharePoint, Confluence, cloud IAM, HR tools). Corrected Zoom, Box, and Salesforce to show both suspend and revoke session actions.
 - **GCP IAM remediation buttons** — Fixed remediation buttons showing app-centric actions instead of identity actions on GCP IAM findings.
 
 ### Security
