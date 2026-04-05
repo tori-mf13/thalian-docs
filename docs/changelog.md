@@ -34,6 +34,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **Platform category registry** — New integrations are now classified via a single `PLATFORM_CATEGORY` map in the rule engine. Adding a new IDP, HR, MDM, or EDR platform is a one-line change that automatically propagates to all 300+ rules. No more maintaining 130+ duplicate platform lists across individual rules.
 
+- **Access review bulk decisions + overdue reminders** — Access review campaigns now support bulk approve and bulk revoke across multiple items at once. Campaigns past their due date automatically send overdue reminder emails to reviewers with a direct link to the campaign.
+
+- **Trial extension + compliance preview** — Free-tier users can now self-serve a trial extension from the billing page. The Compliance page is now visible to free users in a preview mode with a plan gate, so prospects can see the value before upgrading.
+
 ### Improvements
 
 - **Remediation action buttons** — Finding detail panels now show actionable buttons (suspend, revoke, create ticket, etc.) across all finding types. Previously, some finding types only showed a text recommendation with no buttons. Safe actions auto-execute; risky actions queue for approval.
@@ -68,6 +72,16 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **11 CI drift checks** — Automated checks now verify that platform registries, permission maps, severity scores, analysis rule categories, and compliance framework mappings stay in sync between frontend and backend. Any drift is caught before merge.
 
+- **FAIR-aligned entity risk scoring** — Entity risk scores now use a FAIR-aligned model that weighs privilege level, platform exposure, finding severity, and behavioral signals. Scores are more meaningful and comparable across identity types.
+
+- **Integration error classification** — Integration errors are now classified by type (authentication expired, configuration invalid, rate limited, API error). A sidebar badge shows the count of integrations needing attention, and a dismissible app-wide banner appears when critical auth errors require reconnection.
+
+- **Blast radius orbit visualization** — The blast radius view on entity details now renders as an interactive orbit diagram instead of a flat list, making it easier to see the scope of access and downstream impact at a glance.
+
+- **Behavioral baseline accuracy** — Directory-sourced login events (Google Workspace, Microsoft 365) are now excluded from behavioral anomaly baselines when a dedicated IDP (Okta, Entra, JumpCloud, OneLogin) is connected. This prevents noisy directory sync events from inflating login frequency baselines and triggering false anomalies.
+
+- **Finding category consolidation** — The "Configuration" finding category has been folded into "Access Risk" and "Identity Security" for a cleaner, more actionable grouping. Rules previously classified as configuration findings now appear under the category that best matches their remediation path.
+
 ### Fixes
 
 - **Findings suppression** — Actioned and dismissed findings are now properly excluded from re-creation during analysis, preventing duplicate findings after remediation.
@@ -88,10 +102,17 @@ Notable changes, new features, and fixes for the Thalian platform.
 - **Finding categories** — Fixed findings with `access_risk` and `configuration` categories rendering without category labels or icons.
 - **Platform action buttons** — Fixed action buttons appearing on platforms that don't support them (read-only platforms like Outlook, SharePoint, Confluence, cloud IAM, HR tools). Corrected Zoom, Box, and Salesforce to show both suspend and revoke session actions.
 - **GCP IAM remediation buttons** — Fixed remediation buttons showing app-centric actions instead of identity actions on GCP IAM findings.
+- **Billable identity count** — Billable identity count now only includes IDP and directory users, excluding SaaS-only accounts that inflated the count beyond what customers expected.
+- **MTTR calculations** — Mean time to resolution now excludes auto-resolved findings (findings that resolved themselves on the next sync), giving a more accurate picture of actual remediation effort.
+- **Device page simplification** — Removed managed/unmanaged device tab split in favor of a single unified view. Fixed compliance status string mismatch between frontend and backend.
+- **Behavioral baseline scope** — Fixed behavioral baseline suppression applying too broadly, which could mask legitimate anomalies on identities that share a platform with a suppressed directory source.
+- **Programmatic login severity** — Downgraded `suspicious_programmatic_login` finding from high to medium severity to reduce alert fatigue for service account activity that is unusual but not inherently risky.
 
 ### Security
 
 - **npm supply chain hardening** — In response to the March 30 Axios npm supply chain attack (CVE pending, attributed to North Korean threat actor UNC1069), we audited all dependencies and confirmed Thalian is not affected — axios is not in our dependency tree. We've additionally hardened our build pipeline: npm audit now blocks deployments on high-severity findings, postinstall scripts from transitive dependencies are disabled by default, all dependency versions are pinned exactly, and lockfile integrity validation has been added to CI.
+
+- **AI chat prompt injection hardening** — Added topic-scoping guardrails to the AI assistant to prevent prompt injection attempts from manipulating responses. The AI is now constrained to IT security and identity governance topics, with explicit rejection of attempts to override system instructions or extract internal configuration.
 
 ---
 
