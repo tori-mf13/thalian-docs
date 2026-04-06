@@ -88,6 +88,14 @@ Thalian supports 31+ platforms across 11 categories:
 |---|---|---|---|
 | **Webhook** | HTTPS endpoint | Outbound finding delivery (no read access needed) | [Outbound Webhooks](./integrations/webhooks.md) |
 
+![Connected integrations with coverage sidebar showing category completeness](./assets/screenshots/integrations/integrations-connected.png)
+
+## Browsing the Integration Library
+
+Click **Browse** on the Integrations page to open the full library of supported platforms, organized by category:
+
+![The Integration Library showing 40 supported platforms with category filters and connection status](./assets/screenshots/integrations/integrations-library-browse.png)
+
 ## Connecting an Integration
 
 ### OAuth Platforms (Google Workspace, Entra ID, Intune, Slack, Jira, etc.)

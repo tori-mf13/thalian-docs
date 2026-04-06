@@ -25,6 +25,8 @@ The Compliance page is available on **Pro and Enterprise** plans. It is accessib
 
 ---
 
+![The Compliance page showing SOC 2 controls with passing, failing, and attention status indicators](./assets/screenshots/compliance/compliance-soc2.png)
+
 ## SOC 2 coverage
 
 Thalian maps its findings across the five Trust Services Criteria:
@@ -63,6 +65,8 @@ Thalian maps its findings across the five Trust Services Criteria:
 ---
 
 ## ISO 27001 coverage
+
+![The Compliance page showing ISO 27001 Annex A controls with coverage status and related findings](./assets/screenshots/compliance/compliance-iso27001.png)
 
 Thalian maps findings to 12 Annex A controls across organizational, people, physical, and technological domains:
 

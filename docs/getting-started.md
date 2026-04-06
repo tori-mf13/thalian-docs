@@ -53,6 +53,8 @@ Click "Go to Dashboard" to start exploring.
 
 The dashboard (`/home`) is your workspace command center. Here's what you'll see:
 
+![The Thalian dashboard showing stat cards, MFA coverage, cross-platform signals, and integration health](./assets/screenshots/dashboard/dashboard-overview.png)
+
 ### Stat Cards (top row)
 
 Five summary metrics updated after each analysis:

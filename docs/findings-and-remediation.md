@@ -68,6 +68,18 @@ The **Security Posture score** on the dashboard uses a sigmoid normalization of 
 
 The Findings page (`/findings`) provides a filterable, searchable list of all findings:
 
+![The Findings page showing open findings with severity indicators, category badges, and filter controls](./assets/screenshots/findings/findings-list.png)
+
+### Filtering by Severity
+
+Use the **Severity** dropdown to narrow findings to a specific risk level. Click the dropdown to see counts for each severity:
+
+![The Severity filter dropdown open, showing counts for Critical, High, Medium, and Low findings](./assets/screenshots/findings/findings-severity-filter-open.png)
+
+Select a severity to filter the list. Here, filtering to **Critical** shows only the most urgent findings:
+
+![Findings filtered to Critical severity, showing high-impact findings requiring immediate attention](./assets/screenshots/findings/findings-filtered-critical.png)
+
 ### Filters
 - **Status tab:** Open, Resolved, Dismissed
 - **Severity:** Critical, High, Medium, Low
@@ -80,10 +92,15 @@ The Findings page (`/findings`) provides a filterable, searchable list of all fi
 
 Click any finding to expand its detail panel, which shows:
 
+![A finding detail panel showing the cross-platform perspective view, affected identity, and remediation options](./assets/screenshots/findings/findings-detail-panel.png)
+
 - Full finding description (the sentence-based insight)
 - Affected entities with details
-- Source platform(s) and cross-platform indicators
+- Source platform(s) and the **cross-platform perspective view** — showing what each connected platform sees independently vs. what Thalian sees by combining them
 - Available remediation actions
+
+![A finding detail panel showing the cross-platform perspective — what Okta sees, what Slack sees, and the combined insight only Thalian can surface](./assets/screenshots/findings/findings-detail-cross-platform.png)
+
 - Causality insights (related findings across platforms)
 - What-if simulation preview (impact of acting on this finding)
 - Linked policy (if a matching policy template exists)
@@ -151,6 +168,8 @@ Thalian supports 40+ remediation action templates across several categories:
 |---|---|
 | Create ticket | Create an ITSM ticket for the finding |
 | Email vendor | Compose email to SaaS vendor (renewal, cancellation, etc.) |
+
+![The Remediation page showing completed and failed actions across platforms](./assets/screenshots/findings/remediation-actions.png)
 
 ### Approval Workflow
 

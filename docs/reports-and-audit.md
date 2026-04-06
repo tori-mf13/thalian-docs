@@ -10,6 +10,8 @@ The Reports page (`/reports`) provides historical views of your security posture
 
 The default view showing your workspace's security posture over time:
 
+![The Reports posture tab with risk score, MFA coverage, findings by severity, and remediation progress](./assets/screenshots/reports/reports-posture.png)
+
 - **Posture score trend:** Historical risk score from drift snapshots, showing how your security posture has changed over time
 - **Findings breakdown:** Open findings by severity and category
 - **Coverage metrics:** MFA coverage, SSO adoption, device compliance percentages
@@ -18,6 +20,8 @@ The default view showing your workspace's security posture over time:
 ### Findings
 
 A historical view of finding activity:
+
+![The Reports findings tab showing a table of all findings with severity, category, and status columns](./assets/screenshots/reports/reports-findings-tab.png)
 
 - **Finding trends:** New findings opened vs. resolved over time
 - **Category distribution:** Which rule categories are generating the most findings

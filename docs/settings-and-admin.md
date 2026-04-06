@@ -4,6 +4,8 @@ The Settings page (`/settings`) is where you manage your workspace, team, securi
 
 ---
 
+![The Settings page showing profile, workspace, and AI assistant configuration](./assets/screenshots/settings/settings-general.png)
+
 ## Tabs
 
 ### General

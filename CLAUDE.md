@@ -121,9 +121,36 @@ Enabled extensions: `tables`, `admonition`, `pymdownx.details`, `toc` with perma
 
 ---
 
+## Screenshots
+
+Screenshots are the only visual content in the docs — no diagrams, illustrations, or stock images. Every screenshot is a cropped capture of the actual Thalian UI from `demo.thalian.ai`.
+
+### When to use
+- To orient users on a page or feature they haven't seen before
+- To show the result of a multi-step action (e.g., after connecting an integration)
+- To clarify a UI element that's hard to describe in text alone
+
+### When NOT to use
+- For simple actions (clicking a button, toggling a filter)
+- When text already explains the UI clearly
+- For every section — screenshots should supplement, not replace, written instructions
+
+### File conventions
+- **Format:** PNG (sharp text on dark UI)
+- **Max width:** 1200px
+- **Location:** `docs/assets/screenshots/` — organized by section (`integrations/`, `findings/`, `settings/`, etc.)
+- **Naming:** lowercase, hyphenated, descriptive: `findings-page-severity-filter.png`, `integrations-okta-connected.png`
+- **Content:** Always use demo workspace data — never real customer data
+
+### Markdown syntax
+```markdown
+![Short description of what the screenshot shows](./assets/screenshots/section/filename.png)
+```
+
+---
+
 ## What NOT to Do
 
-- Don't add images or screenshots — the docs are text-only
 - Don't use emoji in page content
 - Don't nest sections deeper than `###`
 - Don't use HTML in markdown files
