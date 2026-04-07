@@ -63,6 +63,8 @@ You need to register Thalian in your identity provider before connecting it in S
 
 ## Step 2 — Connect SSO in Thalian Settings
 
+![The Security settings tab showing the SSO/SAML configuration card with fields for IdP Metadata URL and email domain](./assets/screenshots/settings/settings-security.png)
+
 1. Go to **Settings** → **Security** → **Access**
 2. Find the **SSO / SAML** card
 3. Paste your IdP's **Metadata URL** into the *IdP Metadata URL* field

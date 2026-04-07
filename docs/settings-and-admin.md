@@ -35,6 +35,8 @@ The Settings page (`/settings`) is where you manage your workspace, team, securi
 
 ### Security
 
+![The Security settings tab showing sign-in method, SSO/SAML configuration, MFA enforcement, and session timeout options](./assets/screenshots/settings/settings-security.png)
+
 Security settings that affect all workspace members:
 
 - **MFA enforcement:** When enabled, all members must enroll TOTP-based MFA before accessing the dashboard. Members without a verified factor are blocked until they complete enrollment
@@ -42,6 +44,8 @@ Security settings that affect all workspace members:
 - **IP allowlist:** Restrict API access to specific IP addresses or CIDR ranges. When enabled, requests from non-allowed IPs are rejected
 
 ### Team
+
+![The Team settings tab showing the member list, invite form, and role descriptions](./assets/screenshots/settings/settings-team.png)
 
 Manage workspace members and their roles:
 

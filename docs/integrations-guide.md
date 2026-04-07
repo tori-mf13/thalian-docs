@@ -116,6 +116,8 @@ Click **Browse** on the Integrations page to open the full library of supported 
 3. Enter the required credentials (API token, domain, etc.)
 4. Click **Save** — Thalian validates the credentials and connects
 
+![The Connect modal for an API key platform, showing fields for Client ID and Client Secret](./assets/screenshots/integrations/connect-modal-api-key.png)
+
 **Credentials are encrypted** at rest before storage and are never exposed in plaintext.
 
 ## Syncing Data
