@@ -6,6 +6,12 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## April 2026
 
+### New Features
+
+- **MCP server** — Query your Thalian workspace from Claude Code using the Model Context Protocol. Generate an API key in **Settings → API Keys**, configure the local MCP server, and ask questions like "What's our risk score?" or "What does alice@company.com have access to?" directly in the Claude Code chat. Six tools available: `get_risk_score`, `list_findings`, `lookup_identity`, `get_integrations`, `get_posture_summary`, and `trigger_sync`. See [MCP Server](./mcp-server.md) for setup instructions.
+
+- **API Keys** — New **Settings → API Keys** tab for workspace admins. Create workspace-scoped read-only API keys (`thal_` prefix, SHA-256 hashed in storage) for use with the MCP server and future API integrations. Keys show a display prefix and last-used timestamp; the plaintext key is shown once on creation. Up to 10 active keys per workspace.
+
 ### Integrations
 
 - **Zoom** — Connect your Zoom organization to detect users and admins not in your corporate IDP, SSO enforcement gaps, offboarded employees with active Zoom accounts, and stale unused seats. Read-only OAuth integration with `user:read:admin` and `account:read:admin` scopes. Syncs users, roles, and account security settings. 5 detection rules.

@@ -84,6 +84,7 @@ nav:
     - Settings & Admin: settings-and-admin.md
     - SSO Setup Guide: sso-setup.md
     - API Reference: api-reference.md
+    - MCP Server: mcp-server.md
   - Releases:
     - Release Notes: releases/index.md
     - Changelog: changelog.md
