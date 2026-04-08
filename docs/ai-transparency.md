@@ -16,7 +16,7 @@ Thalian does not operate its own AI models. We integrate with **Anthropic** via 
 
 | Function | Model | Purpose |
 |---|---|---|
-| **AI chat and analysis** | Claude Opus | Natural-language Q&A, executive briefs, entity dossiers, root-cause analysis |
+| **AI chat and analysis** | Claude Sonnet (Free / Pro) · Claude Opus (Enterprise) | Natural-language Q&A, executive briefs, entity dossiers, root-cause analysis |
 | **Remediation planning** | Claude Sonnet | Generating step-by-step remediation action plans from findings |
 | **Contract extraction** | Claude Sonnet | Parsing uploaded license/contract documents into structured fields |
 
