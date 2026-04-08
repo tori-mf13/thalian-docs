@@ -79,6 +79,8 @@ AI conversation history is retained **within your Thalian workspace** according 
 | **Pro** | 90 days |
 | **Enterprise** | Unlimited |
 
+You can disable chat persistence entirely in **Settings > General** or from the AI chat panel. When disabled, conversations are not saved to your workspace and are discarded at the end of each session.
+
 ## 7. Human Oversight Controls
 
 Thalian treats AI as a decision-support tool. You make the final call.
