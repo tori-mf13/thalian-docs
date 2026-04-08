@@ -77,6 +77,8 @@ When you connect third-party platforms, Thalian syncs data including:
 - AI conversation history is stored within your workspace and subject to your plan's data retention period
 - We do not share AI outputs with other customers
 
+For a detailed breakdown of what data enters AI prompts, what is excluded, human oversight controls, and accuracy limitations, see [AI Transparency](./ai-transparency.md).
+
 ## 5. Data Storage and Security
 
 ### Where Data Is Stored

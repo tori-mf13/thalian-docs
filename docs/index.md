@@ -34,6 +34,7 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 ## Security & Legal
 
 - **[Information Security Policy](information-security-policy.md)** — How Thalian protects your data
+- **[AI Transparency](ai-transparency.md)** — What AI models we use, what data they see, and the controls you have
 - **[Terms of Service](terms-of-service.md)** — Agreement governing use of the Thalian platform
 - **[Privacy Policy](privacy-policy.md)** — How we collect, use, and protect your data
 - **[Acceptable Use Policy](acceptable-use-policy.md)** — Permitted and prohibited uses of the Service

@@ -63,7 +63,7 @@ Thalian uses the following sub-processors:
 |---|---|---|---|
 | **Supabase** | Database and authentication | All Customer Data | United States |
 | **Cloudflare** | Application hosting, CDN, Workers | Request routing, static assets | Global (edge) |
-| **Anthropic** | AI analysis (Claude API) | Workspace context in prompts | United States |
+| **Anthropic** | AI analysis (Claude API) | Workspace context in prompts ([details](./ai-transparency.md#3-what-data-enters-ai-prompts)) | United States |
 | **Stripe** | Payment processing | Billing data | United States |
 | **Sentry** | Error monitoring | Technical error data | United States |
 
