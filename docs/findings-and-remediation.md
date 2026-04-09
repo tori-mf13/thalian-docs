@@ -21,7 +21,7 @@ Every finding has:
 
 ## Analysis Engine
 
-Thalian runs 295+ analysis rules across 11 categories every time data is synced:
+Thalian runs 350+ analysis rules across 10 categories every time data is synced:
 
 | Category | What It Detects |
 |---|---|
@@ -34,8 +34,7 @@ Thalian runs 295+ analysis rules across 11 categories every time data is synced:
 | **Drift Signal** | Changes in security posture over time — MFA coverage dropping, shadow IT count rising, compliance degrading |
 | **Behavioral Anomaly** | Unusual login patterns, off-hours activity spikes, failed authentication bursts, sudden app access changes vs per-user baselines |
 | **Access Risk** | Cloud IAM privilege analysis — GCP owner sprawl, AWS root account usage, Azure service principal risks |
-| **Configuration** | Platform configuration issues — security defaults disabled, weak password policies, permissive session settings |
-| **Finding Correlation** | Automatically correlated findings that share the same affected entity across platforms |
+| **Finding Correlation** | Meta-layer analysis that runs after all rules — scans generated findings for dangerous combinations on the same identity and surfaces compound risks that no single rule detects |
 
 The cross-platform join is the key differentiator. Thalian correlates data across disconnected systems to surface insights that no single tool can produce — for example, an identity that's been deactivated in Okta but still has active entitlements in Google Workspace.
 
