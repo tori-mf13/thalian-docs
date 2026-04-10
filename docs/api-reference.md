@@ -55,6 +55,28 @@ All MCP endpoints accept an optional `workspaceId` query parameter. If omitted, 
 | `GET` | `/api/mcp/posture-summary` | Plain-language executive summary with key metrics |
 | `POST` | `/api/mcp/sync` | Trigger a background sync for all connected integrations |
 
+### MCP endpoint examples
+
+```bash
+# Get current risk score and top findings
+curl https://app.thalian.ai/api/mcp/risk-score \
+  -H "Authorization: Bearer thal_your_key_here"
+
+# List open high and critical findings (up to 20)
+curl "https://app.thalian.ai/api/mcp/findings?severity=high&limit=20" \
+  -H "Authorization: Bearer thal_your_key_here"
+
+# Look up an identity by email
+curl "https://app.thalian.ai/api/mcp/identity?email=alice@example.com" \
+  -H "Authorization: Bearer thal_your_key_here"
+
+# Trigger a background sync of all connected integrations
+curl -X POST https://app.thalian.ai/api/mcp/sync \
+  -H "Authorization: Bearer thal_your_key_here" \
+  -H "Content-Type: application/json" \
+  -d '{"workspaceId": "your-workspace-id"}'
+```
+
 ### API key management
 
 | Method | Path | Description | Min Role |
