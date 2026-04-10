@@ -87,6 +87,12 @@ Configure how and when you receive notifications:
 - **Workspace export:** Download a JSON blob of all workspace data (identities, applications, devices, findings, audit log)
 - **Delete workspace:** Permanently delete the workspace and all associated data. For safety, this directs you to contact support@thalian.ai
 
+### API Keys
+
+Create API keys to authenticate MCP-compatible AI assistants (Claude Code, Cursor, Windsurf, and others) against your workspace data. Go to **Settings** → **API Keys** to create, list, or revoke keys.
+
+Each key is workspace-scoped and read-only. You can have up to 10 active keys per workspace. For setup instructions, see [MCP Server](./mcp-server.md).
+
 ### Platform
 
 Advanced platform configuration for workspace-level settings:
