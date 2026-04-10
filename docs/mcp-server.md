@@ -67,6 +67,17 @@ After saving the config, restart the client. You can verify the connection is wo
 - Keys can be revoked at any time from **Settings** → **API Keys**
 - The full key value is only shown once at creation — store it securely
 
+## Troubleshooting
+
+**"Invalid API key" (401)**
+The key may have been revoked or copied incorrectly. Revoke it in Settings and create a new one.
+
+**Tools don't appear in your AI client**
+Restart the client after editing the config file. Check that the JSON is valid (no trailing commas).
+
+**"Unauthorized" on trigger_sync**
+Ensure your key was created in the correct workspace.
+
 ## Security
 
 API keys are hashed with SHA-256 before storage. Thalian never stores the raw key value. All MCP endpoints are read-only — no key can modify workspace data.

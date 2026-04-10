@@ -6,6 +6,8 @@ Thalian includes tools for documenting security policies tied to your actual fin
 
 ## Policies Page
 
+![The Policies (Playbooks) page showing auto-generated policy drafts with enforcement tier chips and agentic execution tiers](./assets/screenshots/policies/policies-list.png)
+
 The Policies page (`/policies`) provides auto-generated policy and procedure documents based on your workspace's connected integrations and active findings.
 
 ### How It Works
@@ -42,6 +44,8 @@ Draft → Approved (after review)
 ---
 
 ## Impact Analysis Page
+
+![The Impact Analysis page showing the scenario builder with before/after risk score comparison and recommended actions](./assets/screenshots/policies/policies-planning.png)
 
 The Impact Analysis page (`/impact-analysis`) helps you model remediation scenarios before executing them, and track progress toward security goals.
 

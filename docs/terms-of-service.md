@@ -67,7 +67,7 @@ Your use of the Service is also governed by our [Privacy Policy](./privacy-polic
 - The AI analysis engine processes Customer Data to generate findings and insights
 - AI conversations may be sent to third-party AI providers (Anthropic) for processing
 - AI prompts include workspace context but are not used to train third-party models
-- You can review our AI data handling in the [Privacy Policy](./privacy-policy.md)
+- You can review our AI data handling in the [Privacy Policy](./privacy-policy.md) and [AI Transparency](./ai-transparency.md) page
 
 ## 7. Security
 

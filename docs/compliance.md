@@ -13,7 +13,7 @@ The Compliance page (`/compliance`) translates Thalian's raw findings into contr
 
 For each control, Thalian shows:
 
-- **Status** — Covered, At Risk, or Not Applicable
+- **Status** — Passing, Failing, Attention, or Not Monitored
 - **Related findings** — open findings that affect this control's compliance posture
 - **Evidence** — links to the data Thalian has collected that supports the control (audit logs, identity records, device compliance status, etc.)
 

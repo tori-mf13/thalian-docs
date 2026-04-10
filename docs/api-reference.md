@@ -28,6 +28,43 @@ All API endpoints are served from:
 https://app.thalian.ai/api/
 ```
 
+## MCP API (API key auth)
+
+Thalian exposes a separate set of endpoints under `/api/mcp/` that accept API keys instead of Supabase session tokens. These are designed for programmatic access from external tools like Claude Code via the [MCP server](./mcp-server.md).
+
+### API key authentication
+
+Generate a key in **Settings → API Keys**. Pass it as a Bearer token:
+
+```
+Authorization: Bearer thal_your_key_here
+```
+
+API keys are workspace-scoped and read-only by default. They do not require Supabase Auth and work from any environment that can reach `app.thalian.ai`.
+
+### MCP endpoints
+
+All MCP endpoints accept an optional `workspaceId` query parameter. If omitted, the workspace associated with the API key is used.
+
+| Method | Path | Description |
+|---|---|---|
+| `GET` | `/api/mcp/risk-score` | Risk score (0–100), severity breakdown, top 5 open findings |
+| `GET` | `/api/mcp/findings` | Open findings — filterable by `severity`, `category`, `limit` (max 100) |
+| `GET` | `/api/mcp/identity` | Identity details by `email` — status, MFA, app access, linked findings |
+| `GET` | `/api/mcp/integrations` | Connected platforms and sync status |
+| `GET` | `/api/mcp/posture-summary` | Plain-language executive summary with key metrics |
+| `POST` | `/api/mcp/sync` | Trigger a background sync for all connected integrations |
+
+### API key management
+
+| Method | Path | Description | Min Role |
+|---|---|---|---|
+| `POST` | `/api/api-keys` | Create a new API key (returned once in plaintext) | Admin |
+| `GET` | `/api/api-keys` | List active keys (prefix and metadata only — hash never returned) | Admin |
+| `DELETE` | `/api/api-keys?id=<key_id>` | Revoke a key immediately | Admin |
+
+---
+
 ## Endpoints
 
 ### Health

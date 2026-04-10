@@ -6,7 +6,7 @@ Thalian's intelligence comes from the data it collects across your IT stack. The
 
 ## Supported Platforms
 
-Thalian supports 31+ platforms across 11 categories:
+Thalian supports 40+ platforms across 11 categories:
 
 ### Identity & Access
 | Platform | Auth Method | What It Syncs | Setup Guide |
@@ -24,6 +24,11 @@ Thalian supports 31+ platforms across 11 categories:
 | **Jamf Pro** | API credentials | Mac/iOS devices, compliance, configurations | [Connect Jamf Pro](./integrations/jamf-pro.md) |
 | **Iru (formerly Kandji)** | API token | Apple devices, blueprints, compliance | [Connect Iru](./integrations/kandji.md) |
 | **Hexnode** | API key | Cross-platform devices, policies | [Connect Hexnode](./integrations/hexnode.md) |
+| **Mosyle** | API credentials | Apple devices, compliance, policies | [Connect Mosyle](./integrations/mosyle.md) |
+| **Fleet** | API token | Cross-platform endpoints, policy results, host inventory | [Connect Fleet](./integrations/fleet.md) |
+| **SimpleMDM** | API key | Apple devices, profiles, compliance | [Connect SimpleMDM](./integrations/simplemdm.md) |
+| **VMware Workspace ONE** | API credentials | Cross-platform devices, compliance status | [Connect Workspace ONE](./integrations/workspace-one.md) |
+| **Scalefusion** | API key | Cross-platform devices, policies, compliance | [Connect Scalefusion](./integrations/scalefusion.md) |
 
 ### Security
 | Platform | Auth Method | What It Syncs | Setup Guide |
@@ -83,6 +88,12 @@ Thalian supports 31+ platforms across 11 categories:
 | **AWS IAM** | Access key | IAM users, access keys, MFA status, IDP gap detection | [Connect AWS IAM](./integrations/aws-iam.md) |
 | **Azure IAM** | OAuth | Role assignments, service principals, IDP gap detection | [Connect Azure IAM](./integrations/azure-iam.md) |
 
+### Productivity
+| Platform | Auth Method | What It Syncs | Setup Guide |
+|---|---|---|---|
+| **Zoom** | OAuth | Users, admin settings, SSO enforcement status, IDP gap detection | [Connect Zoom](./integrations/zoom.md) |
+| **Box** | OAuth | Users, admin events, external sharing activity, IDP gap detection | [Connect Box](./integrations/box.md) |
+
 ### Outbound
 | Platform | Auth Method | What It Syncs | Setup Guide |
 |---|---|---|---|
@@ -115,6 +126,8 @@ Click **Browse** on the Integrations page to open the full library of supported 
 2. Find the platform and click **Connect**
 3. Enter the required credentials (API token, domain, etc.)
 4. Click **Save** — Thalian validates the credentials and connects
+
+![The Connect modal for an API key platform, showing fields for Client ID and Client Secret](./assets/screenshots/integrations/connect-modal-api-key.png)
 
 **Credentials are encrypted** at rest before storage and are never exposed in plaintext.
 
@@ -153,7 +166,8 @@ For a full plan comparison, see [Settings & Admin](./settings-and-admin.md).
 
 - **Pause:** Temporarily stop syncing without losing the connection. Data is retained
 - **Reconnect:** Re-authorize OAuth or update API credentials if they've expired
-- **Disconnect:** Remove the integration entirely. Synced data is retained until the next retention enforcement cycle
+- **Disconnect:** Stop syncing and remove credentials. Synced data (identities, apps, devices, findings) is retained — the integration shows as disconnected but its data remains until your retention window expires
+- **Remove:** Permanently delete the integration and all synced data. Findings are anonymized and preserved for audit trail purposes, but entity records are deleted immediately
 
 ## Troubleshooting
 

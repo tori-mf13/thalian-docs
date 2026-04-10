@@ -29,6 +29,8 @@ In Thalian, an access review:
 
 Access Reviews require a **Pro or Enterprise** plan.
 
+![The Access Reviews page showing a campaign list with total campaigns, in-progress count, items pending, and completion rate](./assets/screenshots/access-reviews/access-reviews-list.png)
+
 ---
 
 ## Creating a campaign
@@ -47,6 +49,8 @@ Thalian immediately takes a snapshot of all entitlements matching your scope fil
 
 ## Reviewing items
 
+![Inside a campaign — the review items list showing identity, application, last used, risk flags, and Approve / Revoke / Exception decision buttons](./assets/screenshots/access-reviews/access-reviews-campaign-detail.png)
+
 Each campaign contains one item per identity-to-application entitlement. For each item, reviewers see:
 
 - **Identity** — name, email, department, manager
@@ -64,6 +68,10 @@ Each campaign contains one item per identity-to-application entitlement. For eac
 | **Exception** | Access would normally be flagged but is intentionally allowed — documented for audit |
 
 Decisions are recorded with the reviewer's identity, role, and timestamp.
+
+### Bulk decisions
+
+To speed up large reviews, you can select multiple items and apply the same decision to all of them at once. Use the checkboxes in the campaign item list, then choose **Approve all**, **Revoke all**, or **Exception all** from the bulk action bar.
 
 ---
 
