@@ -25,6 +25,7 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 
 - **[Settings & Admin](settings-and-admin.md)** — Team management, RBAC roles, security settings, billing
 - **[SSO Setup Guide](sso-setup.md)** — SAML 2.0 single sign-on configuration (Enterprise)
+- **[MCP Server](mcp-server.md)** — Connect Claude Code and other AI assistants to your workspace
 - **[API Reference](api-reference.md)** — Authentication, endpoints, request format, and error handling
 
 ## Releases

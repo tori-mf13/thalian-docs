@@ -13,8 +13,8 @@ MCP is an open protocol that lets AI tools call external services as structured 
 | Tool | Description |
 |---|---|
 | `get_risk_score` | Workspace risk score (0–100), severity breakdown, and top 5 open findings |
-| `get_findings` | Open findings, filterable by severity or category |
-| `get_identity` | Look up a user by email across all connected platforms |
+| `list_findings` | Open findings, filterable by severity or category |
+| `lookup_identity` | Look up a user by email across all connected platforms |
 | `get_integrations` | All integrations and their connection and sync status |
 | `get_posture_summary` | Plain-text summary: risk grade, MFA/SSO coverage, top risk areas |
 | `trigger_sync` | Trigger a sync across all connected integrations |

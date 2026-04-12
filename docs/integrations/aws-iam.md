@@ -6,12 +6,30 @@ Step-by-step guide to connecting AWS Identity and Access Management to Thalian f
 
 ## What Thalian detects
 
-Thalian cross-references every AWS IAM user against your corporate identity provider (Okta, Entra ID, Google Workspace, JumpCloud, or OneLogin) to find access that exists outside your IDP lifecycle controls:
+Thalian cross-references every AWS IAM user against your corporate identity provider (Okta, Entra ID, Google Workspace, JumpCloud, or OneLogin) and analyzes your AWS account security configuration for 11 detection rules total:
+
+**IDP gap detection:**
 
 - **AWS admin not in IDP** — IAM users with AdministratorAccess or PowerUserAccess not in your IDP (critical)
 - **AWS user not in IDP** — any IAM user not present in your IDP (high)
 - **IAM user without MFA** — console users with no MFA device enrolled (high)
 - **Stale IAM user** — IAM user whose IDP account is suspended or deprovisioned (high)
+
+**Access key hygiene:**
+
+- **Stale access key** — IAM user has an active access key not used in 90+ days (high)
+- **Multiple active access keys** — IAM user has more than one active access key (medium)
+- **Access key not rotated** — active access key older than 90 days (medium)
+
+**Root account analysis:**
+
+- **Root account without MFA** — the AWS root account has no MFA device enrolled (critical)
+- **Root account recently used** — the root account has been used recently (high)
+
+**IAM role trust policy:**
+
+- **Wildcard trust principal** — an IAM role trust policy grants `sts:AssumeRole` to `*` (critical)
+- **Cross-account trust without condition** — a role can be assumed by any principal in another AWS account without an `ExternalId` or condition constraint (high)
 
 AWS IAM does not auto-sync with corporate directories. When an employee leaves and their Okta or Entra account is disabled, their IAM user and access keys remain active until explicitly deleted.
 
@@ -60,6 +78,12 @@ If you prefer a tighter permission set, create a custom policy with only what Th
       "Action": [
         "iam:GetAccountAuthorizationDetails",
         "iam:ListVirtualMFADevices",
+        "iam:GenerateCredentialReport",
+        "iam:GetCredentialReport",
+        "iam:GetAccountSummary",
+        "iam:ListRoles",
+        "iam:GetRole",
+        "cloudtrail:LookupEvents",
         "sts:GetCallerIdentity"
       ],
       "Resource": "*"
@@ -97,6 +121,9 @@ If you prefer a tighter permission set, create a custom policy with only what Th
 - **MFA enrollment** — whether each user has a virtual MFA device assigned
 - **Last login** — `PasswordLastUsed` timestamp for console access activity
 - **Group membership** — which IAM groups each user belongs to (used for admin detection)
+- **IAM Credential Report** — access key ages, rotation dates, last-used timestamps, and multi-key detection across all IAM users
+- **Root account status** — root MFA enrollment via `GetAccountSummary`; recent root account activity via CloudTrail `LookupEvents`
+- **IAM role trust policies** — trust policy principals and conditions for all roles, to detect wildcard or unconstrained cross-account trust
 
 Service accounts and roles are not synced as identities — only human IAM users.
 

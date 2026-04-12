@@ -21,7 +21,7 @@ Every finding has:
 
 ## Analysis Engine
 
-Thalian runs 350+ analysis rules across 10 categories every time data is synced:
+Thalian runs 320+ analysis rules across 10 categories every time data is synced:
 
 | Category | What It Detects |
 |---|---|
@@ -82,7 +82,7 @@ Select a severity to filter the list. Here, filtering to **Critical** shows only
 ### Filters
 - **Status tab:** Open, Resolved, Dismissed
 - **Severity:** Critical, High, Medium, Low
-- **Category:** Identity Security, Access Hygiene, Shadow IT, Device Posture, License Waste, Compound Risk, Drift Signal, Behavioral Anomaly, Access Risk, Configuration
+- **Category:** Identity Security, Access Hygiene, Shadow IT, Device Posture, License Waste, Compound Risk, Drift Signal, Behavioral Anomaly, Access Risk
 - **Entity type:** Identity, Application, Device, Signal
 - **Platform:** Filter by source platform
 - **Search:** Free-text search across finding titles and affected entities

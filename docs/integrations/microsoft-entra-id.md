@@ -62,7 +62,14 @@ If your organization restricts OAuth consent flows, you can connect using applic
 - **Groups** — group memberships, dynamic groups, and role assignments
 - **Sign-in logs** — successful and failed sign-ins with location and device details
 - **Enterprise apps** — registered and consented applications
-- **Conditional access** — policies and their current state
+- **Conditional access** — policies and their current state (requires `Policy.Read.All`)
+- **Identity Protection** — risky users list with risk level and last risk event details
+- **PIM role assignments** — Privileged Identity Management permanent role assignments (vs. time-limited eligible assignments)
+- **Admin authentication methods** — which authentication methods each admin account has registered, used to detect weak or absent MFA factors
+- **Guest invitation policy** — org-level settings for who can invite external guests and whether guest accounts require MFA
+
+!!! note "No reconnection required for existing connections"
+    All Phase 2 data (Identity Protection, PIM, admin auth methods, guest policy) is accessible with the scopes granted during initial OAuth setup. Existing Entra connections do not need to be reconnected.
 
 ---
 

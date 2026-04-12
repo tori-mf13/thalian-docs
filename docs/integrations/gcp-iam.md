@@ -16,6 +16,8 @@ Thalian cross-references every GCP project member against your corporate identit
 - **Service account with admin role** — a service account holds an admin-level IAM role (high)
 - **Cross-project admin** — a user has admin access across 3+ projects (high)
 - **Editor role overuse** — more than 50% of a project's members have Editor or higher (medium)
+- **Service account key not rotated** — a user-managed service account key is older than 90 days (high)
+- **Service account not using Workload Identity Federation** — a service account relies on long-lived keys rather than keyless WIF authentication (medium)
 
 GCP IAM does not auto-sync with corporate directories. When an employee leaves and their Okta or Entra account is disabled, their GCP project access remains active until explicitly removed.
 
@@ -87,6 +89,7 @@ GCP IAM does not auto-sync with corporate directories. When an employee leaves a
 - **IAM project members** — human users (`user:`) and service accounts (`serviceAccount:`)
 - **Role assignments** — which roles each member holds across which projects
 - **Public bindings** — `allUsers` and `allAuthenticatedUsers` entries flagged immediately
+- **Service account key metadata** — user-managed key creation dates and last-used timestamps for all service accounts
 
 Groups (`group:`) are skipped — Thalian detects individual identities, not group containers.
 

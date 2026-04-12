@@ -57,6 +57,21 @@ After creating the app:
 - **Apps** — assigned applications and provisioning status
 - **System log events** — authentication events, admin actions, and policy changes
 
+## Okta security configuration analysis
+
+Beyond user and access data, Thalian fetches and analyzes Okta's org-level security configuration after each sync:
+
+- **ThreatInsight** — whether IP-based threat intelligence is enabled and its enforcement mode
+- **MFA enrollment policies** — which authenticator types are required vs. optional, and which users are excluded
+- **Password policies** — minimum length, complexity, and history requirements per group
+- **API token hygiene** — active long-lived API tokens that should be rotated or scoped down
+- **Session settings** — session lifetime, persistent cookie settings, and idle timeout configuration
+- **Network zones** — defined trusted zones vs. unrecognized origin checks
+
+This configuration data powers 14 Okta-specific detection rules — for example, firing when ThreatInsight is in audit-only mode (logging threats but not blocking them), when an MFA policy excludes high-privilege groups, or when admin accounts have long-lived API tokens. The AI assistant also uses this context to answer questions about your Okta security posture.
+
+No additional OAuth scopes are required — all configuration data is accessible with the four scopes granted during initial setup.
+
 ## Troubleshooting
 
 - **Invalid credentials:** Ensure the Client ID and Secret were copied correctly and the app has not been deactivated

@@ -8,6 +8,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### New Features
 
+- **Security Posture Timeline** — new History page (accessible via **Reports → Timeline** tab or the dashboard "Monitoring since" badge) shows your posture score over time, MFA coverage trend, compliance rate, and a narrative event log of significant changes: grade shifts, MFA drops, new integrations, and remediation milestones.
+
+- **Integration Coverage Widget** — dashboard now shows a 6-category coverage bar (Identity, Endpoint, HR, Security, Cloud, Comms) with per-category status dots and a CTA for the highest-priority gap.
+
 - **MCP server** — Query your Thalian workspace from Claude Code using the Model Context Protocol. Generate an API key in **Settings → API Keys**, configure the local MCP server, and ask questions like "What's our risk score?" or "What does alice@company.com have access to?" directly in the Claude Code chat. Six tools available: `get_risk_score`, `list_findings`, `lookup_identity`, `get_integrations`, `get_posture_summary`, and `trigger_sync`. See [MCP Server](./mcp-server.md) for setup instructions.
 
 - **API Keys** — New **Settings → API Keys** tab for workspace admins. Create workspace-scoped read-only API keys (`thal_` prefix, SHA-256 hashed in storage) for use with the MCP server and future API integrations. Keys show a display prefix and last-used timestamp; the plaintext key is shown once on creation. Up to 10 active keys per workspace.
@@ -17,8 +21,6 @@ Notable changes, new features, and fixes for the Thalian platform.
 - **Zoom** — Connect your Zoom organization to detect users and admins not in your corporate IDP, SSO enforcement gaps, offboarded employees with active Zoom accounts, and stale unused seats. Read-only OAuth integration with `user:read:admin` and `account:read:admin` scopes. Syncs users, roles, and account security settings. 5 detection rules.
 
 - **Box** — Connect Box to detect IDP gaps, offboarded employees retaining file access, and external sharing activity. OAuth integration with admin-level scopes. Syncs enterprise users and admin event logs (external sharing events). Cross-references with IDP data to surface departed employees who still have access to corporate files. 4 detection rules.
-
-### New Features
 
 - **Cross-platform brute-force detection** — New `brute_force_login_detected` rule detects credential stuffing attacks by correlating failed login events across platforms. Fires when 3+ distinct IPs attempt 10+ failed logins against the same account on an identity provider. Escalates to a cross-platform finding when the same email also shows 5+ failures on SaaS apps (Salesforce, Box, Zoom, Slack) — a coordinated attack that no single tool can see. Failed login sync added to Salesforce (LoginHistory API), Box (FAILED_LOGIN admin events), and Zoom (sign-in activity reports).
 
@@ -45,6 +47,18 @@ Notable changes, new features, and fixes for the Thalian platform.
 - **Trial extension + compliance preview** — Free-tier users can now self-serve a trial extension from the billing page. The Compliance page is now visible to free users in a preview mode with a plan gate, so prospects can see the value before upgrading.
 
 ### Improvements
+
+- **Drift trend sparkline** — finding detail panel for drift-signal findings (MFA coverage declining, SSO coverage declining, etc.) now shows a mini sparkline with a 3-step forward projection.
+
+- **Ghost finding cards** — Findings page surfaces projected findings for missing integration categories so you can see what Thalian would detect if you connected a missing tool.
+
+- **Post-remediation nudge** — after completing a remediation action, Thalian suggests the next integration category most relevant to that action type.
+
+- **Weekly digest** — now includes integration coverage gap nudge and cumulative workspace stats (identities monitored, findings resolved, integrations connected).
+
+- **Sync Events tab** — Integrations page now has a Sync Events tab showing the full entity diff log (creates, updates, deletes) across all connected platforms.
+
+- **Milestone lifecycle emails** — workspaces now receive a progress email at 30, 60, and 90 days summarizing integrations connected, findings resolved, MFA coverage, and posture grade.
 
 - **Remediation action buttons** — Finding detail panels now show actionable buttons (suspend, revoke, create ticket, etc.) across all finding types. Previously, some finding types only showed a text recommendation with no buttons. Safe actions auto-execute; risky actions queue for approval.
 
@@ -168,7 +182,7 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ---
 
-
+## March 29, 2026
 
 ### New Features
 
@@ -193,8 +207,6 @@ Notable changes, new features, and fixes for the Thalian platform.
 - **Signup workspace naming** — Personal email signups (Gmail, Outlook, iCloud, etc.) now get "Personal Workspace" as their workspace name instead of the email domain (e.g., "gmail.com Workspace").
 
 ---
-
-## March 29, 2026
 
 ### Integrations
 

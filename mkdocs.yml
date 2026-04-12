@@ -51,6 +51,11 @@ nav:
       - Jamf Pro: integrations/jamf-pro.md
       - Iru (formerly Kandji): integrations/kandji.md
       - Hexnode: integrations/hexnode.md
+      - Mosyle: integrations/mosyle.md
+      - Fleet: integrations/fleet.md
+      - SimpleMDM: integrations/simplemdm.md
+      - VMware Workspace ONE: integrations/workspace-one.md
+      - Scalefusion: integrations/scalefusion.md
       - CrowdStrike: integrations/crowdstrike.md
       - SentinelOne: integrations/sentinelone.md
       - Cisco Meraki: integrations/cisco-meraki.md
@@ -72,6 +77,8 @@ nav:
       - AWS IAM: integrations/aws-iam.md
       - Azure IAM: integrations/azure-iam.md
       - Workday: integrations/workday.md
+      - Zoom: integrations/zoom.md
+      - Box: integrations/box.md
       - Webhooks: integrations/webhooks.md
   - Findings & Intelligence:
     - Findings & Remediation: findings-and-remediation.md
