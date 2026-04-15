@@ -1,6 +1,6 @@
-# Connect VMware Workspace ONE
+# Connect Omnissa Workspace ONE
 
-Step-by-step guide to connecting VMware Workspace ONE (Omnissa) to Thalian for cross-platform device management intelligence.
+Step-by-step guide to connecting Omnissa Workspace ONE to Thalian for cross-platform device management intelligence.
 
 ---
 
@@ -24,7 +24,7 @@ Step-by-step guide to connecting VMware Workspace ONE (Omnissa) to Thalian for c
 ## Connect in Thalian
 
 1. Go to **Integrations** → **Browse**
-2. Find **VMware Workspace ONE** and click **Connect**
+2. Find **Omnissa Workspace ONE** and click **Connect**
 3. Enter your **API URL** (e.g., `https://as###.awmdm.com`)
 4. Enter your **admin username** and **password** (used for Basic auth against the REST API)
 5. Enter your **tenant code** if prompted (visible in the UEM console URL path)

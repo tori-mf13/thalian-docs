@@ -16,6 +16,14 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **API Keys** — New **Settings → API Keys** tab for workspace admins. Create workspace-scoped read-only API keys (`thal_` prefix, SHA-256 hashed in storage) for use with the MCP server and future API integrations. Keys show a display prefix and last-used timestamp; the plaintext key is shown once on creation. Up to 10 active keys per workspace.
 
+- **Remediation playbooks** — Multi-step automated response sequences on the Policies page. Build a playbook (e.g., "Offboard terminated employee") with ordered steps across platforms — suspend IDP account, revoke OAuth tokens, wipe device, create ITSM ticket. Each step can be set to auto-execute or require approval. Run a playbook against any finding or entity from the detail panel. Available on Pro and Enterprise.
+
+- **PDF evidence export for access reviews** — Access review campaigns now include a PDF export button that generates a formatted evidence pack for each campaign: reviewer decisions, timestamps, and entity details. Useful for audit evidence and compliance documentation.
+
+- **Compliance Trend tab** — New **Trend** tab on the Compliance page shows control pass rate over time, rule coverage changes, and open finding counts by framework. Helps track compliance posture progress across audit cycles.
+
+- **In-app service status banner** — A dismissible banner now appears when an active incident or service degradation is detected. Powered by the status page — no configuration required.
+
 ### Integrations
 
 - **Zoom** — Connect your Zoom organization to detect users and admins not in your corporate IDP, SSO enforcement gaps, offboarded employees with active Zoom accounts, and stale unused seats. Read-only OAuth integration with `user:read:admin` and `account:read:admin` scopes. Syncs users, roles, and account security settings. 5 detection rules.
@@ -24,7 +32,7 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **Cross-platform brute-force detection** — New `brute_force_login_detected` rule detects credential stuffing attacks by correlating failed login events across platforms. Fires when 3+ distinct IPs attempt 10+ failed logins against the same account on an identity provider. Escalates to a cross-platform finding when the same email also shows 5+ failures on SaaS apps (Salesforce, Box, Zoom, Slack) — a coordinated attack that no single tool can see. Failed login sync added to Salesforce (LoginHistory API), Box (FAILED_LOGIN admin events), and Zoom (sign-in activity reports).
 
-- **320 detection rules** — The analysis engine now runs 320 rules (up from 173 in mid-March), covering identity security, access hygiene, device posture, behavioral anomalies, shadow IT, license waste, compound cross-platform risks, and drift signals. Every rule fires with real data from existing API integrations.
+- **341 detection rules** — The analysis engine now runs 341 rules (up from 173 in mid-March), covering identity security, access hygiene, device posture, behavioral anomalies, shadow IT, license waste, compound cross-platform risks, and drift signals. Every rule fires with real data from existing API integrations.
 
 - **Cross-platform compound rules** — 14 new rules that require data from 3+ connected platforms to fire. These are findings that no single tool can surface: terminated employee with active device not wiped (HR + IDP + MDM), EDR threat on a cloud admin's device (EDR + MDM + Cloud IAM), admin in IDP + cloud + CRM simultaneously (IDP + Cloud + Salesforce), and more.
 
@@ -45,6 +53,24 @@ Notable changes, new features, and fixes for the Thalian platform.
 - **Access review bulk decisions + overdue reminders** — Access review campaigns now support bulk approve and bulk revoke across multiple items at once. Campaigns past their due date automatically send overdue reminder emails to reviewers with a direct link to the campaign.
 
 - **Trial extension + compliance preview** — Free-tier users can now self-serve a trial extension from the billing page. The Compliance page is now visible to free users in a preview mode with a plan gate, so prospects can see the value before upgrading.
+
+- **GitHub secret scanning** — GitHub sync now pulls open secret scanning alerts and push protection bypass events. Two new detection rules: unresolved secret scanning alerts (critical, workspace-level finding) and developers who bypassed push protection 2+ times (high, per-user finding).
+
+- **CrowdStrike Spotlight vulnerability detection** — CrowdStrike sync now fetches open critical and high CVEs from Spotlight after each device sync. Two new cross-platform rules: unpatched critical CVEs on managed devices (one finding per device, severity mirrors worst CVE) and high-severity vulnerabilities on admin-access devices (critical, highest blast-radius signal).
+
+- **Entra ID PIM activation monitoring** — Entra sync now pulls Privileged Identity Management activation history (last 30 days). Two new detection rules: PIM role activated without a justification field populated, and PIM activation outside business hours (weekend or before 6am/after 10pm UTC).
+
+- **Okta high-risk signin detection** — New rule fires when Okta System Log records a completed sign-in flagged as high risk by Okta's risk engine. Requires Okta System Log sync (active since launch) — no new connection steps.
+
+- **Identity profile enrichment** — Identities now carry 10 new profile fields including department, title, manager, employee type, and hire date. Three new detection rules fire on enriched data: provisioning anomaly (identity in IDP with no corresponding HR record), department with no offboarding workflow, and role-title mismatch (admin title in HR but no IDP admin privileges, or vice versa).
+
+- **Box Shield threat detection** — Box sync now fetches Shield anomaly alerts and file download events. Two new rules: unresolved Box Shield threat alerts (high, workspace-level) and departing employee mass download detection (critical, fires when an offboarded user downloaded 50+ files in 7 days).
+
+- **Salesforce permission set escalation** — Salesforce sync now fetches permission set assignments granting admin-equivalent access and currently-active session-based permission set activations. Two new rules: non-admin user with admin-equivalent permission set (high) and active session permission escalation (high).
+
+- **SentinelOne Ranger unmanaged device detection** — SentinelOne sync now pulls Ranger gateway data to discover network-connected devices without a SentinelOne agent installed. Single workspace-level finding with count and sample hostnames.
+
+- **Confluence and Jira audit log rules** — Confluence sync now fetches space permission change events from the audit API (last 30 days). Jira sync fetches permission scheme and role change events. Two new rules surface permission changes that may indicate privilege escalation: `confluence::space_permission_change` and `jira::permission_scheme_changed`.
 
 ### Improvements
 
@@ -102,6 +128,12 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **Finding category consolidation** — The "Configuration" finding category has been folded into "Access Risk" and "Identity Security" for a cleaner, more actionable grouping. Rules previously classified as configuration findings now appear under the category that best matches their remediation path.
 
+- **Free plan identity usage bar** — Free plan workspaces now see a live usage bar showing monitored identities against the plan limit, with a one-click upgrade path.
+
+- **Posture timeline — stale accounts and null-gap rendering** — The posture over time chart now includes stale account coverage as a tracked metric and handles null data gaps (periods with no analysis run) with correct interpolation instead of chart artifacts.
+
+- **Pro data retention** — Pro plan data retention extended from 90 days to 1 year for all workspace data and audit logs.
+
 ### Fixes
 
 - **Findings suppression** — Actioned and dismissed findings are now properly excluded from re-creation during analysis, preventing duplicate findings after remediation.
@@ -127,12 +159,19 @@ Notable changes, new features, and fixes for the Thalian platform.
 - **Device page simplification** — Removed managed/unmanaged device tab split in favor of a single unified view. Fixed compliance status string mismatch between frontend and backend.
 - **Behavioral baseline scope** — Fixed behavioral baseline suppression applying too broadly, which could mask legitimate anomalies on identities that share a platform with a suppressed directory source.
 - **Programmatic login severity** — Downgraded `suspicious_programmatic_login` finding from high to medium severity to reduce alert fatigue for service account activity that is unusual but not inherently risky.
+- **Google OAuth WebViews warning** — Fixed a console warning triggered by Google's updated OAuth policies when signing in from embedded web views (Claude desktop app, Electron-based tools).
+- **Billing flow correctness** — Fixed plan gate logic incorrectly blocking some Pro workspace actions, and hardened trial expiry detection to handle clock skew edge cases.
+- **Approval request emails** — Fixed approval request emails sending twice in some cases, and corrected missing template variable substitution.
 
 ### Security
 
 - **npm supply chain hardening** — In response to the March 30 Axios npm supply chain attack (CVE pending, attributed to North Korean threat actor UNC1069), we audited all dependencies and confirmed Thalian is not affected — axios is not in our dependency tree. We've additionally hardened our build pipeline: npm audit now blocks deployments on high-severity findings, postinstall scripts from transitive dependencies are disabled by default, all dependency versions are pinned exactly, and lockfile integrity validation has been added to CI.
 
 - **AI chat prompt injection hardening** — Added topic-scoping guardrails to the AI assistant to prevent prompt injection attempts from manipulating responses. The AI is now constrained to IT security and identity governance topics, with explicit rejection of attempts to override system instructions or extract internal configuration.
+
+- **RBAC audit — role gating hardened** — A full audit of all role-based access control surfaces closed gaps where certain UI actions and API endpoints were accessible to roles below the required permission level. Affected surfaces: integration management, workspace settings, billing actions, and agentic remediation approvals. No data was exposed — the gaps were UI/action availability only.
+
+- **Workspace ONE vendor reference** — Updated all in-app and documentation references from "VMware Workspace ONE" to "Omnissa Workspace ONE" following VMware's acquisition and rebranding by Omnissa.
 
 ---
 

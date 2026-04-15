@@ -21,7 +21,7 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 - **[Mosyle](mosyle.md)** — API key setup for Apple devices and compliance
 - **[Fleet](fleet.md)** — API token setup for cross-platform endpoints and policy results
 - **[SimpleMDM](simplemdm.md)** — API key setup for Apple devices and profiles
-- **[VMware Workspace ONE](workspace-one.md)** — API credentials setup for cross-platform devices and compliance
+- **[Omnissa Workspace ONE](workspace-one.md)** — API credentials setup for cross-platform devices and compliance
 - **[Scalefusion](scalefusion.md)** — API key setup for cross-platform devices and policies
 
 ## Security

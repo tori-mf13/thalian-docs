@@ -27,7 +27,7 @@ Thalian supports 40+ platforms across 11 categories:
 | **Mosyle** | API credentials | Apple devices, compliance, policies | [Connect Mosyle](./integrations/mosyle.md) |
 | **Fleet** | API token | Cross-platform endpoints, policy results, host inventory | [Connect Fleet](./integrations/fleet.md) |
 | **SimpleMDM** | API key | Apple devices, profiles, compliance | [Connect SimpleMDM](./integrations/simplemdm.md) |
-| **VMware Workspace ONE** | API credentials | Cross-platform devices, compliance status | [Connect Workspace ONE](./integrations/workspace-one.md) |
+| **Omnissa Workspace ONE** | API credentials | Cross-platform devices, compliance status | [Connect Workspace ONE](./integrations/workspace-one.md) |
 | **Scalefusion** | API key | Cross-platform devices, policies, compliance | [Connect Scalefusion](./integrations/scalefusion.md) |
 
 ### Security
