@@ -101,8 +101,8 @@ For a detailed breakdown of what data enters AI prompts, what is excluded, human
 
 | Data Type | Free Plan | Pro Plan | Enterprise |
 |---|---|---|---|
-| Customer Data | 7 days | 90 days | Unlimited |
-| AI conversation history | 7 days | 90 days | Unlimited |
+| Customer Data | 7 days | 1 year | Unlimited |
+| AI conversation history | 7 days | 1 year | Unlimited |
 | Audit logs | 365 days minimum | 365 days minimum | 365 days minimum |
 | Account information | Duration of account | Duration of account | Duration of account |
 

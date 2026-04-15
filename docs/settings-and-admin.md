@@ -24,7 +24,7 @@ The Settings page (`/settings`) is where you manage your workspace, team, securi
 |---|---|---|---|
 | Identities | 25 | 500 | Unlimited |
 | Integrations | 3 | Unlimited | Unlimited |
-| Data retention | 7 days | 90 days | Unlimited |
+| Data retention | 7 days | 1 year | Unlimited |
 | AI queries/day | 25 | 100 | Unlimited |
 | Auto-remediation | No | Yes | Yes |
 | Causality analysis | No | Yes | Yes |
@@ -120,4 +120,4 @@ The UI conditionally renders action buttons, settings panels, and management int
 
 ---
 
-*For information on security policies and impact analysis, see [Policies & Impact Analysis](./policies-and-planning.md).*
+*For help with your workspace, see [Getting Help](./support.md).*
