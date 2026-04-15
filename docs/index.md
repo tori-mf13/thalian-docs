@@ -32,6 +32,10 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 
 - **[Changelog](changelog.md)** — New features, integrations, and improvements by release
 
+## Support
+
+- **[Getting Help](support.md)** — In-app support form, email contacts, system status, and common troubleshooting
+
 ## Security & Legal
 
 - **[Information Security Policy](information-security-policy.md)** — How Thalian protects your data
@@ -43,4 +47,4 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 
 ---
 
-Need help? Contact [support@thalian.ai](mailto:support@thalian.ai)
+Need help? Visit the [support hub](support.md) or email [support@thalian.ai](mailto:support@thalian.ai).
