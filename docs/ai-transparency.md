@@ -2,7 +2,7 @@
 
 **Thalian, LLC**
 **Effective Date:** April 2026
-**Last Reviewed:** April 7, 2026
+**Last Reviewed:** April 16, 2026
 
 ---
 
@@ -16,7 +16,7 @@ Thalian does not operate its own AI models. We integrate with **Anthropic** via 
 
 | Function | Model | Purpose |
 |---|---|---|
-| **AI chat and analysis** | Claude Sonnet (Free / Pro) · Claude Opus (Enterprise) | Natural-language Q&A, executive briefs, entity dossiers, root-cause analysis |
+| **AI chat and analysis** | Claude Sonnet (Free / Pro) · Claude Opus 4.7 (Enterprise) | Natural-language Q&A, executive briefs, entity dossiers, root-cause analysis |
 | **Remediation planning** | Claude Sonnet | Generating step-by-step remediation action plans from findings |
 | **Contract extraction** | Claude Sonnet | Parsing uploaded license/contract documents into structured fields |
 
@@ -69,7 +69,9 @@ Your data is **not** used to train, fine-tune, or improve any AI model. This gua
 
 ## 6. Data Retention at the AI Provider
 
-Anthropic's API processes prompts in real time and does not retain input or output data beyond the duration of the API request, per their commercial API terms. Thalian does not enable any optional data retention or logging features at the provider level.
+Anthropic's API processes prompts in real time for AI inference. Under Anthropic's commercial API terms, Anthropic may retain API inputs and outputs for up to **30 days** for trust and safety review purposes. This data is **not** used to train, fine-tune, or improve any AI model — Anthropic's API terms explicitly prohibit using API-submitted data for model training.
+
+Thalian uses the standard commercial API tier and has not enrolled in Anthropic's Zero Data Retention (ZDR) program. If you require a ZDR commitment — where Anthropic retains no inputs or outputs for any period — please contact us at privacy@thalian.ai to discuss Enterprise plan options.
 
 AI conversation history is retained **within your Thalian workspace** according to your plan tier:
 

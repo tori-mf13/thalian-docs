@@ -456,7 +456,7 @@ Supported attachment MIME types: `application/pdf`, `image/jpeg`, `image/png`, `
     }
   ],
   "tokens_used": 1840,
-  "model": "claude-opus-4-6",
+  "model": "claude-opus-4-7",
   "stop_reason": "end_turn"
 }
 ```

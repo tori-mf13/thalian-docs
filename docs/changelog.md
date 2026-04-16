@@ -24,6 +24,8 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **In-app service status banner** — A dismissible banner now appears when an active incident or service degradation is detected. Powered by the status page — no configuration required.
 
+- **Claude Opus 4.7 on Enterprise** — Enterprise workspaces now include **Claude Opus 4.7** as the model powering the AI contextual analysis engine, replacing Opus 4.6. No action required. See [AI Transparency](./ai-transparency.md) for the full model matrix.
+
 ### Integrations
 
 - **Zoom** — Connect your Zoom organization to detect users and admins not in your corporate IDP, SSO enforcement gaps, offboarded employees with active Zoom accounts, and stale unused seats. Read-only OAuth integration with `user:read:admin` and `account:read:admin` scopes. Syncs users, roles, and account security settings. 5 detection rules.
