@@ -74,6 +74,14 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **Confluence and Jira audit log rules** — Confluence sync now fetches space permission change events from the audit API (last 30 days). Jira sync fetches permission scheme and role change events. Two new rules surface permission changes that may indicate privilege escalation: `confluence::space_permission_change` and `jira::permission_scheme_changed`.
 
+- **390 detection rules** — Rule count reaches 390 (up from 350) with 40 new platform-depth rules across 7 areas, all firing on existing synced data with no new connection steps required:
+  - **MDM platform-specific rules** — Intune (non-compliant admin with SaaS access), Jamf (FileVault disabled, stale check-in), Fleet (policy cascade failures, unpatched critical CVEs, CVE on sensitive-app owner, admin device vulnerabilities, offline device with active entitlements), Workspace ONE (non-enrollment, compliance violations, stale check-in, enrollment gap vs. Entra), Iru (Gatekeeper disabled, FileVault off, MDM profile inactive, stale check-in, unassigned device)
+  - **Workday-specific rules** — Contingent worker with permanent-employee app access, position eliminated with active IDP account, rehire with prior entitlements restored, department change with no access review triggered
+  - **Microsoft 365 communication security** — Teams: external guest in sensitive channel, open guest federation policy, offboarded user still a guest, admin using personal account. SharePoint: anonymous link policy open, offboarded user accessing files. Outlook: mailbox delegation to external address, shared mailbox with no MFA, auto-reply with internal information visible externally. Compound: external comms spike pre-offboarding, file share + messaging exfiltration in offboarding window
+  - **MDM × IDP compound rules** — Active IDP user with no device in any MDM, terminated identity with device still enrolled, admin with cloud admin rights on non-compliant device, IDP-deactivated identity with recent MDM activity, MDM enrollment coverage below 60% vs. IDP user count, BYOD device owner with admin entitlements
+  - **JumpCloud-specific rules** — Admin without MFA, users without MFA, accounts with non-expiring passwords
+  - **OneLogin-specific rules** — Users not enrolled in any MFA factor, admin accounts with no security policy assigned, offboarded primary IDP user still active in OneLogin
+
 ### Improvements
 
 - **Drift trend sparkline** — finding detail panel for drift-signal findings (MFA coverage declining, SSO coverage declining, etc.) now shows a mini sparkline with a 3-step forward projection.
