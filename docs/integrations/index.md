@@ -51,6 +51,7 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 ## Developer Tools
 
 - **[GitHub](github.md)** — OAuth setup for org members, outside collaborators, and IDP gap detection
+- **[GitLab](gitlab.md)** — Group Access Token setup for group members, projects, deploy keys, and IDP gap detection
 
 ## CRM
 

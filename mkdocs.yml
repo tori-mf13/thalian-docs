@@ -70,6 +70,7 @@ nav:
       - SharePoint: integrations/sharepoint.md
       - Confluence: integrations/confluence.md
       - GitHub: integrations/github.md
+      - GitLab: integrations/gitlab.md
       - Salesforce: integrations/salesforce.md
       - Rippling: integrations/rippling.md
       - BambooHR: integrations/bamboohr.md
@@ -90,8 +91,11 @@ nav:
   - Administration:
     - Settings & Admin: settings-and-admin.md
     - SSO Setup Guide: sso-setup.md
+  - Developers:
+    - Overview: developers.md
     - MCP Server: mcp-server.md
     - API Reference: api-reference.md
+    - Webhooks: integrations/webhooks.md
   - Releases:
     - Release Notes: releases/index.md
     - Changelog: changelog.md

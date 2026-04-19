@@ -56,6 +56,8 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **Trial extension + compliance preview** — Free-tier users can now self-serve a trial extension from the billing page. The Compliance page is now visible to free users in a preview mode with a plan gate, so prospects can see the value before upgrading.
 
+- **GitLab** — Connect a GitLab group to detect developer access risks across your source code platform. Syncs group members, projects, deploy keys, and group access tokens using a Group Access Token (no OAuth required). Works with both GitLab.com and self-hosted instances. 8 detection rules: admins and maintainers without MFA, Maintainer/Owner accounts not in your IDP (critical), developers not in your IDP, external members with elevated access, deploy keys with write permissions, non-expiring group tokens, offboarded employees with active membership, and stale members with no recent contribution activity. Audit event sync available on GitLab Premium and Ultimate.
+
 - **GitHub secret scanning** — GitHub sync now pulls open secret scanning alerts and push protection bypass events. Two new detection rules: unresolved secret scanning alerts (critical, workspace-level finding) and developers who bypassed push protection 2+ times (high, per-user finding).
 
 - **CrowdStrike Spotlight vulnerability detection** — CrowdStrike sync now fetches open critical and high CVEs from Spotlight after each device sync. Two new cross-platform rules: unpatched critical CVEs on managed devices (one finding per device, severity mirrors worst CVE) and high-severity vulnerabilities on admin-access devices (critical, highest blast-radius signal).
