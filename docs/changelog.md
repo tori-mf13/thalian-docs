@@ -86,6 +86,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### Improvements
 
+- **Webhook destination picker** — Connecting a webhook or SIEM integration now opens a destination picker before the configuration form. Two sections: **Workflow Automation** (Workato, Zapier, n8n, Gumloop, Make) and **SIEM & Observability** (Datadog, Splunk, Elastic, Panther, Sumo Logic, Custom). Each destination includes a setup hint explaining how to get your endpoint URL from that platform.
+
+- **Webhook event improvements** — The webhook/SIEM integration now fires three distinct events. `finding_detected` fires only for genuinely new findings discovered in that analysis run — not all open findings on every run. `finding_resolved` fires when a finding is automatically resolved because its condition no longer holds. `analysis_completed` now includes a `new_findings_count` field so automation workflows can skip processing when nothing changed. The `finding_detected` payload now includes `finding_id`, `action_type`, and `source_integrations` for richer downstream automation.
+
 - **Drift trend sparkline** — finding detail panel for drift-signal findings (MFA coverage declining, SSO coverage declining, etc.) now shows a mini sparkline with a 3-step forward projection.
 
 - **Ghost finding cards** — Findings page surfaces projected findings for missing integration categories so you can see what Thalian would detect if you connected a missing tool.
