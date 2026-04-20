@@ -6,6 +6,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## April 2026
 
+### Integrations
+
+- **Datadog** — new integration for observability access intelligence. Connect with an API Key + Application Key (no OAuth required). Thalian syncs users and role assignments, then surfaces four findings: admin not in IDP (critical), admin without MFA (high — suppressed when a primary IDP with SAML/SSO is connected), user not in IDP (high), and offboarded employee still active (critical). See [Connect Datadog](./integrations/datadog.md) for setup instructions.
+
 ### New Features
 
 - **Security Posture Timeline** — new History page (accessible via **Reports → Timeline** tab or the dashboard "Monitoring since" badge) shows your posture score over time, MFA coverage trend, compliance rate, and a narrative event log of significant changes: grade shifts, MFA drops, new integrations, and remediation milestones.
