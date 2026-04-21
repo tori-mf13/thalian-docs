@@ -45,8 +45,8 @@ Thalian tracks 23+ AI tools — including **ChatGPT**, **Claude**, **Cursor**, *
 Example AI tool findings:
 
 - *"4 users granted Claude mail-read and drive-write scope via personal Google OAuth."*
-- *"ChatGPT Enterprise has workspace admin, but 3 seats are assigned to inactive users."*
-- *"Cursor was authorized in 2 non-IT-approved Google accounts this week."*
+- *"ChatGPT Enterprise has 3 admin seats assigned to users who are inactive in Okta."*
+- *"2 employees connected Cursor to personal Google accounts not approved by IT."*
 - *"$640/mo in AI subscriptions is assigned to users who haven't logged in for 30+ days."*
 
 Findings include the specific OAuth scopes granted (e.g., `mail.readonly`, `drive.file`), who authorized them, and whether the tool is IT-approved. Risky scopes trigger higher severity automatically.
