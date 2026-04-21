@@ -11,6 +11,7 @@ Step-by-step setup instructions for each platform Thalian supports. Select your 
 - **[Google Workspace](google-workspace.md)** — OAuth setup for users, groups, OAuth apps, and audit events
 - **[JumpCloud](jumpcloud.md)** — API key setup for users, devices, and policies
 - **[OneLogin](onelogin.md)** — Client credentials setup for users, apps, and roles
+- **[PingOne](ping-identity.md)** — Worker app setup for users, role assignments, SSO apps, and MFA policy
 
 ## Endpoint Management
 

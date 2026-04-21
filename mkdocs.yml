@@ -47,6 +47,7 @@ nav:
       - Google Workspace: integrations/google-workspace.md
       - JumpCloud: integrations/jumpcloud.md
       - OneLogin: integrations/onelogin.md
+      - PingOne: integrations/ping-identity.md
       - Microsoft Intune: integrations/microsoft-intune.md
       - Jamf Pro: integrations/jamf-pro.md
       - Iru (formerly Kandji): integrations/kandji.md
