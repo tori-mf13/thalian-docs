@@ -160,6 +160,8 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **SSO finding accuracy for Google Workspace-only environments** — When Google Workspace is your only identity provider (no Okta, Entra ID, JumpCloud, OneLogin, or PingOne), SSO-related findings now correctly identify ungoverned OAuth grants rather than reporting apps as "bypassing SSO." Apps that authenticate via Google sign-in are not bypassing SSO — they're outside centralized OAuth governance. Finding titles, descriptions, and remediation guidance have been updated accordingly, directing admins to **Google Admin → Security → API controls** to review and restrict OAuth app access.
 
+- **SSO finding accuracy — Google-only ratio and entity payload corrections** — Three follow-up fixes to Google Workspace-only SSO findings: `sso::high_direct_auth_ratio` now requires OAuth grants to represent a majority of an identity's app portfolio before firing (previously could fire at any count and incorrectly state "over half"); the `sso::offboarded_with_direct_auth_apps` and `behavioral_off_hours_direct_auth` findings now correctly report `oauth_count` in their entity payloads rather than `direct_count: 0`, ensuring the AI assistant and entity detail panels reflect the actual risk signal.
+
 - **Findings suppression** — Actioned and dismissed findings are now properly excluded from re-creation during analysis, preventing duplicate findings after remediation.
 - **Remediation denied actions** — Actions that were denied by an approver no longer resurface in the remediation queue.
 - **Reports sparklines** — Posture trend sparklines are now correctly constrained and show accurate drift projections.
