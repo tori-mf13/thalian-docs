@@ -1,8 +1,8 @@
 # Acceptable Use Policy
 
 **Thalian, LLC**
-**Effective Date:** March 2026
-**Last Reviewed:** March 18, 2026
+**Effective Date:** April 16, 2026
+**Last Reviewed:** April 16, 2026
 
 ---
 
@@ -28,7 +28,7 @@ You may not use the Service to:
 ### Security and Abuse
 
 - Attempt to access data belonging to other workspaces or tenants
-- Probe, scan, or test the vulnerability of the Service without authorization
+- Probe, scan, or test the vulnerability of the Service without authorization (see Security Research Exception below)
 - Interfere with or disrupt the Service or its infrastructure
 - Circumvent rate limits, access controls, or security mechanisms
 - Use automated tools to scrape, crawl, or extract data from the Service beyond its intended API
@@ -70,7 +70,11 @@ Violations of this AUP may result in:
 
 We will attempt to notify you before taking action, except where immediate action is necessary to protect the Service or other users.
 
-## 6. Reporting Violations
+## 6. Security Research Exception
+
+Security testing conducted in good faith under Thalian's Responsible Disclosure program is authorized and is not a violation of this AUP. To qualify for safe harbor: contact security@thalian.ai prior to testing, limit testing to your own workspace or data, do not access or exfiltrate data belonging to other customers, and report findings responsibly. Thalian will not pursue legal action against researchers who follow these practices. See the [Security & Trust](https://thalian.ai/security) page for our full responsible disclosure commitment.
+
+## 7. Reporting Violations
 
 If you become aware of any violation of this AUP, please report it to security@thalian.ai.
 

@@ -12,7 +12,7 @@ Welcome to the Thalian documentation. Thalian is an AI-powered IT intelligence p
 
 ## Findings & Intelligence
 
-- **[Findings & Remediation](findings-and-remediation.md)** — Understanding findings, remediation actions, and the approval workflow
+- **[Findings & Remediation](findings-and-remediation.md)** — Understanding findings, remediation actions, the approval workflow, and AI tool detection
 - **[Access Reviews](access-reviews.md)** — Run structured user access certification campaigns
 
 ## Compliance & Reporting

@@ -1,8 +1,8 @@
 # Information Security Policy
 
 **Thalian, LLC**
-**Effective Date:** March 2026
-**Last Reviewed:** March 18, 2026
+**Effective Date:** April 16, 2026
+**Last Reviewed:** April 16, 2026
 **Owner:** Engineering & Security Team
 **Classification:** Public
 
@@ -154,8 +154,11 @@ In addition to RLS (defense in depth), every application query is explicitly sco
 |---|---|---|---|
 | **Supabase** | Database, Auth, Realtime | All workspace data | Covered under Supabase Terms of Service and DPA |
 | **Cloudflare** | CDN, Pages, Workers, R2 | Request routing, static assets, backend execution | Covered under Cloudflare DPA |
-| **Anthropic** | AI analysis (Claude API) | Workspace context sent in AI prompts ([details](./ai-transparency.md)) | Zero-retention API; data not used for training |
+| **Anthropic** | AI inference (Claude API) | Workspace context sent in AI prompts ([details](./ai-transparency.md)) | 30-day retention for trust & safety review; not used for model training |
 | **Stripe** | Payment processing | Customer billing data | Covered under Stripe DPA |
+| **Loops** | Transactional and lifecycle email | Account email, display name, workspace plan | Covered under Loops DPA |
+| **Sentry** | Error monitoring | Technical error data (PII scrubbed; 10% trace sampling) | Covered under Sentry DPA |
+| **Plain.com** | Support chat widget | Name, email, support conversation content | Covered under Plain.com DPA |
 
 ## 11. Vulnerability Management
 

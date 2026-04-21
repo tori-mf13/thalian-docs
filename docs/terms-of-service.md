@@ -1,8 +1,8 @@
 # Terms of Service
 
 **Thalian, LLC**
-**Effective Date:** March 2026
-**Last Reviewed:** March 18, 2026
+**Effective Date:** April 16, 2026
+**Last Reviewed:** April 16, 2026
 
 ---
 
@@ -36,7 +36,7 @@ Your use of the Service must comply with our [Acceptable Use Policy](./acceptabl
 
 ### Pro Plan
 
-- Up to 500 identities, unlimited integrations, 90-day data retention
+- Up to 500 identities, unlimited integrations, 1-year data retention
 - Billed monthly via Stripe
 - 30-day free trial included for new workspaces
 
@@ -47,7 +47,9 @@ Your use of the Service must comply with our [Acceptable Use Policy](./acceptabl
 
 ### Billing Terms
 
-- Pro subscriptions are billed monthly in advance
+- Pro subscriptions are billed monthly in advance and **auto-renew** each month unless cancelled before the renewal date
+- To cancel, visit Settings → Billing within the platform or contact support@thalian.ai
+- You will receive a reminder 7 days before renewal
 - You may cancel at any time — access continues through the end of the billing period
 - No refunds for partial months
 - If payment fails, the workspace enters a 7-day grace period before downgrading to Free
@@ -88,6 +90,10 @@ Full details are available in our [Information Security Policy](./information-se
 - You are responsible for ensuring the credentials you provide have appropriate permissions
 - You may disconnect integrations at any time, which stops data syncing
 
+## 8a. Customer Security Obligations
+
+You are responsible for: (a) maintaining the security of your account credentials and all workspace access; (b) ensuring that only authorized personnel are granted admin-level roles within your workspace; (c) notifying Thalian promptly at security@thalian.ai if you suspect unauthorized access to your account or any connected integration credentials; and (d) configuring MFA enforcement for your workspace where required by your organization's security policies. Thalian is not liable for security incidents caused by your failure to maintain appropriate access controls or to notify Thalian of a suspected compromise.
+
 ## 9. Intellectual Property
 
 - Thalian and its licensors retain all rights to the Service, including its software, algorithms, design, and documentation
@@ -107,6 +113,8 @@ To the maximum extent permitted by law, Thalian, LLC shall not be liable for any
 
 Our total aggregate liability for any claims arising from or related to the Service shall not exceed the amount you paid us in the 12 months preceding the claim.
 
+Notwithstanding the above, the aggregate liability cap does not apply to: (a) either party's indemnification obligations under these Terms; (b) either party's breach of confidentiality obligations; (c) damages arising from gross negligence or willful misconduct; or (d) Thalian's infringement of a third party's intellectual property rights.
+
 ## 12. Disclaimer of Warranties
 
 The Service is provided "as is" and "as available" without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.
@@ -118,17 +126,25 @@ Thalian does not warrant that the Service will be uninterrupted, error-free, or 
 - You may terminate your account at any time by contacting support@thalian.ai
 - We may suspend or terminate your access if you violate these Terms or the Acceptable Use Policy
 - Upon termination, your data will be retained for 30 days and then permanently deleted
-- Audit log entries are retained for a minimum of 365 days regardless of account status
+- Audit log entries are retained for a minimum of 365 days. Upon account deletion, audit logs are anonymized (personal identifiers removed) and retained for an additional 12 months for legal and compliance purposes, then permanently deleted
 
 ## 14. Changes to Terms
 
 We may update these Terms from time to time. Material changes will be communicated via email to workspace administrators. Continued use of the Service after changes take effect constitutes acceptance of the updated Terms.
 
-## 15. Governing Law
+## 15. Export Compliance
 
-These Terms are governed by and construed in accordance with the laws of the State of Delaware, without regard to conflict of law principles.
+The Service may be subject to United States export control laws and regulations. You agree not to export, re-export, or transfer the Service or any related technical data to any country, entity, or person prohibited by applicable export control laws, including U.S. sanctions programs administered by OFAC.
 
-## 16. Contact
+## 16. Governing Law
+
+These Terms are governed by and construed in accordance with the laws of the State of Texas, without regard to conflict of law principles.
+
+## 17. Dispute Resolution
+
+Any dispute arising out of or relating to these Terms or the Service shall first be attempted to be resolved through good-faith negotiation between the parties. If the dispute cannot be resolved within 30 days of written notice, either party may pursue binding arbitration under the rules of the American Arbitration Association in Texas. To the fullest extent permitted by law, you waive the right to participate in class-action lawsuits or class-wide arbitration related to these Terms or the Service.
+
+## 18. Contact
 
 For questions about these Terms, contact us at legal@thalian.ai.
 

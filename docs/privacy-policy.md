@@ -1,8 +1,8 @@
 # Privacy Policy
 
 **Thalian, LLC**
-**Effective Date:** March 2026
-**Last Reviewed:** March 18, 2026
+**Effective Date:** April 16, 2026
+**Last Reviewed:** April 16, 2026
 
 ---
 
@@ -33,6 +33,15 @@ When you connect third-party platforms, Thalian syncs data including:
 
 - API tokens, OAuth tokens, and other authentication credentials you provide to connect platforms
 - These are encrypted with AES-256-GCM before storage — plaintext is never saved to the database
+
+### HR Data (if HR integration connected)
+
+When you connect an HR system (Rippling, BambooHR), Thalian syncs:
+
+- Employment status, start and termination dates
+- Department, job title, and manager relationships
+
+This data is used solely to enable offboarding gap detection and identity lifecycle analysis across connected platforms.
 
 ### Usage Data
 
@@ -116,11 +125,15 @@ We do not sell your data. We share data only in these circumstances:
 
 | Recipient | Purpose | Data Shared |
 |---|---|---|
-| **Anthropic** | AI analysis and chat | Workspace context in AI prompts |
+| **Anthropic** | AI inference (Claude API) | Workspace context in AI prompts |
 | **Stripe** | Payment processing | Billing information |
-| **Sentry** | Error monitoring | Technical error data (no Customer Data) |
+| **Loops** | Transactional and lifecycle email | Account email, display name, workspace plan |
+| **Sentry** | Error monitoring | Technical error data (PII scrubbed; no Customer Data) |
 | **Supabase** | Database hosting | All Customer Data (encrypted at rest) |
-| **Cloudflare** | Application hosting | Request routing metadata |
+| **Cloudflare** | Application hosting and CDN | Request routing metadata |
+| **Plain.com** | Support chat widget | Name, email, support conversation content |
+
+The complete sub-processor registry, including locations and data processed, is maintained at [policies/sub-processors.md](../policies/sub-processors.md).
 
 We may also disclose data if required by law, court order, or to protect our legal rights.
 

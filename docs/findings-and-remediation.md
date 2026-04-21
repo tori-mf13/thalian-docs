@@ -21,7 +21,7 @@ Every finding has:
 
 ## Analysis Engine
 
-Thalian runs 320+ analysis rules across 10 categories every time data is synced:
+Thalian runs 375+ analysis rules across 10 categories every time data is synced:
 
 | Category | What It Detects |
 |---|---|
@@ -37,6 +37,19 @@ Thalian runs 320+ analysis rules across 10 categories every time data is synced:
 | **Finding Correlation** | Meta-layer analysis that runs after all rules — scans generated findings for dangerous combinations on the same identity and surfaces compound risks that no single rule detects |
 
 The cross-platform join is the key differentiator. Thalian correlates data across disconnected systems to surface insights that no single tool can produce — for example, an identity that's been deactivated in Okta but still has active entitlements in Google Workspace.
+
+### AI Tool Detection
+
+Thalian tracks 23+ AI tools — including **ChatGPT**, **Claude**, **Cursor**, **Perplexity**, **Copilot**, **Gemini**, **Midjourney**, and **Notion AI** — and surfaces them as Shadow IT findings when they're authorized via OAuth against your identity provider or Google Workspace. Because AI assistants are typically connected through personal OAuth rather than sanctioned SSO, they're often invisible to SSO-centric reporting.
+
+Example AI tool findings:
+
+- *"4 users granted Claude mail-read and drive-write scope via personal Google OAuth."*
+- *"ChatGPT Enterprise has workspace admin, but 3 seats are assigned to inactive users."*
+- *"Cursor was authorized in 2 non-IT-approved Google accounts this week."*
+- *"$640/mo in AI subscriptions is assigned to users who haven't logged in for 30+ days."*
+
+Findings include the specific OAuth scopes granted (e.g., `mail.readonly`, `drive.file`), who authorized them, and whether the tool is IT-approved. Risky scopes trigger higher severity automatically.
 
 ## Finding Lifecycle
 

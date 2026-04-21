@@ -1,8 +1,8 @@
 # Data Processing Agreement
 
 **Thalian, LLC**
-**Effective Date:** March 2026
-**Last Reviewed:** March 18, 2026
+**Effective Date:** April 16, 2026
+**Last Reviewed:** April 16, 2026
 
 ---
 
@@ -33,6 +33,7 @@ This DPA applies where Thalian processes personal data on the Controller's behal
 | **Device data** | Device names, serial numbers, OS versions, compliance status |
 | **Activity data** | Last login dates, application usage timestamps, sign-in events |
 | **Security data** | MFA enrollment status, password change dates, session activity |
+| **HR data** (if HR integration connected) | Employment status, start and termination dates, department, job title, manager — synced from HR systems (Rippling, BambooHR) to enable offboarding gap detection and identity lifecycle analysis |
 
 ### Purpose of Processing
 
@@ -61,13 +62,15 @@ Thalian uses the following sub-processors:
 
 | Sub-Processor | Service | Data Processed | Location |
 |---|---|---|---|
-| **Supabase** | Database and authentication | All Customer Data | United States |
-| **Cloudflare** | Application hosting, CDN, Workers | Request routing, static assets | Global (edge) |
-| **Anthropic** | AI analysis (Claude API) | Workspace context in prompts ([details](./ai-transparency.md#3-what-data-enters-ai-prompts)) | United States |
+| **Supabase** | Database and authentication | All Customer Data | United States (AWS us-east-1) |
+| **Cloudflare** | Application hosting, CDN, Workers | Request routing, static assets, backend execution | Global edge; customer data at rest remains US-only |
+| **Anthropic** | AI inference (Claude API) | Workspace context in AI prompts ([details](./ai-transparency.md#3-what-data-enters-ai-prompts)) | United States |
 | **Stripe** | Payment processing | Billing data | United States |
-| **Sentry** | Error monitoring | Technical error data | United States |
+| **Loops** | Transactional and lifecycle email | Account email address, display name, workspace plan | United States |
+| **Sentry** | Error monitoring | Technical error data (PII scrubbed; 10% trace sampling) | United States |
+| **Plain.com** | Support chat widget | Name, email address, support conversation content | United States |
 
-The Controller authorizes the use of the sub-processors listed above. Thalian will notify the Controller of any intended changes to sub-processors, giving the Controller the opportunity to object.
+The Controller authorizes the use of the sub-processors listed above. Thalian will notify the Controller of any intended changes to sub-processors (additions or replacements) with at least **14 days' advance notice** before the change takes effect, giving the Controller the opportunity to object. The complete sub-processor registry is maintained at [policies/sub-processors.md](../policies/sub-processors.md).
 
 ## 6. Security Measures
 
@@ -92,6 +95,8 @@ Thalian will assist the Controller in fulfilling data subject requests:
 
 ## 8. Data Breach Notification
 
+For purposes of this DPA, "personal data breach" has the meaning given in GDPR Article 4(12): a breach of security leading to the accidental or unlawful destruction, loss, alteration, unauthorized disclosure of, or access to, personal data.
+
 In the event of a personal data breach:
 
 - Thalian will notify the Controller without undue delay, and no later than 72 hours after becoming aware of the breach
@@ -100,16 +105,18 @@ In the event of a personal data breach:
 
 ## 9. International Transfers
 
-Where personal data is transferred outside the European Economic Area (EEA):
+Where personal data is transferred outside the European Economic Area (EEA) or the United Kingdom (UK):
 
-- Transfers to US-based sub-processors are covered by Standard Contractual Clauses (SCCs) or equivalent safeguards provided by each sub-processor
+- **EU transfers:** Transfers of personal data from the EEA to the United States are covered by the EU Standard Contractual Clauses (EU 2021/914, Module 2: Controller to Processor) incorporated herein by reference, or equivalent safeguards provided by each sub-processor
+- **UK transfers:** For transfers from the United Kingdom, Thalian relies on the UK International Data Transfer Agreement (IDTA) or the UK Addendum to the EU SCCs, as applicable under ICO guidance
+- **Sub-processor compliance:** All US-based sub-processors are required to maintain equivalent transfer mechanisms. Details available on request
 - The Controller acknowledges that AI processing (Anthropic) occurs in the United States
 
 ## 10. Duration and Termination
 
 - This DPA remains in effect for the duration of the Service agreement
 - Upon termination, Thalian will delete Customer Data within 30 days
-- Audit logs are retained for a minimum of 365 days regardless of termination, as required by the [Information Security Policy](./information-security-policy.md)
+- Audit logs are retained for a minimum of 365 days. Upon account termination, audit logs are anonymized (personal identifiers removed) and retained for an additional 12 months for legal and compliance purposes, then permanently deleted
 
 ## 11. Contact
 

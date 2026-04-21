@@ -37,7 +37,7 @@ Thalian does not require domain-wide delegation. The OAuth consent flow grants t
 
 - **Users** — full directory including status, last login, and organizational unit
 - **Groups** — group memberships and group settings
-- **OAuth apps** — third-party apps with access to your domain
+- **OAuth apps** — third-party apps with access to your domain, including AI tool detection across [ChatGPT, Claude, Cursor, and 20+ others](../findings-and-remediation.md#ai-tool-detection)
 - **Gmail app discovery** — connected apps and mail delegation settings
 - **Audit events** — admin activity, login events, and token grants
 
@@ -48,4 +48,4 @@ Thalian does not require domain-wide delegation. The OAuth consent flow grants t
 
 ---
 
-*For a full list of supported platforms, see [Integrations Guide](../integrations-guide.md).*
+*For details on how OAuth grants surface as findings, see [AI Tool Detection](../findings-and-remediation.md#ai-tool-detection).*
