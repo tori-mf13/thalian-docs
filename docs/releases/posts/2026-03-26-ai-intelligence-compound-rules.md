@@ -11,11 +11,11 @@ Major intelligence upgrade: personalized AI briefs, cross-platform perspective v
 
 ## "Since your last session" AI brief
 
-The dashboard AI brief now opens with what changed since you last logged in. "Since yesterday, 2 new findings surfaced — the most urgent is..." Makes every login feel personalized instead of seeing the same static posture summary.
+The dashboard AI brief now opens with what changed since you last logged in. "Since yesterday, 2 new findings surfaced: the most urgent is..." Makes every login feel personalized instead of seeing the same static posture summary.
 
 ## Cross-platform perspective view on findings
 
-Expanding a cross-platform finding now shows a side-by-side "What each tool sees" breakdown. Each connected platform's view is shown alongside what Thalian sees by joining them — making it immediately obvious why the finding is invisible in any single tool.
+Expanding a cross-platform finding now shows a side-by-side "What each tool sees" breakdown. Each connected platform's view is shown alongside what Thalian sees by joining them: making it immediately obvious why the finding is invisible in any single tool.
 
 ## Live cost counter on integration discovery
 
@@ -57,15 +57,15 @@ After connecting your 2nd or later integration, a dedicated interstitial shows t
 
 ## Improvements
 
-- **Teams alerts** — Security finding cards sent to Microsoft Teams now include an "Approve in Thalian" button for approvable actions
-- **Findings page streamlined** — Value badges consolidated, sort buttons merged, Type filter removed
-- **Entity detail panel tightened** — Data Sources hidden when attack chain visible, AI dossier hidden when attack chain narrative exists
-- **Remediation cards collapsed by default** — Approval cards now show just the action label + approve/deny buttons
-- **Hourly auto-sync** — Connected integrations now sync every hour (previously every 6 hours)
+- **Teams alerts**: Security finding cards sent to Microsoft Teams now include an "Approve in Thalian" button for approvable actions
+- **Findings page**: Value badges consolidated, sort buttons merged, Type filter removed
+- **Entity detail panel tightened**: Data Sources hidden when attack chain visible, AI dossier hidden when attack chain narrative exists
+- **Remediation cards collapsed by default**: Approval cards now show just the action label + approve/deny buttons
+- **Hourly auto-sync**: Connected integrations now sync every hour (previously every 6 hours)
 
 ## Fixes
 
-- **Google OAuth app deduplication** — OAuth apps now deduplicated by normalized name
-- **Scoring consistency** — All scoring imports cleaned up to use a single source of truth
+- **Google OAuth app deduplication**: OAuth apps now deduplicated by normalized name
+- **Scoring consistency**: All scoring imports cleaned up to use a single source of truth
 
 [View on GitHub](https://github.com/tori-mf13/thalian-beta/releases/tag/2026-03-26)
