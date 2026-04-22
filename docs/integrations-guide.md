@@ -16,6 +16,7 @@ Thalian supports 40+ platforms across 11 categories:
 | **Google Workspace** | OAuth | Users, groups, OAuth apps, Gmail app discovery, audit events | [Connect Google Workspace](./integrations/google-workspace.md) |
 | **JumpCloud** | API key | Users, devices, systems, policies | [Connect JumpCloud](./integrations/jumpcloud.md) |
 | **OneLogin** | Client credentials | Users, apps, roles | [Connect OneLogin](./integrations/onelogin.md) |
+| **PingOne** | API credentials | Users, groups, authentication policies, MFA policy, IDP gap detection | [Connect PingOne](./integrations/ping-identity.md) |
 
 ### Endpoint Management
 | Platform | Auth Method | What It Syncs | Setup Guide |
@@ -68,6 +69,8 @@ Thalian supports 40+ platforms across 11 categories:
 | Platform | Auth Method | What It Syncs | Setup Guide |
 |---|---|---|---|
 | **GitHub** | OAuth | Org members, outside collaborators, repositories, IDP gap detection | [Connect GitHub](./integrations/github.md) |
+| **GitLab** | Group Access Token | Group members, projects, deploy keys, IDP gap detection | [Connect GitLab](./integrations/gitlab.md) |
+| **Datadog** | API + App key | Users, admin roles, IDP gap detection, offboarded user access | [Connect Datadog](./integrations/datadog.md) |
 
 ### HR & People
 | Platform | Auth Method | What It Syncs | Setup Guide |
@@ -105,7 +108,7 @@ Thalian supports 40+ platforms across 11 categories:
 
 Click **Browse** on the Integrations page to open the full library of supported platforms, organized by category:
 
-![The Integration Library showing 40 supported platforms with category filters and connection status](./assets/screenshots/integrations/integrations-library-browse.png)
+![The Integration Library showing 42 supported platforms with category filters and connection status](./assets/screenshots/integrations/integrations-library-browse.png)
 
 ## Connecting an Integration
 

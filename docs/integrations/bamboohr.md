@@ -87,7 +87,7 @@ BambooHR data alone doesn't generate findings — it becomes the authoritative t
 BambooHR is a **read-only integration** — it is the HR source of truth, not a remediation target. All remediation actions for HR-triggered findings execute against the IDP or SaaS platform where the account remains active:
 
 - Suspend the user in Okta, Entra ID, or Google Workspace
-- Revoke device enrollment in Jamf, Intune, or Kandji
+- Revoke device enrollment in Jamf, Intune, or Iru
 - Revoke GitHub org membership or Salesforce access directly
 
 ---

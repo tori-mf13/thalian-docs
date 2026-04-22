@@ -21,7 +21,7 @@ Every finding has:
 
 ## Analysis Engine
 
-Thalian runs 375+ analysis rules across 10 categories every time data is synced:
+Thalian runs 400+ analysis rules across 10 categories every time data is synced:
 
 | Category | What It Detects |
 |---|---|
