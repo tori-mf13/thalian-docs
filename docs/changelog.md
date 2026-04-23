@@ -10,6 +10,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **MFA enforcement**: enabling MFA on a workspace no longer immediately blocks active sessions. Users currently signed in can finish their session normally; MFA enrollment is required on their next login.
 
+### Improvements
+
+- **Compliance Trend tab**: now shows MFA coverage and SSO coverage alongside device compliance as separate chart lines. The Posture Events card tracks significant drops or improvements across all three metrics. Workspaces without a device management integration now see MFA and SSO trend data instead of a blank chart.
+
 ### Integrations
 
 - **Datadog**: new integration for observability access intelligence. Connect with an API Key + Application Key (no OAuth required). Thalian syncs users and role assignments, then surfaces four findings: admin not in IDP (critical), admin without MFA (high: suppressed when a primary IDP with SAML/SSO is connected), user not in IDP (high), and offboarded employee still active (critical). See [Connect Datadog](./integrations/datadog.md) for setup instructions.
