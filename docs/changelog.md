@@ -16,7 +16,7 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### Improvements
 
-- **Compliance Trend tab**: now shows MFA coverage and SSO coverage alongside device compliance as separate chart lines. The Posture Events card tracks significant drops or improvements across all three metrics. Workspaces without a device management integration now see MFA and SSO trend data instead of a blank chart.
+- **Compliance Trend tab**: the trend chart now tracks your **SOC 2** and **ISO 27001** compliance scores over time. Scores are computed each analysis run from live open findings mapped to each framework's controls, and stored in posture history so the chart reflects your real compliance trajectory — not synthetic estimates. Scores range from 0–100 (passing controls / total controls). Historical data is backfilled automatically from existing finding timestamps.
 
 ### Integrations
 
