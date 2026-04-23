@@ -1,7 +1,9 @@
-// Inject header links into the MkDocs Material top nav
-document.addEventListener('DOMContentLoaded', function () {
+// Inject header links into the MkDocs Material top nav.
+// Uses document$ (Material's instant-navigation observable) so links
+// persist across client-side page transitions, not just the initial load.
+document$.subscribe(function () {
   var header = document.querySelector('.md-header__inner');
-  if (!header) return;
+  if (!header || header.querySelector('.th-header-links')) return;
 
   var nav = document.createElement('nav');
   nav.className = 'th-header-links';

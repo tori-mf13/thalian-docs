@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="md-content__inner th-home">
+
+  <h1 class="th-home-headline">Thalian Documentation</h1>
+  <p class="th-home-intro">AI-powered identity intelligence for IT and security teams. Connect your stack and surface your first findings in minutes.</p>
+
+  <div class="th-home-grid">
+    <a href="{{ 'getting-started/' | url }}" class="th-home-card th-home-card--featured">
+      <span class="th-home-card__label">Start here</span>
+      <div class="th-home-card__title">Getting Started</div>
+      <div class="th-home-card__desc">Quick start, integrations overview, and step-by-step setup guides for 42+ platforms.</div>
+    </a>
+    <a href="{{ 'findings-and-remediation/' | url }}" class="th-home-card">
+      <div class="th-home-card__title">Findings &amp; Intelligence</div>
+      <div class="th-home-card__desc">Understanding findings, remediation actions, and access review campaigns.</div>
+    </a>
+    <a href="{{ 'compliance/' | url }}" class="th-home-card">
+      <div class="th-home-card__title">Compliance &amp; Reporting</div>
+      <div class="th-home-card__desc">SOC 2 and ISO 27001 control mapping, posture tracking, and the immutable audit log.</div>
+    </a>
+    <a href="{{ 'settings-and-admin/' | url }}" class="th-home-card">
+      <div class="th-home-card__title">Administration</div>
+      <div class="th-home-card__desc">Team management, RBAC roles, SSO setup, and billing.</div>
+    </a>
+    <a href="{{ 'developers/' | url }}" class="th-home-card">
+      <div class="th-home-card__title">Developers</div>
+      <div class="th-home-card__desc">MCP server, REST API reference, and webhook configuration.</div>
+    </a>
+    <a href="{{ 'releases/' | url }}" class="th-home-card">
+      <div class="th-home-card__title">Releases</div>
+      <div class="th-home-card__desc">Release notes and changelog for every platform update.</div>
+    </a>
+  </div>
+
+  <div class="th-home-secondary">
+    <a href="{{ 'support/' | url }}" class="th-home-secondary-link">Support</a>
+    <a href="{{ 'information-security-policy/' | url }}" class="th-home-secondary-link">Security &amp; Legal</a>
+    <a href="{{ 'ai-transparency/' | url }}" class="th-home-secondary-link">AI Transparency</a>
+  </div>
+
+  <p class="th-home-footer-note">
+    Need help? Visit the <a href="{{ 'support/' | url }}">support hub</a> or email <a href="mailto:support@thalian.ai">support@thalian.ai</a>.
+  </p>
+
+</div>
+{% endblock %}

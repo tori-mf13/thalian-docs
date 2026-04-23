@@ -1,0 +1,18 @@
+{% extends "main.html" %}
+
+{% block content %}
+<div class="md-content__inner th-404">
+
+  <div class="th-404-code">404</div>
+  <h1 class="th-404-title">Page not found</h1>
+  <p class="th-404-desc">This page doesn't exist or may have moved. Try one of these instead:</p>
+
+  <ul class="th-404-links">
+    <li><a href="{{ config.site_url }}">Documentation home</a></li>
+    <li><a href="{{ config.site_url }}getting-started/">Getting started</a></li>
+    <li><a href="{{ config.site_url }}integrations/">Integration guides</a></li>
+    <li><a href="{{ config.site_url }}support/">Support</a></li>
+  </ul>
+
+</div>
+{% endblock %}
