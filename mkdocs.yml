@@ -19,7 +19,7 @@ theme:
     - navigation.instant
 
 extra_css:
-  - stylesheets/custom.css
+  - stylesheets/custom.css?v=2
 
 extra_javascript:
   - assets/nav-links.js
