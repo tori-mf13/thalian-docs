@@ -6,6 +6,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## April 2026
 
+### Improvements
+
+- **Bulk app policy actions**: select multiple apps on the **Applications** page and approve, flag, or block them all at once. A floating action bar appears when you select one or more apps. Use the **Select all** shortcut to apply a policy across an entire tab in one click. Available to admins and security roles.
+
 ### Fixes
 
 - **MFA enforcement**: enabling MFA on a workspace no longer immediately blocks active sessions. Users currently signed in can finish their session normally; MFA enrollment is required on their next login.
