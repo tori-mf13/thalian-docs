@@ -1,5 +1,8 @@
 ---
 template: home.html
+hide:
+  - navigation
+  - toc
 ---
 
 # Thalian Documentation
