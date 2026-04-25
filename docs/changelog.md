@@ -6,23 +6,23 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ## April 2026
 
-### Improvements
-
-- **Bulk app policy actions**: select multiple apps on the **Applications** page and approve, flag, or block them all at once. A floating action bar appears when you select one or more apps. Use the **Select all** shortcut to apply a policy across an entire tab in one click. Available to admins and security roles.
-
-### Fixes
-
-- **MFA enforcement**: enabling MFA on a workspace no longer immediately blocks active sessions. Users currently signed in can finish their session normally; MFA enrollment is required on their next login.
-
-### Improvements
-
-- **Compliance Trend tab**: the trend chart now tracks your **SOC 2** and **ISO 27001** compliance scores over time. Scores are computed each analysis run from live open findings mapped to each framework's controls, and stored in posture history so the chart reflects your real compliance trajectory — not synthetic estimates. Scores range from 0–100 (passing controls / total controls). Historical data is backfilled automatically from existing finding timestamps.
-
-### Integrations
-
-- **Datadog**: new integration for observability access intelligence. Connect with an API Key + Application Key (no OAuth required). Thalian syncs users and role assignments, then surfaces four findings: admin not in IDP (critical), admin without MFA (high: suppressed when a primary IDP with SAML/SSO is connected), user not in IDP (high), and offboarded employee still active (critical). See [Connect Datadog](./integrations/datadog.md) for setup instructions.
-
 ### New Features
+
+- **Attack Surface Map**: The Causality Insights panel now shows an interactive SVG graph connecting your identity entry points, attack vectors, and at-risk platforms in a single view. Root cause and systemic pattern cards are clickable and pre-fill the AI assistant with a targeted question. Replaces the previous card-based layout.
+
+- **Attack chain redesign**: The attack chain card is rebuilt as a structured diagram — entry point avatar → animated attack vector pill → fanned platform list. Each platform row shows an intensity-colored tick proportional to entitlement exposure. Hover any count to see "X entitlements at risk."
+
+- **Login geolocation**: Finding detail panels now show city, region, country, and ISP for login-based context (unmanaged access panel and behavioral findings). Processed in-house via MaxMind GeoLite2 on Cloudflare R2 — no customer IP is sent to third parties.
+
+- **Grouped findings**: Eight high-volume rules now emit a single grouped finding with all affected users inside, instead of one finding per identity. Severity scales with scope: 3+ users without a device escalates to critical; MFA coverage gap crossing 50% escalates to critical. Affected rules: active user with no MDM device, admin without MFA, stale admin, MFA coverage gap, password-only auth, cross-platform privilege drift, cross-platform offboarding gap, cross-platform MFA gap.
+
+- **Finding consolidation**: Shadow IT sensitive-scope and broad OAuth write-access findings now consolidate into one finding per workspace (5+ apps escalates to critical). GitHub org owner not-in-IDP and GCP owner/member not-in-IDP findings similarly grouped.
+
+- **Per-admin OAuth revoke**: Admin excessive OAuth findings are now one finding per admin, each with per-app inline revoke buttons. Revocation runs through your IDP by app name — no stored OAuth client ID required.
+
+- **Custom entity names in titles**: 11 per-entity rules now include the specific person's name in the finding title for faster scanning at a glance.
+
+- **Slack App Directory**: Thalian is listed in the Slack App Directory. Install Slack directly from `app.thalian.ai/api/slack-install` without leaving Slack.
 
 - **Security Posture Timeline**: new History page (accessible via **Reports → Timeline** tab or the dashboard "Monitoring since" badge) shows your posture score over time, MFA coverage trend, compliance rate, and a narrative event log of significant changes: grade shifts, MFA drops, new integrations, and remediation milestones.
 
@@ -36,7 +36,7 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 - **PDF evidence export for access reviews**: Access review campaigns now include a PDF export button that generates a formatted evidence pack for each campaign: reviewer decisions, timestamps, and entity details. Useful for audit evidence and compliance documentation.
 
-- **Compliance Trend tab**: New **Trend** tab on the Compliance page shows control pass rate over time, rule coverage changes, and open finding counts by framework. Helps track compliance posture progress across audit cycles.
+- **Compliance Trend tab**: The trend chart tracks **SOC 2** and **ISO 27001** compliance scores over time, computed from live open findings mapped to each framework's controls. Scores range from 0–100 (passing controls / total controls). Historical data is backfilled automatically from existing finding timestamps.
 
 - **In-app service status banner**: A dismissible banner now appears when an active incident or service degradation is detected. Powered by the status page: no configuration required.
 
@@ -101,6 +101,8 @@ Notable changes, new features, and fixes for the Thalian platform.
   - **OneLogin-specific rules**: Users not enrolled in any MFA factor, admin accounts with no security policy assigned, offboarded primary IDP user still active in OneLogin
 
 ### Improvements
+
+- **Bulk app policy actions**: select multiple apps on the **Applications** page and approve, flag, or block them all at once. A floating action bar appears when you select one or more apps. Use the **Select all** shortcut to apply a policy across an entire tab in one click. Available to admins and security roles.
 
 - **Workspace risk score rebuilt**: The 0–100 workspace risk score now uses a linear, CVSS-aligned formula (`severity weight × finding count ÷ 150`, capped at 100) instead of a sigmoid curve that saturated at high risk levels. This means every finding change produces a meaningful, proportional score movement: each critical finding is worth ~6.7 pts, high ~3.3 pts, medium ~1.3 pts, low ~0.7 pts. The previous formula caused all **Recommended Actions** point deltas to display as ±0 for workspaces with moderate-to-high risk: that bug is fixed. Additionally, cost-only findings (license waste) and metadata-noise rules that don't represent active security risk are now excluded from the workspace score, so the score reflects actual security exposure. Six rules reclassified from low to medium severity to better reflect their real impact: Okta factor enrollment optional, Okta network zone bypass, Okta ThreatInsight disabled, Entra Security Defaults disabled, GitHub default branch protection missing, and SharePoint external sharing activity.
 
@@ -170,6 +172,15 @@ Notable changes, new features, and fixes for the Thalian platform.
 
 ### Fixes
 
+- **MFA enforcement**: enabling MFA on a workspace no longer immediately blocks active sessions. Users currently signed in can finish their session normally; MFA enrollment is required on their next login.
+
+- **Automation policy matching**: Automation policies were silently matching against the wrong finding scope — the engine was falling back to category-wide match for policies with an empty rule ID list while the UI counted violations strictly by rule ID. Fixed via an explicit `match_mode` column. Check the **Policies** page — violation counts may change.
+- **Fleet encryption and compliance data**: Encryption status and compliance were showing as "Unknown" for Fleet-managed devices. Fixed by fetching per-host detail endpoints after the initial list.
+- **Device OS column**: Devices table now shows the OS version string instead of the raw internal platform identifier (e.g., `darwin`).
+- **AI chat response truncation**: Max token limit raised to 4096 with pagination for long responses.
+- **Finding panel "Authorized by" on OAuth findings**: Now aggregates unique users across all apps in a consolidated finding, scoped to a selected app when one is clicked.
+- **Entity show more / show less**: Finding detail panels with 10+ entities now show a toggle instead of an unbounded list.
+
 - **SSO finding accuracy for Google Workspace-only environments**: When Google Workspace is your only identity provider (no Okta, Entra ID, JumpCloud, OneLogin, or PingOne), SSO-related findings now correctly identify ungoverned OAuth grants rather than reporting apps as "bypassing SSO." Apps that authenticate via Google sign-in are not bypassing SSO: they're outside centralized OAuth governance. Finding titles, descriptions, and remediation guidance have been updated accordingly, directing admins to **Google Admin → Security → API controls** to review and restrict OAuth app access.
 
 - **SSO finding accuracy: Google-only ratio and entity payload corrections**: Three follow-up fixes to Google Workspace-only SSO findings: `sso::high_direct_auth_ratio` now requires OAuth grants to represent a majority of an identity's app portfolio before firing (previously could fire at any count and incorrectly state "over half"); the `sso::offboarded_with_direct_auth_apps` and `behavioral_off_hours_direct_auth` findings now correctly report `oauth_count` in their entity payloads rather than `direct_count: 0`, ensuring the AI assistant and entity detail panels reflect the actual risk signal.
@@ -202,6 +213,10 @@ Notable changes, new features, and fixes for the Thalian platform.
 - **Approval request emails**: Fixed approval request emails sending twice in some cases, and corrected missing template variable substitution.
 
 ### Security
+
+- **HMAC key isolation**: Webhook and AI chat action HMAC keys are now domain-separated via HKDF. A key compromise in one context cannot be used in another.
+- **Single-use action tokens**: HMAC confirmation tokens for AI-initiated remediation actions are consumed on first use.
+- **AI chat tool gating**: `trigger_sync` requires `manage_integrations` role; `run_analysis` requires `analyze` role.
 
 - **npm supply chain hardening**: In response to the March 30 Axios npm supply chain attack (CVE pending, attributed to North Korean threat actor UNC1069), we audited all dependencies and confirmed Thalian is not affected: axios is not in our dependency tree. We've additionally hardened our build pipeline: npm audit now blocks deployments on high-severity findings, postinstall scripts from transitive dependencies are disabled by default, all dependency versions are pinned exactly, and lockfile integrity validation has been added to CI.
 
